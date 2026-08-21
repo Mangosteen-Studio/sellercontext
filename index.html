@@ -3,30 +3,37 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Seller Context | Build your SELLER.md</title>
-  <meta name="description" content="Create a SELLER.md context file so ChatGPT, Claude, Gemini, Codex, Cursor, and other AI agents understand how you sell before they write or research for you.">
-  <meta property="og:title" content="Seller Context | Build your SELLER.md">
-  <meta property="og:description" content="An editable seller-context generator for AI-native account executives. Fill it out, copy the Markdown, and give your AI agent the sales context it is missing.">
+  <meta name="theme-color" content="#e4f2dc">
+  <title>Seller Context | Make your sales agents perform better</title>
+  <meta name="description" content="Build a portable SELLER.md that teaches ChatGPT, Claude, Gemini, Codex, Cursor, and other AI sales agents what you sell, who matters, and how you work.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://sellercontext.com/">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%233f6e46'/%3E%3Cpath d='M19 20h27v7H27v7h16v7H27v4h19v7H19z' fill='%23f6fbf3'/%3E%3C/svg%3E">
+  <meta property="og:title" content="Seller Context | Make your sales agents perform better">
+  <meta property="og:description" content="SELLER.md is the portable context layer that helps every AI sales agent research, write, brief, and prepare more like you.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://sellercontext.com/">
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Seller Context | Build your SELLER.md">
-  <meta name="twitter:description" content="Fill out a sales context file your AI agent can use before writing, researching, following up, or building decks.">
+  <meta property="og:site_name" content="Seller Context">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Seller Context | Make your sales agents perform better">
+  <meta name="twitter:description" content="Build one portable SELLER.md so every AI sales agent understands what you sell, who matters, and how you work.">
   <style>
     :root {
-      --bg: #080a0d;
-      --panel: #11151b;
-      --panel-2: #151b22;
-      --ink: #f4f1df;
-      --muted: #a99f80;
-      --line: #2d352f;
-      --line-hot: #72f6a8;
-      --green: #55ff9a;
-      --amber: #ffcf5a;
-      --red: #ff6b5d;
-      --shadow: rgba(85, 255, 154, 0.18);
+      color-scheme: light;
+      --bg: #f7f9fc;
+      --panel: #ffffff;
+      --panel-2: #f1f5fb;
+      --ink: #0b1020;
+      --muted: #627086;
+      --line: #d8e0ec;
+      --line-hot: #245cff;
+      --green: #245cff;
+      --amber: #5d42d8;
+      --red: #ff5f67;
+      --cyan: #00a7e8;
+      --shadow: rgba(36, 92, 255, 0.16);
       --mono: "SFMono-Regular", Consolas, "Liberation Mono", monospace;
-      --sans: "Avenir Next", "Inter Tight", "Helvetica Neue", Arial, sans-serif;
+      --sans: Inter, "Avenir Next", "Helvetica Neue", Arial, sans-serif;
     }
 
     * {
@@ -41,11 +48,12 @@
       margin: 0;
       min-height: 100vh;
       background:
-        radial-gradient(circle at 20% 10%, rgba(85, 255, 154, 0.14), transparent 28rem),
-        radial-gradient(circle at 85% 12%, rgba(255, 207, 90, 0.12), transparent 24rem),
-        linear-gradient(135deg, rgba(85, 255, 154, 0.08) 1px, transparent 1px),
+        radial-gradient(circle at 12% 0%, rgba(36, 92, 255, 0.10), transparent 30rem),
+        radial-gradient(circle at 92% 12%, rgba(0, 167, 232, 0.10), transparent 26rem),
+        linear-gradient(rgba(36, 92, 255, 0.035) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(36, 92, 255, 0.035) 1px, transparent 1px),
         var(--bg);
-      background-size: auto, auto, 34px 34px, auto;
+      background-size: auto, auto, 32px 32px, 32px 32px, auto;
       color: var(--ink);
       font-family: var(--sans);
       line-height: 1.45;
@@ -56,16 +64,10 @@
       content: "";
       position: fixed;
       inset: 0;
-      background: repeating-linear-gradient(
-        to bottom,
-        rgba(255, 255, 255, 0.025),
-        rgba(255, 255, 255, 0.025) 1px,
-        transparent 1px,
-        transparent 4px
-      );
+      background:
+        linear-gradient(120deg, transparent 0 46%, rgba(36, 92, 255, 0.035) 46% 46.2%, transparent 46.2% 100%);
       pointer-events: none;
-      mix-blend-mode: screen;
-      opacity: 0.45;
+      opacity: 1;
       z-index: 5;
     }
 
@@ -74,7 +76,7 @@
     }
 
     .shell {
-      width: min(1180px, calc(100vw - 32px));
+      width: min(1240px, calc(100vw - 40px));
       margin: 0 auto;
       padding: 24px 0 56px;
       position: relative;
@@ -86,7 +88,8 @@
       justify-content: space-between;
       align-items: center;
       gap: 16px;
-      padding: 14px 0 28px;
+      padding: 18px 0 24px;
+      border-bottom: 1px solid rgba(11, 16, 32, 0.09);
       font-family: var(--mono);
       font-size: 13px;
       color: var(--muted);
@@ -102,13 +105,14 @@
     }
 
     .mark {
-      width: 28px;
-      height: 28px;
+      width: 30px;
+      height: 30px;
       border: 1px solid var(--line-hot);
       display: grid;
       place-items: center;
-      color: var(--green);
-      box-shadow: 0 0 22px var(--shadow);
+      background: var(--green);
+      color: #ffffff;
+      box-shadow: 0 10px 28px var(--shadow);
     }
 
     .nav-links {
@@ -130,23 +134,25 @@
     .hero {
       display: grid;
       grid-template-columns: minmax(0, 0.9fr) minmax(420px, 1.1fr);
-      gap: 28px;
+      gap: 24px;
       align-items: stretch;
-      padding: 52px 0 34px;
+      padding: 64px 0 30px;
     }
 
     .hero-copy,
     .terminal,
     .module {
       border: 1px solid var(--line);
-      background: linear-gradient(180deg, rgba(21, 27, 34, 0.92), rgba(10, 13, 17, 0.96));
-      box-shadow: 0 0 0 1px rgba(85, 255, 154, 0.04), 0 36px 70px rgba(0, 0, 0, 0.42);
+      background: rgba(255, 255, 255, 0.92);
+      box-shadow: 0 1px 0 rgba(255, 255, 255, 0.9) inset, 0 24px 70px rgba(31, 48, 84, 0.10);
+      backdrop-filter: blur(16px);
     }
 
     .hero-copy {
       padding: clamp(24px, 4vw, 42px);
       position: relative;
       overflow: hidden;
+      border-top: 3px solid var(--green);
     }
 
     .hero-copy::after {
@@ -157,7 +163,7 @@
       font-family: var(--mono);
       font-size: clamp(48px, 10vw, 118px);
       font-weight: 700;
-      color: rgba(85, 255, 154, 0.045);
+      color: rgba(36, 92, 255, 0.045);
       letter-spacing: -0.08em;
       pointer-events: none;
     }
@@ -172,6 +178,7 @@
       font-size: 12px;
       text-transform: uppercase;
       letter-spacing: 0.14em;
+      font-weight: 700;
     }
 
     .eyebrow::before {
@@ -186,8 +193,9 @@
       max-width: 11ch;
       font-size: clamp(46px, 8vw, 88px);
       line-height: 0.9;
-      letter-spacing: -0.08em;
-      font-weight: 800;
+      letter-spacing: -0.065em;
+      font-weight: 760;
+      text-wrap: balance;
     }
 
     .hero-copy p {
@@ -211,7 +219,7 @@
       appearance: none;
       border: 1px solid var(--line-hot);
       background: var(--green);
-      color: #061008;
+      color: #ffffff;
       cursor: pointer;
       display: inline-flex;
       justify-content: center;
@@ -223,17 +231,20 @@
       font-size: 13px;
       font-weight: 700;
       text-decoration: none;
-      box-shadow: 0 0 24px var(--shadow);
+      border-radius: 3px;
+      box-shadow: 0 10px 28px var(--shadow);
+      transition: transform 160ms ease, box-shadow 160ms ease, background 160ms ease;
     }
 
     .button.secondary {
-      background: transparent;
+      background: #ffffff;
       color: var(--green);
-      box-shadow: none;
+      box-shadow: 0 8px 20px rgba(31, 48, 84, 0.06);
     }
 
     .button:hover {
       transform: translateY(-1px);
+      box-shadow: 0 14px 34px var(--shadow);
     }
 
     .badge-strip {
@@ -248,7 +259,7 @@
 
     .badge-strip span {
       border: 1px solid var(--line);
-      background: rgba(8, 10, 13, 0.52);
+      background: rgba(255, 255, 255, 0.72);
       padding: 7px 9px;
     }
 
@@ -257,6 +268,7 @@
       overflow: hidden;
       display: flex;
       flex-direction: column;
+      border-top: 3px solid var(--cyan);
     }
 
     .terminal-bar {
@@ -266,7 +278,7 @@
       gap: 16px;
       border-bottom: 1px solid var(--line);
       padding: 12px 14px;
-      background: rgba(0, 0, 0, 0.28);
+      background: var(--panel-2);
       color: var(--muted);
       font-family: var(--mono);
       font-size: 12px;
@@ -282,7 +294,7 @@
       width: 9px;
       height: 9px;
       border-radius: 999px;
-      background: var(--line);
+      background: #b8c4d4;
     }
 
     .lights span:nth-child(1) {
@@ -294,7 +306,7 @@
     }
 
     .lights span:nth-child(3) {
-      background: var(--green);
+      background: var(--cyan);
     }
 
     .preview {
@@ -306,7 +318,7 @@
       font-family: var(--mono);
       font-size: 12.5px;
       line-height: 1.72;
-      color: #d9f9d7;
+      color: #1a2a46;
       flex: 1;
       max-height: 620px;
     }
@@ -330,13 +342,13 @@
     .grid {
       display: grid;
       grid-template-columns: minmax(0, 0.95fr) minmax(420px, 1.05fr);
-      gap: 28px;
+      gap: 24px;
       align-items: start;
       margin-top: 24px;
     }
 
     .module {
-      padding: 22px;
+      padding: clamp(22px, 3vw, 32px);
     }
 
     .module h2,
@@ -370,22 +382,25 @@
     }
 
     label {
-      color: var(--amber);
+      color: #31435f;
       font-family: var(--mono);
       font-size: 11px;
       letter-spacing: 0.08em;
       text-transform: uppercase;
+      font-weight: 700;
     }
 
     input,
     textarea {
       width: 100%;
       border: 1px solid var(--line);
-      background: rgba(8, 10, 13, 0.72);
+      background: #fbfcff;
       color: var(--ink);
       padding: 12px 12px;
       font: 14px/1.45 var(--sans);
       outline: none;
+      border-radius: 3px;
+      transition: border-color 160ms ease, box-shadow 160ms ease, background 160ms ease;
     }
 
     textarea {
@@ -396,7 +411,8 @@
     input:focus,
     textarea:focus {
       border-color: var(--line-hot);
-      box-shadow: 0 0 0 3px rgba(85, 255, 154, 0.08);
+      background: #ffffff;
+      box-shadow: 0 0 0 3px rgba(36, 92, 255, 0.10);
     }
 
     .split-fields {
@@ -421,7 +437,7 @@
     }
 
     .step {
-      background: rgba(17, 21, 27, 0.96);
+      background: #ffffff;
       padding: 20px;
     }
 
@@ -450,6 +466,7 @@
       color: var(--muted);
       font-family: var(--mono);
       font-size: 12px;
+      border-top: 1px solid var(--line);
     }
 
     .footer a {
@@ -462,8 +479,8 @@
       right: 18px;
       bottom: 18px;
       border: 1px solid var(--line-hot);
-      background: #07120b;
-      color: var(--green);
+      background: #0d1830;
+      color: #ffffff;
       padding: 12px 14px;
       font-family: var(--mono);
       font-size: 12px;
@@ -472,6 +489,17 @@
       transition: 160ms ease;
       pointer-events: none;
       z-index: 10;
+      box-shadow: 0 16px 42px rgba(11, 16, 32, 0.22);
+    }
+
+    ::selection {
+      background: rgba(36, 92, 255, 0.18);
+      color: var(--ink);
+    }
+
+    :focus-visible {
+      outline: 2px solid var(--cyan);
+      outline-offset: 3px;
     }
 
     .toast.show {
@@ -521,120 +549,2158 @@
       }
     }
   </style>
+  <style>
+    /* Notion-inspired edition: quiet workspace chrome, document-first hierarchy. */
+    :root {
+      --bg: #ffffff;
+      --panel: #ffffff;
+      --panel-2: #f7f7f5;
+      --ink: #37352f;
+      --muted: #787774;
+      --line: rgba(55, 53, 47, 0.16);
+      --line-hot: #37352f;
+      --green: #2f6fda;
+      --amber: #d9730d;
+      --red: #e03e3e;
+      --cyan: #0b6e99;
+      --shadow: rgba(15, 15, 15, 0.08);
+      --mono: "SFMono-Regular", Consolas, "Liberation Mono", monospace;
+      --sans: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+    }
+
+    body {
+      background: var(--bg);
+      color: var(--ink);
+      font-family: var(--sans);
+      line-height: 1.5;
+    }
+
+    body::before {
+      display: none;
+    }
+
+    .notion-sidebar {
+      position: fixed;
+      inset: 0 auto 0 0;
+      z-index: 4;
+      width: 244px;
+      display: flex;
+      flex-direction: column;
+      padding: 10px 8px 14px;
+      background: #f7f7f5;
+      border-right: 1px solid rgba(55, 53, 47, 0.08);
+      color: #5f5e5b;
+      font-size: 14px;
+    }
+
+    .workspace-name {
+      display: flex;
+      align-items: center;
+      gap: 9px;
+      min-height: 38px;
+      padding: 4px 7px;
+      color: var(--ink);
+      font-size: 14px;
+      font-weight: 600;
+    }
+
+    .workspace-icon {
+      width: 24px;
+      height: 24px;
+      display: grid;
+      place-items: center;
+      border-radius: 5px;
+      background: #ffffff;
+      border: 1px solid rgba(55, 53, 47, 0.12);
+      box-shadow: 0 1px 2px rgba(15, 15, 15, 0.08);
+      color: var(--ink);
+      font-family: Georgia, serif;
+      font-weight: 700;
+    }
+
+    .sidebar-search {
+      margin: 7px 2px 15px;
+      padding: 7px 9px;
+      border-radius: 5px;
+      background: rgba(55, 53, 47, 0.05);
+      color: #8a8986;
+      font-size: 13px;
+    }
+
+    .sidebar-label {
+      padding: 8px 9px 5px;
+      color: #9b9a97;
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.02em;
+      text-transform: uppercase;
+    }
+
+    .sidebar-link {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      min-height: 30px;
+      padding: 4px 9px;
+      border-radius: 5px;
+      color: #65635f;
+      text-decoration: none;
+    }
+
+    .sidebar-link:hover,
+    .sidebar-link.active {
+      background: rgba(55, 53, 47, 0.08);
+      color: var(--ink);
+    }
+
+    .sidebar-footer {
+      margin-top: auto;
+      padding: 12px 9px 0;
+      border-top: 1px solid rgba(55, 53, 47, 0.08);
+      color: #9b9a97;
+      font-size: 12px;
+      line-height: 1.45;
+    }
+
+    .shell {
+      width: min(1120px, calc(100vw - 308px));
+      margin: 0 36px 0 280px;
+      padding: 0 0 72px;
+    }
+
+    .nav {
+      position: sticky;
+      top: 0;
+      z-index: 3;
+      min-height: 46px;
+      padding: 8px 2px;
+      background: rgba(255, 255, 255, 0.94);
+      border-bottom: 1px solid rgba(55, 53, 47, 0.08);
+      backdrop-filter: blur(14px);
+      font-family: var(--sans);
+      font-size: 13px;
+    }
+
+    .brand {
+      gap: 7px;
+      color: #787774;
+      text-transform: none;
+      letter-spacing: 0;
+    }
+
+    .brand::before {
+      content: "Private /";
+      color: #a09f9c;
+    }
+
+    .mark {
+      width: 22px;
+      height: 22px;
+      border: 0;
+      border-radius: 4px;
+      background: #f1f1ef;
+      box-shadow: none;
+      color: var(--ink);
+      font-family: Georgia, serif;
+      font-size: 12px;
+    }
+
+    .nav-links {
+      gap: 5px;
+    }
+
+    .nav-links a {
+      padding: 5px 8px;
+      border-radius: 5px;
+      color: #6f6e69;
+    }
+
+    .nav-links a:hover {
+      background: #f1f1ef;
+      color: var(--ink);
+    }
+
+    .hero {
+      grid-template-columns: minmax(0, 0.92fr) minmax(390px, 1.08fr);
+      gap: 38px;
+      align-items: start;
+      padding: 70px 4px 54px;
+      border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+    }
+
+    .hero-copy,
+    .terminal,
+    .module {
+      border: 0;
+      background: transparent;
+      box-shadow: none;
+      backdrop-filter: none;
+    }
+
+    .hero-copy {
+      padding: 0;
+      overflow: visible;
+      border-top: 0;
+    }
+
+    .hero-copy::after {
+      display: none;
+    }
+
+    .page-icon {
+      display: block;
+      margin-bottom: 22px;
+      font-size: 68px;
+      line-height: 1;
+      filter: saturate(0.8);
+    }
+
+    .eyebrow {
+      display: block;
+      margin-bottom: 13px;
+      color: #9b9a97;
+      font-family: var(--sans);
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 0.02em;
+      text-transform: uppercase;
+    }
+
+    .eyebrow::before {
+      display: none;
+    }
+
+    h1 {
+      max-width: 10ch;
+      margin-bottom: 18px;
+      color: #2f2e2a;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: clamp(47px, 6.6vw, 78px);
+      font-weight: 600;
+      line-height: 0.98;
+      letter-spacing: -0.055em;
+    }
+
+    .hero-copy p {
+      color: #65635f;
+      font-size: 17px;
+      line-height: 1.65;
+    }
+
+    .cta-row {
+      gap: 8px;
+      margin-top: 24px;
+    }
+
+    .button {
+      min-height: 36px;
+      padding: 0 13px;
+      border: 1px solid #37352f;
+      border-radius: 5px;
+      background: #37352f;
+      box-shadow: 0 1px 2px rgba(15, 15, 15, 0.1);
+      color: #ffffff;
+      font-family: var(--sans);
+      font-size: 13px;
+      font-weight: 600;
+      transition: background 120ms ease, transform 120ms ease;
+    }
+
+    .button.secondary {
+      border-color: rgba(55, 53, 47, 0.18);
+      background: #ffffff;
+      box-shadow: 0 1px 2px rgba(15, 15, 15, 0.05);
+      color: var(--ink);
+    }
+
+    .button:hover {
+      transform: none;
+      background: #2f2e2a;
+      box-shadow: 0 1px 2px rgba(15, 15, 15, 0.12);
+    }
+
+    .button.secondary:hover {
+      background: #f7f7f5;
+    }
+
+    .badge-strip {
+      gap: 6px;
+      margin-top: 22px;
+      font-family: var(--sans);
+      color: #6f6e69;
+    }
+
+    .badge-strip span {
+      padding: 3px 7px;
+      border: 0;
+      border-radius: 3px;
+      background: #f1f1ef;
+    }
+
+    .badge-strip span:nth-child(1) { background: #e7f3f8; color: #245c73; }
+    .badge-strip span:nth-child(2) { background: #f3eeee; color: #7b4e4e; }
+    .badge-strip span:nth-child(3) { background: #edf3ec; color: #466747; }
+    .badge-strip span:nth-child(4) { background: #fbecdd; color: #8a5a28; }
+
+    .terminal {
+      min-height: 500px;
+      overflow: hidden;
+      border: 1px solid rgba(55, 53, 47, 0.14);
+      border-radius: 5px;
+      background: #f7f7f5;
+    }
+
+    .terminal-bar {
+      padding: 10px 13px;
+      border-bottom-color: rgba(55, 53, 47, 0.1);
+      background: #f1f1ef;
+      color: #787774;
+      font-size: 11px;
+    }
+
+    .lights {
+      gap: 4px;
+    }
+
+    .lights span {
+      width: 7px;
+      height: 7px;
+      background: #c7c6c3;
+    }
+
+    .lights span:nth-child(1),
+    .lights span:nth-child(2),
+    .lights span:nth-child(3) {
+      background: #c7c6c3;
+    }
+
+    .preview {
+      padding: 24px 26px;
+      color: #4b4a46;
+      font-size: 12px;
+      line-height: 1.75;
+    }
+
+    .grid {
+      grid-template-columns: minmax(0, 760px);
+      justify-content: center;
+      margin-top: 0;
+      padding: 62px 4px 26px;
+    }
+
+    .module {
+      padding: 0;
+    }
+
+    .module h2 {
+      margin-bottom: 13px;
+      color: #2f2e2a;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: clamp(31px, 3.5vw, 44px);
+      font-weight: 600;
+      line-height: 1.08;
+      letter-spacing: -0.045em;
+    }
+
+    .module p {
+      color: #6f6e69;
+      line-height: 1.65;
+    }
+
+    .form {
+      gap: 0;
+      margin-top: 30px;
+      border-top: 1px solid rgba(55, 53, 47, 0.11);
+    }
+
+    .field {
+      gap: 6px;
+      padding: 13px 0;
+      border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+    }
+
+    label {
+      color: #787774;
+      font-family: var(--sans);
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.035em;
+      text-transform: uppercase;
+    }
+
+    input,
+    textarea {
+      padding: 9px 10px;
+      border: 1px solid transparent;
+      border-radius: 4px;
+      background: transparent;
+      color: var(--ink);
+      font: 14px/1.5 var(--sans);
+    }
+
+    input:hover,
+    textarea:hover {
+      background: #f7f7f5;
+    }
+
+    input:focus,
+    textarea:focus {
+      border-color: rgba(47, 111, 218, 0.45);
+      background: #ffffff;
+      box-shadow: 0 0 0 2px rgba(47, 111, 218, 0.12);
+    }
+
+    input::placeholder,
+    textarea::placeholder {
+      color: #aaa9a5;
+    }
+
+    textarea {
+      min-height: 84px;
+    }
+
+    .helper {
+      padding: 11px 13px;
+      border-radius: 4px;
+      background: #f1f1ef;
+      color: #787774;
+      font-family: var(--sans);
+      font-size: 12px;
+    }
+
+    .steps {
+      grid-template-columns: 1fr;
+      gap: 0;
+      margin-top: 28px;
+      border: 0;
+      border-top: 1px solid rgba(55, 53, 47, 0.12);
+      background: transparent;
+    }
+
+    .how-section {
+      margin: 44px 4px 10px;
+      padding: 62px 0 54px;
+      border-top: 1px solid rgba(55, 53, 47, 0.1);
+      border-bottom: 1px solid rgba(55, 53, 47, 0.1);
+    }
+
+    .how-section-head {
+      display: grid;
+      grid-template-columns: minmax(0, 0.8fr) minmax(320px, 1.2fr);
+      gap: 54px;
+      align-items: end;
+      margin-bottom: 34px;
+    }
+
+    .how-section h2 {
+      max-width: 14ch;
+      margin: 0;
+      color: #2f2e2a;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: clamp(34px, 4.6vw, 55px);
+      font-weight: 600;
+      line-height: 1.04;
+      letter-spacing: -0.05em;
+    }
+
+    .how-section-head p {
+      margin: 0;
+      color: #6f6e69;
+      font-size: 16px;
+      line-height: 1.7;
+    }
+
+    .how-section .steps {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      border: 1px solid rgba(55, 53, 47, 0.11);
+      border-radius: 5px;
+      background: rgba(55, 53, 47, 0.08);
+      overflow: hidden;
+    }
+
+    .how-section .step {
+      min-height: 158px;
+      padding: 22px 20px 22px 46px;
+      border: 0;
+      background: #ffffff;
+    }
+
+    .how-section .step + .step {
+      border-left: 1px solid rgba(55, 53, 47, 0.1);
+    }
+
+    .how-section .step::before {
+      top: 23px;
+      left: 18px;
+    }
+
+    .step {
+      position: relative;
+      padding: 16px 8px 16px 38px;
+      border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+      background: transparent;
+    }
+
+    .step::before {
+      content: "→";
+      position: absolute;
+      top: 17px;
+      left: 9px;
+      color: #9b9a97;
+    }
+
+    .step strong {
+      margin-bottom: 4px;
+      color: #37352f;
+      font-family: var(--sans);
+      font-size: 11px;
+      letter-spacing: 0.04em;
+    }
+
+    .step p {
+      color: #6f6e69;
+      font-size: 14px;
+      line-height: 1.55;
+    }
+
+    .footer {
+      margin-top: 22px;
+      padding: 25px 4px 0;
+      border-top-color: rgba(55, 53, 47, 0.1);
+      color: #9b9a97;
+      font-family: var(--sans);
+      font-size: 12px;
+    }
+
+    .footer a {
+      color: #6f6e69;
+      text-decoration: underline;
+      text-decoration-color: rgba(55, 53, 47, 0.3);
+      text-underline-offset: 2px;
+    }
+
+    .toast {
+      right: 20px;
+      bottom: 20px;
+      border: 0;
+      border-radius: 5px;
+      background: #37352f;
+      box-shadow: 0 5px 20px rgba(15, 15, 15, 0.18);
+      font-family: var(--sans);
+    }
+
+    .ai-launcher {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(300px, 0.72fr);
+      gap: 46px;
+      margin: 42px 4px 0;
+      padding: 30px 32px;
+      border: 1px solid rgba(55, 53, 47, 0.12);
+      border-radius: 6px;
+      background: #f7f7f5;
+    }
+
+    .ai-launcher .eyebrow {
+      margin-bottom: 9px;
+    }
+
+    .ai-launcher h2 {
+      margin: 0 0 10px;
+      color: #2f2e2a;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: clamp(27px, 3vw, 38px);
+      font-weight: 600;
+      line-height: 1.08;
+      letter-spacing: -0.035em;
+    }
+
+    .ai-launcher p {
+      max-width: 58ch;
+      margin: 0;
+      color: #6f6e69;
+      font-size: 14px;
+      line-height: 1.65;
+    }
+
+    .ai-actions {
+      display: grid;
+      gap: 8px;
+      align-content: start;
+    }
+
+    .ai-button {
+      display: grid;
+      grid-template-columns: 26px 1fr auto;
+      align-items: center;
+      gap: 10px;
+      min-height: 44px;
+      padding: 6px 10px;
+      border: 1px solid rgba(55, 53, 47, 0.14);
+      border-radius: 5px;
+      background: #ffffff;
+      color: var(--ink);
+      font: 600 13px/1 var(--sans);
+      text-align: left;
+      text-decoration: none;
+      cursor: pointer;
+      box-shadow: 0 1px 2px rgba(15, 15, 15, 0.04);
+      transition: background 120ms ease, border-color 120ms ease;
+    }
+
+    .ai-button:hover {
+      border-color: rgba(55, 53, 47, 0.24);
+      background: #fbfbfa;
+    }
+
+    .ai-icon {
+      width: 26px;
+      height: 26px;
+      display: grid;
+      place-items: center;
+      border-radius: 5px;
+      background: #f1f1ef;
+      color: #5f5e5b;
+      font-size: 11px;
+      font-weight: 700;
+    }
+
+    .ai-button[data-ai="ChatGPT"] .ai-icon { background: #e8f3ef; color: #216e5b; }
+    .ai-button[data-ai="Claude"] .ai-icon { background: #f5eee8; color: #9a5b3e; }
+    .ai-button[data-ai="Gemini"] .ai-icon { background: #ebeefe; color: #5366b4; }
+
+    .ai-arrow {
+      color: #9b9a97;
+      font-size: 14px;
+      font-weight: 400;
+    }
+
+    .ai-button.copy-only {
+      grid-template-columns: 26px 1fr;
+      margin-top: 3px;
+      border-style: dashed;
+      background: transparent;
+      color: #6f6e69;
+    }
+
+    .prompt-details {
+      grid-column: 1 / -1;
+      padding-top: 18px;
+      border-top: 1px solid rgba(55, 53, 47, 0.1);
+    }
+
+    .prompt-details summary {
+      width: max-content;
+      color: #6f6e69;
+      font-size: 12px;
+      font-weight: 600;
+      cursor: pointer;
+      user-select: none;
+    }
+
+    .prompt-details pre {
+      max-height: 320px;
+      margin: 14px 0 0;
+      padding: 18px;
+      overflow: auto;
+      white-space: pre-wrap;
+      border: 1px solid rgba(55, 53, 47, 0.1);
+      border-radius: 4px;
+      background: #ffffff;
+      color: #4b4a46;
+      font: 11.5px/1.65 var(--mono);
+    }
+
+    ::selection {
+      background: rgba(47, 111, 218, 0.18);
+    }
+
+    :focus-visible {
+      outline-color: #2f6fda;
+    }
+
+    @media (max-width: 1040px) {
+      .notion-sidebar {
+        display: none;
+      }
+
+      .shell {
+        width: min(100% - 44px, 1020px);
+        margin: 0 auto;
+      }
+    }
+
+    @media (max-width: 820px) {
+      .hero,
+      .grid,
+      .ai-launcher,
+      .how-section-head {
+        grid-template-columns: 1fr;
+      }
+
+      .hero {
+        gap: 28px;
+        padding-top: 42px;
+      }
+
+      .grid {
+        gap: 54px;
+      }
+
+      .ai-launcher {
+        gap: 24px;
+      }
+
+      .how-section-head {
+        gap: 18px;
+      }
+
+      .how-section .steps {
+        grid-template-columns: 1fr;
+      }
+
+      .how-section .step {
+        min-height: 0;
+      }
+
+      .how-section .step + .step {
+        border-top: 1px solid rgba(55, 53, 47, 0.1);
+        border-left: 0;
+      }
+
+      .terminal {
+        min-height: 390px;
+      }
+    }
+
+    @media (max-width: 560px) {
+      .shell {
+        width: min(100% - 24px, 1020px);
+        padding-top: 0;
+      }
+
+      .nav {
+        align-items: center;
+        flex-direction: row;
+      }
+
+      .nav-links a:not(:first-child) {
+        display: none;
+      }
+
+      .hero {
+        padding-top: 34px;
+      }
+
+      .ai-launcher {
+        margin-right: 0;
+        margin-left: 0;
+        padding: 22px 18px;
+      }
+
+      .page-icon {
+        font-size: 54px;
+      }
+
+      .hero-copy,
+      .module {
+        padding: 0;
+      }
+
+      .preview {
+        padding: 18px;
+      }
+
+      .split-fields {
+        grid-template-columns: 1fr;
+        gap: 0;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      *, *::before, *::after { animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; }
+    }
+  </style>
+  <style>
+    /* Warm paper edition: simpler composition, soft yellow light, handwritten accents. */
+    :root {
+      --bg: #fff8d9;
+      --panel: #fffdf4;
+      --panel-2: #f7edc7;
+      --ink: #3e392c;
+      --muted: #766e58;
+      --line: #ded2a7;
+      --line-hot: #594d2e;
+      --green: #ab7720;
+      --amber: #d29a2e;
+      --red: #b85b42;
+      --cyan: #657f73;
+      --shadow: rgba(91, 72, 28, 0.11);
+      --script: "Bradley Hand", "Segoe Print", "Comic Sans MS", cursive;
+    }
+
+    body {
+      background:
+        radial-gradient(circle at 15% 4%, rgba(255, 255, 255, 0.86), transparent 30rem),
+        radial-gradient(circle at 88% 20%, rgba(242, 201, 92, 0.17), transparent 26rem),
+        #fff8d9;
+      color: var(--ink);
+    }
+
+    .notion-sidebar {
+      display: none;
+    }
+
+    .shell {
+      width: min(1080px, calc(100vw - 40px));
+      margin: 0 auto;
+      padding: 18px 0 62px;
+    }
+
+    .nav {
+      top: 12px;
+      min-height: 52px;
+      padding: 7px 10px 7px 8px;
+      border: 1px solid rgba(89, 77, 46, 0.13);
+      border-radius: 14px;
+      background: rgba(255, 253, 244, 0.87);
+      box-shadow: 0 8px 30px rgba(91, 72, 28, 0.06);
+    }
+
+    .brand {
+      color: var(--ink);
+      font-weight: 650;
+    }
+
+    .brand::before {
+      display: none;
+    }
+
+    .mark {
+      width: 31px;
+      height: 31px;
+      border-radius: 9px;
+      background: #f3df91;
+      color: #59451b;
+      font-size: 14px;
+    }
+
+    .nav-links a {
+      padding: 7px 10px;
+      border-radius: 9px;
+      color: #6d644e;
+    }
+
+    .nav-links a:hover {
+      background: #f4e8b8;
+      color: #453e2f;
+    }
+
+    .hero {
+      grid-template-columns: minmax(0, 0.92fr) minmax(390px, 1.08fr);
+      gap: 44px;
+      padding: 76px 10px 58px;
+      border-bottom: 0;
+    }
+
+    .page-icon {
+      width: 66px;
+      height: 66px;
+      display: grid;
+      place-items: center;
+      margin-bottom: 20px;
+      border: 1px solid rgba(89, 77, 46, 0.11);
+      border-radius: 18px;
+      background: #f4e39e;
+      box-shadow: 0 8px 22px rgba(91, 72, 28, 0.08);
+      color: #5f4a1f;
+      font-family: var(--script);
+      font-size: 38px;
+      transform: rotate(-2deg);
+    }
+
+    .eyebrow {
+      color: #8d6e28;
+      font-family: var(--script);
+      font-size: 16px;
+      font-weight: 600;
+      letter-spacing: 0;
+      text-transform: none;
+      transform: rotate(-1deg);
+      transform-origin: left center;
+    }
+
+    h1 {
+      position: relative;
+      max-width: 11ch;
+      color: #373225;
+      font-size: clamp(50px, 7vw, 79px);
+      line-height: 0.96;
+    }
+
+    h1::after {
+      content: "better context → better agents";
+      display: block;
+      width: max-content;
+      max-width: 100%;
+      margin-top: 17px;
+      color: #a27420;
+      font-family: var(--script);
+      font-size: clamp(15px, 1.8vw, 21px);
+      font-weight: 500;
+      line-height: 1.2;
+      letter-spacing: 0;
+      transform: rotate(-1.5deg);
+    }
+
+    .hero-copy p {
+      color: #6e6652;
+      font-size: 17px;
+    }
+
+    .button {
+      min-height: 40px;
+      padding: 0 16px;
+      border-color: #53472c;
+      border-radius: 999px;
+      background: #53472c;
+      box-shadow: 0 5px 14px rgba(76, 61, 27, 0.12);
+    }
+
+    .button:hover {
+      background: #443a24;
+    }
+
+    .button.secondary {
+      border-color: rgba(89, 77, 46, 0.2);
+      background: rgba(255, 253, 244, 0.72);
+      color: #514933;
+    }
+
+    .button.secondary:hover {
+      background: #fffdf4;
+    }
+
+    .badge-strip span,
+    .badge-strip span:nth-child(1),
+    .badge-strip span:nth-child(2),
+    .badge-strip span:nth-child(3),
+    .badge-strip span:nth-child(4) {
+      padding: 5px 9px;
+      border: 1px solid rgba(89, 77, 46, 0.09);
+      border-radius: 999px;
+      background: rgba(255, 253, 244, 0.65);
+      color: #766d55;
+    }
+
+    .terminal {
+      min-height: 480px;
+      border-color: rgba(89, 77, 46, 0.15);
+      border-radius: 20px;
+      background: rgba(255, 253, 244, 0.76);
+      box-shadow: 0 24px 60px rgba(91, 72, 28, 0.09);
+      transform: rotate(0.4deg);
+    }
+
+    .terminal-bar {
+      padding: 13px 16px;
+      background: rgba(244, 232, 184, 0.72);
+      border-bottom-color: rgba(89, 77, 46, 0.1);
+    }
+
+    .example-label {
+      display: inline-block;
+      margin-right: 7px;
+      padding: 3px 7px;
+      border: 1px solid rgba(89, 77, 46, 0.12);
+      border-radius: 999px;
+      background: rgba(255, 253, 244, 0.76);
+      color: #8a681f;
+      font: 600 10px/1 var(--sans);
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      vertical-align: 1px;
+    }
+
+    .preview {
+      color: #514b3b;
+    }
+
+    .ai-launcher {
+      grid-template-columns: minmax(0, 1fr) minmax(290px, 0.68fr);
+      margin: 10px 4px 0;
+      padding: 34px;
+      border-color: rgba(89, 77, 46, 0.13);
+      border-radius: 22px;
+      background: rgba(247, 231, 166, 0.66);
+      box-shadow: 0 18px 48px rgba(91, 72, 28, 0.06);
+    }
+
+    .ai-launcher h2,
+    .module h2,
+    .how-section h2 {
+      color: #373225;
+    }
+
+    .ai-button {
+      min-height: 46px;
+      border-color: rgba(89, 77, 46, 0.13);
+      border-radius: 12px;
+      background: rgba(255, 253, 244, 0.89);
+      box-shadow: 0 3px 10px rgba(91, 72, 28, 0.04);
+    }
+
+    .ai-button:hover {
+      border-color: rgba(89, 77, 46, 0.22);
+      background: #fffdf4;
+    }
+
+    .ai-icon,
+    .ai-button[data-ai="ChatGPT"] .ai-icon,
+    .ai-button[data-ai="Claude"] .ai-icon,
+    .ai-button[data-ai="Gemini"] .ai-icon {
+      border-radius: 8px;
+      background: #f2e3aa;
+      color: #70551e;
+    }
+
+    .prompt-details pre {
+      border-radius: 12px;
+      background: #fffdf4;
+    }
+
+    .grid {
+      padding-top: 52px;
+    }
+
+    .module {
+      padding: 38px;
+      border: 1px solid rgba(89, 77, 46, 0.12);
+      border-radius: 24px;
+      background: rgba(255, 253, 244, 0.74);
+      box-shadow: 0 20px 52px rgba(91, 72, 28, 0.065);
+    }
+
+    .field {
+      border-bottom-color: rgba(89, 77, 46, 0.09);
+    }
+
+    label {
+      color: #817454;
+    }
+
+    input,
+    textarea {
+      border-radius: 11px;
+    }
+
+    input:hover,
+    textarea:hover {
+      background: #fffaf0;
+    }
+
+    input:focus,
+    textarea:focus {
+      border-color: rgba(170, 119, 32, 0.48);
+      background: #fffefa;
+      box-shadow: 0 0 0 3px rgba(210, 154, 46, 0.12);
+    }
+
+    .helper {
+      border-radius: 12px;
+      background: #f7ebbd;
+    }
+
+    .helper::before {
+      content: "note — ";
+      color: #9a7225;
+      font-family: var(--script);
+      font-size: 15px;
+    }
+
+    .how-section {
+      margin-top: 52px;
+      padding: 52px 42px 44px;
+      border: 1px solid rgba(89, 77, 46, 0.11);
+      border-radius: 24px;
+      background: rgba(244, 226, 151, 0.6);
+    }
+
+    .how-section .steps {
+      border-radius: 15px;
+      border-color: rgba(89, 77, 46, 0.1);
+    }
+
+    .how-section .step {
+      background: rgba(255, 253, 244, 0.84);
+    }
+
+    .step strong {
+      color: #7e5d1e;
+      font-family: var(--script);
+      font-size: 14px;
+      letter-spacing: 0;
+      text-transform: none;
+    }
+
+    .footer {
+      border-top: 0;
+      color: #8b8063;
+    }
+
+    .toast {
+      border-radius: 12px;
+      background: #51452b;
+    }
+
+    @media (max-width: 820px) {
+      .hero,
+      .ai-launcher {
+        grid-template-columns: 1fr;
+      }
+
+      .terminal {
+        transform: none;
+      }
+
+      .module,
+      .how-section {
+        padding: 26px 22px;
+      }
+    }
+
+    @media (max-width: 560px) {
+      .shell {
+        width: min(100% - 20px, 1080px);
+        padding-top: 10px;
+      }
+
+      .nav-links a:nth-child(3),
+      .nav-links a:nth-child(4) {
+        display: none;
+      }
+
+      .hero {
+        padding-right: 4px;
+        padding-left: 4px;
+      }
+
+      .page-icon {
+        width: 54px;
+        height: 54px;
+        border-radius: 15px;
+        font-size: 31px;
+      }
+    }
+  </style>
+  <style>
+    /* Pencil edition: a quiet sketchbook, not a novelty illustration. */
+    body {
+      position: relative;
+      background: #e4f2dc;
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      z-index: 0;
+      display: block;
+      background-image:
+        url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1200' height='900' viewBox='0 0 1200 900'%3E%3Cg fill='none' stroke='%23566850' stroke-opacity='.11' stroke-width='1.3' stroke-linecap='round'%3E%3Cpath d='M26 125C124 76 213 160 332 102S514 66 608 115'/%3E%3Cpath d='M28 132C132 82 218 166 336 108' stroke-opacity='.055'/%3E%3Cpath d='M1002 72l92 34-38 73'/%3E%3Cpath d='M994 76l91 34' stroke-opacity='.055'/%3E%3Cpath d='M1071 177l-16 2 4-16'/%3E%3Cpath d='M67 707c83-31 160-21 227 24 48 33 107 36 177 11'/%3E%3Cpath d='M64 714c88-29 165-18 230 27' stroke-opacity='.055'/%3E%3Cpath d='M759 790c96-61 210-55 321 16'/%3E%3Cpath d='M765 796c99-55 205-48 309 16' stroke-opacity='.055'/%3E%3Ccircle cx='1110' cy='555' r='33'/%3E%3Cpath d='M1090 553c13-17 31-17 45 0M1096 566c11 9 23 9 34 0'/%3E%3Cpath d='M463 820l21-42 12 46 21-39'/%3E%3C/g%3E%3C/svg%3E"),
+        repeating-linear-gradient(5deg, rgba(60, 82, 56, 0.022) 0, rgba(60, 82, 56, 0.022) 1px, transparent 1px, transparent 6px);
+      background-position: top center, 0 0;
+      background-size: 1200px 900px, auto;
+      pointer-events: none;
+    }
+
+    body::after {
+      content: "";
+      position: fixed;
+      inset: 0;
+      z-index: 0;
+      background:
+        radial-gradient(circle at 13% 7%, rgba(255, 255, 255, 0.72), transparent 28rem),
+        radial-gradient(circle at 87% 28%, rgba(130, 184, 113, 0.18), transparent 24rem),
+        linear-gradient(135deg, rgba(227, 243, 220, 0.18), rgba(184, 221, 170, 0.1));
+      pointer-events: none;
+    }
+
+    .shell {
+      position: relative;
+      z-index: 1;
+    }
+
+    .mark {
+      width: 34px;
+      height: 34px;
+      border: 0;
+      border-radius: 0;
+      background: transparent;
+      box-shadow: none;
+      overflow: visible;
+    }
+
+    .pencil-mark {
+      width: 100%;
+      height: 100%;
+      display: block;
+      overflow: visible;
+      fill: none;
+      stroke: #42543e;
+      stroke-width: 1.8;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+
+    .pencil-mark .ghost-stroke {
+      opacity: 0.2;
+      transform: translate(0.8px, 0.7px);
+    }
+
+    .page-icon {
+      width: 72px;
+      height: 72px;
+      padding: 11px;
+      border: 1px solid rgba(63, 86, 58, 0.14);
+      border-radius: 20px;
+      background: rgba(191, 224, 177, 0.76);
+      transform: rotate(-2.5deg);
+    }
+
+    .page-icon .pencil-mark {
+      stroke-width: 1.45;
+    }
+
+    h1 {
+      max-width: 10ch;
+      margin-top: 4px;
+      color: #354332;
+      font-family: var(--script);
+      font-size: clamp(54px, 7.8vw, 86px);
+      font-weight: 400;
+      line-height: 0.94;
+      letter-spacing: -0.055em;
+      transform: rotate(-0.8deg);
+      transform-origin: left center;
+    }
+
+    h1::before {
+      content: "";
+      position: absolute;
+      right: 10%;
+      bottom: -3px;
+      left: -5px;
+      height: 9px;
+      border-top: 2px solid rgba(70, 98, 64, 0.34);
+      border-radius: 50%;
+      transform: rotate(-1.5deg);
+    }
+
+    h1::after {
+      color: #62715d;
+      font-family: var(--sans);
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      transform: none;
+    }
+
+    .eyebrow {
+      color: #567050;
+      font-size: 17px;
+    }
+
+    .nav,
+    .terminal,
+    .ai-launcher,
+    .module,
+    .how-section {
+      box-shadow: 0 18px 48px rgba(54, 82, 48, 0.07);
+    }
+
+    .terminal,
+    .ai-launcher,
+    .module,
+    .how-section {
+      background: rgba(249, 255, 246, 0.88);
+      backdrop-filter: blur(3px);
+    }
+
+    .terminal {
+      transform: rotate(0.65deg);
+    }
+
+    .how-section h2 {
+      position: relative;
+    }
+
+    .how-section h2::after {
+      content: "";
+      position: absolute;
+      right: 18%;
+      bottom: -8px;
+      left: -4px;
+      height: 8px;
+      border-top: 2px solid rgba(70, 98, 64, 0.25);
+      border-radius: 50%;
+      transform: rotate(-1deg);
+    }
+
+    .nav {
+      border-color: rgba(63, 86, 58, 0.13);
+      background: rgba(249, 255, 246, 0.9);
+      box-shadow: 0 8px 30px rgba(54, 82, 48, 0.065);
+    }
+
+    .mark,
+    .brand,
+    .nav-links a,
+    .hero-copy p,
+    .module p,
+    .how-section-head p {
+      color: #4d6049;
+    }
+
+    .nav-links a:hover {
+      background: #dcebd4;
+      color: #344731;
+    }
+
+    .button {
+      border-color: #40563d;
+      background: #40563d;
+      box-shadow: 0 5px 14px rgba(54, 82, 48, 0.14);
+    }
+
+    .button:hover {
+      background: #344831;
+    }
+
+    .button.secondary {
+      border-color: rgba(63, 86, 58, 0.2);
+      background: rgba(249, 255, 246, 0.78);
+      color: #465843;
+    }
+
+    .badge-strip span,
+    .badge-strip span:nth-child(1),
+    .badge-strip span:nth-child(2),
+    .badge-strip span:nth-child(3),
+    .badge-strip span:nth-child(4) {
+      border-color: rgba(63, 86, 58, 0.1);
+      background: rgba(249, 255, 246, 0.7);
+      color: #5a6d56;
+    }
+
+    .terminal-bar {
+      background: rgba(210, 232, 201, 0.78);
+      border-bottom-color: rgba(63, 86, 58, 0.1);
+    }
+
+    .example-label {
+      border-color: rgba(63, 86, 58, 0.13);
+      background: rgba(249, 255, 246, 0.82);
+      color: #4f7149;
+    }
+
+    .ai-launcher,
+    .how-section {
+      border-color: rgba(63, 86, 58, 0.12);
+      background: rgba(206, 232, 195, 0.68);
+    }
+
+    .ai-button,
+    .prompt-details pre,
+    .how-section .step {
+      background: rgba(249, 255, 246, 0.9);
+    }
+
+    .ai-icon,
+    .ai-button[data-ai="ChatGPT"] .ai-icon,
+    .ai-button[data-ai="Claude"] .ai-icon,
+    .ai-button[data-ai="Gemini"] .ai-icon {
+      background: #d3e8ca;
+      color: #496743;
+    }
+
+    .field {
+      border-bottom-color: rgba(63, 86, 58, 0.09);
+    }
+
+    input:hover,
+    textarea:hover {
+      background: #f5fbf2;
+    }
+
+    input:focus,
+    textarea:focus {
+      border-color: rgba(86, 126, 78, 0.5);
+      background: #fbfff9;
+      box-shadow: 0 0 0 3px rgba(111, 155, 101, 0.13);
+    }
+
+    .helper {
+      background: #dcecd5;
+    }
+
+    .helper::before,
+    .step strong {
+      color: #55744e;
+    }
+
+    .ai-launcher {
+      grid-template-columns: minmax(0, 0.88fr) minmax(360px, 1.12fr);
+      gap: 36px;
+      border-color: #315740;
+      background: #315740;
+      color: #ffffff;
+      box-shadow: 0 22px 56px rgba(39, 72, 51, 0.16);
+    }
+
+    .ai-launcher .eyebrow {
+      color: #bcd8c0;
+    }
+
+    .ai-launcher h2 {
+      color: #ffffff;
+    }
+
+    .ai-launcher p {
+      color: #dceade;
+    }
+
+    .ai-actions {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 9px;
+    }
+
+    .ai-button {
+      display: flex;
+      min-width: 0;
+      min-height: 82px;
+      flex-direction: column;
+      justify-content: center;
+      gap: 8px;
+      padding: 12px 8px;
+      border: 1px solid rgba(255, 255, 255, 0.14);
+      border-radius: 15px;
+      background: #f5fbf3;
+      color: #2f4534;
+      text-align: center;
+      box-shadow: none;
+    }
+
+    .ai-button:hover {
+      border-color: rgba(255, 255, 255, 0.35);
+      background: #ffffff;
+      transform: translateY(-1px);
+    }
+
+    .ai-brand-logo {
+      width: 23px;
+      height: 23px;
+      display: block;
+      object-fit: contain;
+    }
+
+    .ai-arrow {
+      display: none;
+    }
+
+    .prompt-copy-link {
+      grid-column: 1 / -1;
+      justify-self: end;
+      border: 0;
+      background: transparent;
+      color: #c7ddca;
+      font: 600 11px/1.3 var(--sans);
+      text-decoration: underline;
+      text-decoration-color: rgba(199, 221, 202, 0.45);
+      text-underline-offset: 3px;
+      cursor: pointer;
+    }
+
+    .prompt-copy-link:hover {
+      color: #ffffff;
+    }
+
+    .prompt-details {
+      border-top-color: rgba(255, 255, 255, 0.14);
+    }
+
+    .prompt-details summary {
+      color: #c7ddca;
+    }
+
+    .prompt-details pre {
+      border-color: rgba(255, 255, 255, 0.12);
+      background: #254733;
+      color: #e6f1e7;
+    }
+
+    .module {
+      padding: 0;
+      border: 0;
+      background: transparent;
+      box-shadow: none;
+    }
+
+    .module > h2,
+    .module > p,
+    .build-time {
+      max-width: 650px;
+      margin-right: auto;
+      margin-left: auto;
+      text-align: center;
+    }
+
+    .build-time {
+      display: flex;
+      justify-content: center;
+      gap: 8px;
+      margin-top: 16px;
+      margin-bottom: 25px;
+      color: #52664f;
+      font-size: 12px;
+    }
+
+    .build-time span {
+      padding: 6px 10px;
+      border: 1px solid rgba(63, 86, 58, 0.11);
+      border-radius: 999px;
+      background: rgba(249, 255, 246, 0.66);
+    }
+
+    .wizard-form {
+      position: relative;
+      min-height: 500px;
+      margin-top: 0;
+      padding: 30px;
+      overflow: hidden;
+      border: 1px solid rgba(37, 73, 49, 0.2);
+      border-radius: 26px;
+      background: #3d694d;
+      box-shadow: 0 24px 62px rgba(41, 76, 51, 0.18);
+      color: #ffffff;
+    }
+
+    .wizard-head {
+      position: relative;
+      z-index: 2;
+    }
+
+    .wizard-meta {
+      display: flex;
+      justify-content: space-between;
+      gap: 18px;
+      margin-bottom: 10px;
+      color: #d5e7d7;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+    }
+
+    .wizard-progress {
+      height: 5px;
+      overflow: hidden;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.15);
+    }
+
+    .wizard-progress span {
+      display: block;
+      width: 8.333%;
+      height: 100%;
+      border-radius: inherit;
+      background: #d9f0d5;
+      transition: width 360ms cubic-bezier(.22, .8, .3, 1);
+    }
+
+    .wizard-visual {
+      position: absolute;
+      top: 76px;
+      right: -18px;
+      width: 230px;
+      height: 230px;
+      color: #ffffff;
+      opacity: 0.1;
+      pointer-events: none;
+      animation: pencil-float 6s ease-in-out infinite;
+    }
+
+    .wizard-visual path {
+      fill: none;
+      stroke: currentColor;
+      stroke-width: 1.5;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+      stroke-dasharray: 440;
+      stroke-dashoffset: 440;
+      animation: pencil-draw 3.2s ease forwards, pencil-pulse 5s ease-in-out 3.2s infinite;
+    }
+
+    @keyframes pencil-draw {
+      to { stroke-dashoffset: 0; }
+    }
+
+    @keyframes pencil-pulse {
+      0%, 100% { opacity: 0.65; }
+      50% { opacity: 1; }
+    }
+
+    @keyframes pencil-float {
+      0%, 100% { transform: translate3d(0, 0, 0) rotate(-2deg); }
+      50% { transform: translate3d(-5px, 7px, 0) rotate(1deg); }
+    }
+
+    .wizard-stage {
+      position: relative;
+      z-index: 2;
+      min-height: 310px;
+      padding: 62px 22% 22px 4px;
+    }
+
+    .wizard-step {
+      display: none;
+    }
+
+    .wizard-step.active {
+      display: grid;
+      gap: 10px;
+      animation: question-in 280ms cubic-bezier(.22, .8, .3, 1) both;
+    }
+
+    @keyframes question-in {
+      from { opacity: 0; transform: translateY(12px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .question-kicker {
+      color: #bcd8c0;
+      font-family: var(--script);
+      font-size: 16px;
+    }
+
+    .wizard-question {
+      max-width: 20ch;
+      color: #ffffff;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: clamp(27px, 4vw, 40px);
+      font-weight: 600;
+      line-height: 1.08;
+      letter-spacing: -0.035em;
+      text-transform: none;
+    }
+
+    .wizard-step input,
+    .wizard-step textarea {
+      max-width: 570px;
+      margin-top: 13px;
+      padding: 14px 15px;
+      border: 1px solid rgba(255, 255, 255, 0.16);
+      border-radius: 13px;
+      background: rgba(250, 255, 248, 0.96);
+      color: #2f4433;
+      font-size: 15px;
+      box-shadow: 0 8px 24px rgba(29, 60, 38, 0.12);
+    }
+
+    .wizard-step textarea {
+      min-height: 126px;
+    }
+
+    .wizard-step input:focus,
+    .wizard-step textarea:focus {
+      border-color: rgba(255, 255, 255, 0.6);
+      background: #ffffff;
+      box-shadow: 0 0 0 4px rgba(216, 240, 213, 0.15);
+    }
+
+    .question-help {
+      max-width: 64ch;
+      color: #cde0cf;
+      font-size: 12px;
+      line-height: 1.5;
+    }
+
+    .wizard-actions {
+      position: relative;
+      z-index: 2;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 12px;
+      padding-top: 18px;
+      border-top: 1px solid rgba(255, 255, 255, 0.13);
+    }
+
+    .wizard-actions button,
+    .wizard-finish .button {
+      min-height: 40px;
+      border-radius: 999px;
+    }
+
+    .wizard-back {
+      border: 0;
+      background: transparent;
+      color: #d7e8d8;
+      font: 650 13px/1 var(--sans);
+      cursor: pointer;
+    }
+
+    .wizard-next {
+      margin-left: auto;
+      padding: 0 18px;
+      border: 1px solid #eff8ed;
+      background: #eff8ed;
+      color: #31513a;
+      font: 700 13px/1 var(--sans);
+      cursor: pointer;
+    }
+
+    .wizard-next:hover {
+      background: #ffffff;
+    }
+
+    .wizard-finish {
+      position: relative;
+      z-index: 2;
+      min-height: 400px;
+      padding: 62px 20px 20px;
+      text-align: center;
+      animation: question-in 350ms ease both;
+    }
+
+    .wizard-finish[hidden],
+    .wizard-stage[hidden],
+    .wizard-actions[hidden] {
+      display: none !important;
+    }
+
+    .finish-mark {
+      width: 74px;
+      height: 74px;
+      display: grid;
+      place-items: center;
+      margin: 0 auto 20px;
+      border-radius: 24px;
+      background: #d9f0d5;
+      color: #31513a;
+      font: 500 38px/1 var(--script);
+      transform: rotate(-2deg);
+    }
+
+    .wizard-finish h3 {
+      margin: 0 0 10px;
+      color: #ffffff;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: clamp(34px, 5vw, 50px);
+      line-height: 1;
+      letter-spacing: -0.045em;
+    }
+
+    .wizard-finish p {
+      max-width: 54ch;
+      margin: 0 auto;
+      color: #d5e7d7;
+    }
+
+    .finish-actions {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 26px;
+    }
+
+    .wizard-finish .button {
+      border-color: #eff8ed;
+      background: #eff8ed;
+      color: #31513a;
+      box-shadow: none;
+    }
+
+    .wizard-finish .button.secondary {
+      border-color: rgba(255, 255, 255, 0.2);
+      background: transparent;
+      color: #ffffff;
+    }
+
+    @media (max-width: 820px) {
+      h1 {
+        transform: none;
+      }
+
+      .terminal {
+        transform: none;
+      }
+
+      .ai-launcher {
+        grid-template-columns: 1fr;
+      }
+
+      .wizard-stage {
+        padding-right: 4px;
+      }
+
+      .wizard-visual {
+        opacity: 0.055;
+      }
+    }
+
+    @media (max-width: 560px) {
+      .ai-actions {
+        grid-template-columns: 1fr;
+      }
+
+      .ai-button {
+        min-height: 54px;
+        flex-direction: row;
+      }
+
+      .wizard-form {
+        min-height: 540px;
+        padding: 22px 18px;
+      }
+
+      .wizard-stage {
+        min-height: 355px;
+        padding-top: 50px;
+      }
+
+      .wizard-question {
+        font-size: 29px;
+      }
+
+      .wizard-meta {
+        font-size: 9px;
+      }
+    }
+
+    /* Clean editorial type and a wordmark-led header. */
+    :root {
+      --sans: "Avenir Next", Avenir, "Helvetica Neue", Helvetica, Arial, sans-serif;
+      --script: var(--sans);
+    }
+
+    body {
+      font-family: var(--sans);
+      font-feature-settings: "kern" 1, "liga" 1;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .nav {
+      font-family: var(--sans);
+    }
+
+    .brand.wordmark {
+      display: inline-flex;
+      align-items: baseline;
+      gap: 0;
+      color: #2f4030;
+      font-family: var(--sans);
+      font-size: 18px;
+      font-weight: 750;
+      letter-spacing: -0.045em;
+      line-height: 1;
+      text-decoration: none;
+      text-transform: lowercase;
+    }
+
+    .wordmark .domain {
+      color: #6d806a;
+      font-weight: 560;
+      letter-spacing: -0.035em;
+    }
+
+    .wordmark .pen-letter {
+      position: relative;
+      display: inline-block;
+      margin: 0 0.015em;
+      color: #3f6e46;
+      font-weight: 800;
+      transform: rotate(5deg) translateY(-0.02em);
+      transform-origin: 50% 80%;
+    }
+
+    .wordmark .pen-letter::after {
+      content: "";
+      position: absolute;
+      left: 50%;
+      bottom: -0.20em;
+      width: 0.32em;
+      height: 0.24em;
+      background: #3f6e46;
+      clip-path: polygon(50% 100%, 0 0, 100% 0);
+      transform: translateX(-42%) rotate(-5deg);
+    }
+
+    h1,
+    h2,
+    h3,
+    .wizard-question,
+    .wizard-finish h3 {
+      font-family: var(--sans);
+    }
+
+    h1 {
+      max-width: 11ch;
+      margin-top: 0;
+      font-weight: 700;
+      line-height: 0.98;
+      letter-spacing: -0.062em;
+      transform: none;
+    }
+
+    h1::before {
+      display: none;
+    }
+
+    .wizard-question,
+    .wizard-finish h3 {
+      font-weight: 650;
+      letter-spacing: -0.045em;
+    }
+
+    .privacy-note {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      margin: 12px 0 0;
+      color: #60715d;
+      font-size: 12px;
+      font-weight: 600;
+    }
+
+    .privacy-note::before {
+      content: "✓";
+      width: 18px;
+      height: 18px;
+      display: inline-grid;
+      place-items: center;
+      border-radius: 999px;
+      background: #d7ead0;
+      color: #31513a;
+      font-size: 10px;
+    }
+  </style>
 </head>
 <body>
+  <aside class="notion-sidebar" aria-label="Workspace navigation">
+    <div class="workspace-name"><span class="workspace-icon">S</span> Seller Context</div>
+    <div class="sidebar-search">⌕&nbsp;&nbsp;Search</div>
+    <div class="sidebar-label">Private</div>
+    <a class="sidebar-link active" href="#top">📄 <span>Build SELLER.md</span></a>
+    <a class="sidebar-link" href="#generate">✦ <span>Generate with AI</span></a>
+    <a class="sidebar-link" href="#build">✎ <span>Seller profile</span></a>
+    <a class="sidebar-link" href="#how">↗ <span>How it works</span></a>
+    <div class="sidebar-label">Top AE skills</div>
+    <a class="sidebar-link" href="https://greenfield.tools/" rel="noopener">01 <span>Greenfield</span></a>
+    <a class="sidebar-link" href="https://greenfield.tools/executive-briefing/" rel="noopener">02 <span>Executive Briefing</span></a>
+    <a class="sidebar-link" href="https://greenfield.tools/account-expansion/" rel="noopener">03 <span>Account Expansion</span></a>
+    <a class="sidebar-link" href="https://greenfield.tools/pov/" rel="noopener">04 <span>Point of View</span></a>
+    <a class="sidebar-link" href="https://greenfield.tools/qbr/" rel="noopener">05 <span>QBR</span></a>
+    <a class="sidebar-link" href="https://greenfield.tools/first-call-deck/" rel="noopener">06 <span>First Call Deck</span></a>
+    <div class="sidebar-footer">A portable performance layer for every sales agent you use.</div>
+  </aside>
   <main class="shell">
     <nav class="nav" aria-label="Primary navigation">
-      <div class="brand"><span class="mark">S</span> Seller Context</div>
+      <a class="brand wordmark" href="#top" aria-label="sellercontext.com">
+        <span aria-hidden="true">sel<span class="pen-letter">l</span>ercontext<span class="domain">.com</span></span>
+      </a>
       <div class="nav-links">
+        <a href="#generate">Generate</a>
         <a href="#build">Build</a>
         <a href="#how">How it works</a>
-        <a href="https://greenfield.tools/" rel="noopener">Greenfield Tools</a>
+        <a href="https://greenfield.tools/ai-skills/" rel="noopener">Top AE skills</a>
       </div>
     </nav>
 
-    <section class="hero">
+    <section id="top" class="hero">
       <div class="hero-copy">
-        <div class="eyebrow">sellercontext.com</div>
-        <h1>Give your AI sales agent context.</h1>
+        <h1>Make your sales agents perform better.</h1>
         <p>
-          `SELLER.md` is a simple context file that teaches ChatGPT, Claude, Gemini, Codex, Cursor, and other agents how you sell before they research, write, brief, follow up, or build decks.
+          <code>SELLER.md</code> teaches AI what you sell, who matters, what proof is credible, and how you work—before it researches an account or writes a word.
         </p>
         <div class="cta-row">
           <a class="button" href="#build">Build your SELLER.md</a>
-          <button class="button secondary" type="button" data-copy>Copy Markdown</button>
+          <a class="button secondary" href="#generate">Generate it with AI</a>
         </div>
         <div class="badge-strip" aria-label="Supported workflows">
-          <span>works with web chat</span>
-          <span>works with CLI agents</span>
+          <span>one file · every agent</span>
+          <span>no signup</span>
           <span>built for AEs</span>
-          <span>free template</span>
+          <span>free to use</span>
         </div>
       </div>
 
-      <section class="terminal" aria-label="Live Markdown preview">
+      <section class="terminal" aria-label="Illustrative SELLER.md example for a fictional Gong account executive">
         <div class="terminal-bar">
           <div class="lights" aria-hidden="true"><span></span><span></span><span></span></div>
-          <span>~/seller-context/SELLER.md</span>
+          <span><b class="example-label">Fictitious example</b>gong-mid-market/SELLER.md</span>
         </div>
         <pre id="preview" class="preview"></pre>
       </section>
     </section>
 
+    <section id="generate" class="ai-launcher" aria-labelledby="generate-title">
+      <div>
+        <div class="eyebrow">A faster first draft</div>
+        <h2 id="generate-title">Let your AI interview you.</h2>
+        <p>
+          Pick your model. We will place the structured interview prompt into a new chat and copy it as a backup. Review it, press send, then answer one question at a time.
+        </p>
+      </div>
+      <div class="ai-actions" aria-label="Generate SELLER.md with an AI assistant">
+        <a class="ai-button" href="https://chatgpt.com/" target="_blank" rel="noopener" data-ai="ChatGPT">
+          <img class="ai-brand-logo" src="assets/openai.svg" alt=""><span>ChatGPT</span><span class="ai-arrow" aria-hidden="true">↗</span>
+        </a>
+        <a class="ai-button" href="https://claude.ai/" target="_blank" rel="noopener" data-ai="Claude">
+          <img class="ai-brand-logo" src="assets/anthropic.svg" alt=""><span>Claude</span><span class="ai-arrow" aria-hidden="true">↗</span>
+        </a>
+        <a class="ai-button" href="https://gemini.google.com/" target="_blank" rel="noopener" data-ai="Gemini">
+          <img class="ai-brand-logo" src="assets/gemini.svg" alt=""><span>Gemini</span><span class="ai-arrow" aria-hidden="true">↗</span>
+        </a>
+        <button class="prompt-copy-link" type="button" data-prompt-copy>Copy prompt instead</button>
+      </div>
+      <details class="prompt-details">
+        <summary>Preview the interview prompt</summary>
+        <pre id="ai-prompt"></pre>
+      </details>
+    </section>
+
     <section id="build" class="grid">
       <section class="module" aria-labelledby="editor-title">
-        <h2 id="editor-title">Fill it out once. Reuse it everywhere.</h2>
+        <h2 id="editor-title">Build your SELLER.md.</h2>
         <p>
-          Most bad AI sales output is not a model problem. It is a context problem. Give the agent your product, ICP, proof, voice, claims rules, and quality bar before asking it to sell.
+          One focused question at a time. At the end, your portable seller context is ready to copy, download, and give to every sales agent you use.
         </p>
-        <form id="seller-form" class="form">
-          <div class="split-fields">
-            <div class="field">
-              <label for="sellerName">Seller name</label>
+        <p class="privacy-note">Your answers stay on this page and are never uploaded.</p>
+        <div class="build-time" aria-label="Estimated completion time">
+          <span>About 6 minutes</span>
+          <span>13 focused questions</span>
+        </div>
+        <form id="seller-form" class="wizard-form">
+          <div class="wizard-head">
+            <div class="wizard-meta"><span id="wizard-step-label">Question 1 of 13</span><span>About 6 minutes</span></div>
+            <div class="wizard-progress" aria-hidden="true"><span id="wizard-progress-bar"></span></div>
+          </div>
+
+          <svg class="wizard-visual" viewBox="0 0 240 240" aria-hidden="true">
+            <path d="M48 25h95l43 43v144H48zM143 25v43h43M72 166l17-44 67-67 29 29-67 67zM89 122l29 29M156 55l29 29M67 191c34-14 69-14 107 1" />
+          </svg>
+
+          <div class="wizard-stage" data-wizard-stage>
+            <div class="wizard-step active" data-wizard-step>
+              <span class="question-kicker">Start with you</span>
+              <label class="wizard-question" for="sellerName">What should your sales agents call you?</label>
               <input id="sellerName" name="sellerName" autocomplete="name" placeholder="Yousuf Imran">
+              <span class="question-help">Use the name you want to appear in your generated seller context.</span>
             </div>
-            <div class="field">
-              <label for="role">Role</label>
-              <input id="role" name="role" placeholder="Enterprise AE / Founder">
+            <div class="wizard-step" data-wizard-step>
+              <span class="question-kicker">Your role</span>
+              <label class="wizard-question" for="role">What is your role?</label>
+              <input id="role" name="role" placeholder="Enterprise AE, Mid-Market AE, Founder">
+              <span class="question-help">Be specific enough for the agent to understand your responsibilities and motion.</span>
+            </div>
+            <div class="wizard-step" data-wizard-step>
+              <span class="question-kicker">Your company</span>
+              <label class="wizard-question" for="company">Which company do you sell for?</label>
+              <input id="company" name="company" placeholder="Company name">
+              <span class="question-help">This anchors the product, proof, policies, and competitive context.</span>
+            </div>
+            <div class="wizard-step" data-wizard-step>
+              <span class="question-kicker">Your territory</span>
+              <label class="wizard-question" for="segment">What segment or patch do you own?</label>
+              <input id="segment" name="segment" placeholder="Mid-market SaaS in North America">
+              <span class="question-help">Include segment, region, vertical, or named-account scope.</span>
+            </div>
+            <div class="wizard-step" data-wizard-step>
+              <span class="question-kicker">Your account universe</span>
+              <label class="wizard-question" for="territory">How is your territory organized?</label>
+              <textarea id="territory" name="territory" placeholder="Coverage model, account count, tiering rules, priority accounts, exclusions, account-list source, territory thesis, and review cadence."></textarea>
+              <span class="question-help">Reference the CRM view or CSV that holds the full list. Keep only priority accounts and the territory logic in SELLER.md.</span>
+            </div>
+            <div class="wizard-step" data-wizard-step>
+              <span class="question-kicker">Your offer</span>
+              <label class="wizard-question" for="product">What do you sell?</label>
+              <textarea id="product" name="product" placeholder="Product, category, main use cases, and the business outcomes it creates."></textarea>
+              <span class="question-help">Explain it like you would to a smart new teammate—not like a homepage.</span>
+            </div>
+            <div class="wizard-step" data-wizard-step>
+              <span class="question-kicker">Best fit</span>
+              <label class="wizard-question" for="icp">Who is your ideal customer?</label>
+              <textarea id="icp" name="icp" placeholder="Company size, industry, maturity, triggers, bad fits, and disqualifiers."></textarea>
+              <span class="question-help">The sharper this is, the better your agents can prioritize accounts.</span>
+            </div>
+            <div class="wizard-step" data-wizard-step>
+              <span class="question-kicker">The buying group</span>
+              <label class="wizard-question" for="personas">Who buys, champions, evaluates, or blocks you?</label>
+              <textarea id="personas" name="personas" placeholder="Economic buyer, technical buyer, champion, blocker—and what each cares about."></textarea>
+              <span class="question-help">Use real titles and the language each persona responds to.</span>
+            </div>
+            <div class="wizard-step" data-wizard-step>
+              <span class="question-kicker">Credibility</span>
+              <label class="wizard-question" for="proof">What proof are you allowed to use?</label>
+              <textarea id="proof" name="proof" placeholder="Customer stories, verified metrics, sources, and useful before-and-after examples."></textarea>
+              <span class="question-help">Only include proof you can verify. Your agent should never invent a metric.</span>
+            </div>
+            <div class="wizard-step" data-wizard-step>
+              <span class="question-kicker">Your edge</span>
+              <label class="wizard-question" for="differentiation">Why do you win—and why do you lose?</label>
+              <textarea id="differentiation" name="differentiation" placeholder="Alternatives, competitors, strengths, weak spots, and claims you cannot make."></textarea>
+              <span class="question-help">Honest constraints produce better positioning than a perfect-sounding answer.</span>
+            </div>
+            <div class="wizard-step" data-wizard-step>
+              <span class="question-kicker">Sound like you</span>
+              <label class="wizard-question" for="voice">How should your sales agents communicate?</label>
+              <textarea id="voice" name="voice" placeholder="Voice, words to use, banned phrases, CTA style, directness, and humor."></textarea>
+              <span class="question-help">Describe what you would actually send—not what corporate copy sounds like.</span>
+            </div>
+            <div class="wizard-step" data-wizard-step>
+              <span class="question-kicker">Buyer resistance</span>
+              <label class="wizard-question" for="objections">What objections do you hear most?</label>
+              <textarea id="objections" name="objections" placeholder="Exact buyer wording, what it usually means, your response, proof, and follow-up question."></textarea>
+              <span class="question-help">Exact buyer language is much more useful than generic objection labels.</span>
+            </div>
+            <div class="wizard-step" data-wizard-step>
+              <span class="question-kicker">The standard</span>
+              <label class="wizard-question" for="qualityBar">What must be true before you would send AI-generated work?</label>
+              <textarea id="qualityBar" name="qualityBar" placeholder="Specificity, verification, business impact, voice, length, and any non-negotiable checks."></textarea>
+              <span class="question-help">This becomes the final quality gate for every customer-facing output.</span>
             </div>
           </div>
-          <div class="split-fields">
-            <div class="field">
-              <label for="company">Company</label>
-              <input id="company" name="company" placeholder="Mangosteen Studio">
+
+          <div class="wizard-actions" data-wizard-actions>
+            <button class="wizard-back" type="button" data-wizard-back>← Back</button>
+            <button class="wizard-next" type="button" data-wizard-next>Next →</button>
+          </div>
+
+          <div class="wizard-finish" data-wizard-finish hidden>
+            <span class="finish-mark" aria-hidden="true">✓</span>
+            <h3>Your SELLER.md is ready.</h3>
+            <p id="finish-summary">Your seller context is ready for ChatGPT, Claude, Gemini, Codex, Cursor, and the sales agents you use next.</p>
+            <div class="finish-actions">
+              <button class="button" type="button" data-copy>Copy SELLER.md</button>
+              <button class="button secondary" type="button" data-download>Download file</button>
+              <button class="button secondary" type="button" data-wizard-restart>Start over</button>
             </div>
-            <div class="field">
-              <label for="segment">Segment / patch</label>
-              <input id="segment" name="segment" placeholder="Mid-market SaaS / strategic accounts">
-            </div>
           </div>
-          <div class="field">
-            <label for="product">What do you sell?</label>
-            <textarea id="product" name="product" placeholder="Describe the product, category, core use cases, and business outcomes."></textarea>
-          </div>
-          <div class="field">
-            <label for="icp">Ideal customer profile</label>
-            <textarea id="icp" name="icp" placeholder="Best-fit companies, industries, triggers, maturity, bad fits, and disqualifiers."></textarea>
-          </div>
-          <div class="field">
-            <label for="personas">Buyer personas</label>
-            <textarea id="personas" name="personas" placeholder="Economic buyer, technical buyer, champion, blocker. Include what each cares about and language to avoid."></textarea>
-          </div>
-          <div class="field">
-            <label for="proof">Proof points</label>
-            <textarea id="proof" name="proof" placeholder="Customer stories, metrics, before/after proof, source notes, and what you can verify."></textarea>
-          </div>
-          <div class="field">
-            <label for="differentiation">Differentiation and competitors</label>
-            <textarea id="differentiation" name="differentiation" placeholder="Alternatives, competitors, why you win, why you lose, claims you can and cannot make."></textarea>
-          </div>
-          <div class="field">
-            <label for="voice">Voice and messaging rules</label>
-            <textarea id="voice" name="voice" placeholder="What your voice should sound like, words to use, words to avoid, CTA style, and follow-up style."></textarea>
-          </div>
-          <div class="field">
-            <label for="objections">Common objections</label>
-            <textarea id="objections" name="objections" placeholder="Exact buyer wording, what it usually means, best response, proof to use, and follow-up question."></textarea>
-          </div>
-          <div class="field">
-            <label for="qualityBar">AI output quality bar</label>
-            <textarea id="qualityBar" name="qualityBar" placeholder="What must be true before the agent gives you customer-facing output?"></textarea>
-          </div>
-          <div class="cta-row">
-            <button class="button" type="button" data-copy>Copy SELLER.md</button>
-            <button class="button secondary" type="button" data-download>Download file</button>
-            <button class="button secondary" type="reset">Reset</button>
-          </div>
-          <div class="helper">Tip: keep this file in your AI project folder and update it every quarter.</div>
         </form>
       </section>
+    </section>
 
-      <section class="module" aria-labelledby="why-title">
-        <h2 id="why-title">Context beats prompting.</h2>
+    <section id="how" class="how-section" aria-labelledby="why-title">
+      <div class="how-section-head">
+        <h2 id="why-title">Better models help. Better seller context compounds.</h2>
         <p>
-          Prompts ask for work. Context trains the agent before the work starts. `SELLER.md` is the sales memory layer your AI tools should read before touching anything customer-facing.
+          Prompts ask for work. Seller context improves every piece of work that follows. <code>SELLER.md</code> is the portable performance layer your AI tools should read before touching anything customer-facing.
         </p>
-        <div id="how" class="steps">
+      </div>
+        <div class="steps">
           <div class="step">
             <strong>01 / capture</strong>
             <p>Write down how you sell: market, ICP, personas, proof, objections, claims, and voice.</p>
@@ -663,22 +2729,246 @@
           </div>
         </div>
       </section>
-    </section>
 
     <footer class="footer">
       <span>Copyright <a href="https://mangosteen.studio/" rel="noopener">Mangosteen Studio</a> 2026</span>
-      <span>Part of the <a href="https://greenfield.tools/ai-skills/" rel="noopener">AI Skills for Account Executives</a> library</span>
+      <span>Explore the <a href="https://greenfield.tools/ai-skills/" rel="noopener">top AE skills on Greenfield</a></span>
     </footer>
   </main>
 
   <div id="toast" class="toast" role="status" aria-live="polite">Copied SELLER.md</div>
 
   <script>
+    const exampleMarkdown = `# SELLER.md
+
+## Seller Identity
+
+- Seller name: Maya Chen
+- Role: Mid-Market Account Executive
+- Company: Gong
+- Segment / patch: North American B2B software companies with 200–2,000 employees and established revenue teams
+- Region: United States and Canada
+- Quota responsibility: $1.1M in annual net-new ARR
+- Typical deal size: $45K–$120K ARR
+- Typical sales cycle: 60–120 days
+- Sales methodology: MEDDPICC
+- My strongest selling motion: Multithreading from frontline workflow pain to an executive operating priority
+- My weakest selling habit: Staying too long with an enthusiastic champion before earning economic-buyer access
+
+## Territory
+
+- Territory name: North America Mid-Market — B2B Software
+- Coverage model: Named accounts plus a defined segment-and-industry pool
+- Region: United States and Canada
+- Company-size range: 200–2,000 employees
+- Priority industries: B2B software, technology-enabled services, financial services, and business services
+- Total account count: 186
+- Tiering rules: Tier 1 has an active revenue-workflow trigger plus ICP fit; Tier 2 has strong fit without verified urgency; Tier 3 is nurture or monitor
+- Priority accounts: Northstar Cloud; AlderWorks; Meridian Software; Harbor Systems; Ridgeway Data
+- Excluded accounts: Existing strategic ownership, active global-parent opportunities, sub-15-seller companies, and transcription-only buyers
+- Account-list source: Salesforce report “FY26 NA Mid-Market Named Accounts,” exported weekly to territory-accounts.csv
+- Current territory thesis: New revenue leaders and forecast pressure create the strongest entry point; lead with one operating workflow before expanding the platform story
+- Review cadence: Weekly signal review; monthly tier review; quarterly territory reset
+- Last reviewed: August 20, 2026
+
+## What I Sell
+
+- Product / service: Gong Revenue AI OS
+- Category: Revenue intelligence
+- One-sentence description: Gong uses customer-interaction signals to help revenue teams improve deal execution, coaching, forecasting, and engagement.
+- Core use cases: Deal inspection; pipeline visibility; sales coaching; forecast confidence; sales engagement
+- Primary business outcomes: Earlier visibility into deal risk, more consistent manager coaching, stronger operating discipline, and better-informed forecasting
+- What we are not: A basic meeting recorder, a generic note-taking tool, or a substitute for a defined sales process
+- Where we are strongest: Revenue organizations with multiple managers, repeatable sales motions, and a leadership mandate to improve how the team operates
+- Where we are not a fit: Very small teams seeking transcription alone or organizations without an owner for adoption and operating change
+
+## Ideal Customer Profile
+
+- Best-fit company size: 200–2,000 employees with 50–500 revenue users
+- Best-fit industries: B2B software, technology-enabled services, financial services, and business services with consultative sales motions
+- Best-fit maturity level: A documented sales process, an established CRM, frontline management layers, and regular deal or forecast reviews
+- Best-fit buying trigger: A new revenue leader, repeated forecast misses, inconsistent deal inspection, uneven coaching, or a tool-consolidation initiative
+- Bad-fit accounts: Founder-led teams with fewer than 15 sellers, low conversation volume, transactional sales cycles, or no change-management owner
+- Disqualifiers: No access to a revenue-workflow owner; no defined business problem; transcription-only evaluation; security requirements that cannot be satisfied; no willingness to involve impacted managers
+- Account signals I care about: CRO or VP Sales arrival; RevOps hiring; enablement investment; manager expansion; forecast pressure; methodology rollout; CRM transformation; acquisition integration
+- Account signals that are usually noise: Generic hiring growth, undated transformation claims, or AI announcements without a named revenue workflow
+
+## Buyer Personas
+
+### Economic Buyer
+
+- Common titles: CRO; Chief Sales Officer; VP Sales; Chief Revenue Officer
+- What they care about: Predictable growth, pipeline visibility, execution consistency, and manager effectiveness
+- Metrics they own: Revenue attainment, forecast accuracy, win rate, sales-cycle length, pipeline coverage, and rep productivity
+- Risks they fear: Forecast surprises, stalled strategic deals, weak inspection, inconsistent execution, and low adoption
+- Language that resonates: Operating visibility, deal risk, manager leverage, predictable execution, and customer reality
+- Language to avoid: AI magic, guaranteed revenue, surveillance, and generic transformation
+- Best proof for this persona: A sourced story showing how a comparable revenue organization improved a named operating workflow
+
+### Technical Buyer
+
+- Common titles: VP Revenue Operations; Head of Sales Operations; GTM Systems leader; Security stakeholder
+- What they care about: Data quality, CRM fit, governance, integrations, deployment effort, permissioning, and adoption
+- Metrics they own: Data completeness, workflow compliance, system adoption, forecast process integrity, and support burden
+- Risks they fear: Another disconnected tool, duplicate data, integration debt, privacy gaps, and poor field adoption
+- Language that resonates: Governed workflows, implementation plan, system-of-record alignment, permissioning, and measurable adoption
+- Best proof for this persona: Architecture, security documentation, implementation plan, and a comparable deployment reference
+
+### Champion
+
+- Common titles: VP Sales Enablement; Director of Revenue Operations; Regional VP; frontline sales leader
+- What they need to believe: Gong will make an existing operating rhythm more useful rather than adding another dashboard
+- What they need to sell internally: A measurable workflow problem, cross-functional value, an adoption plan, and executive sponsorship
+- What makes them look good: A disciplined rollout tied to manager behavior and visible business outcomes
+- What makes them hesitate: Weak sponsorship, unclear ownership, tool fatigue, or a feature-led business case
+- Best assets to give them: Mutual action plan, workflow map, security package, role-based demo, and an approved customer story
+
+### Blocker
+
+- Common titles: Procurement; Legal; Security; CRM owner; skeptical frontline manager
+- Why they block: Cost, change burden, data handling, workflow overlap, or fear of rep surveillance
+- How to de-risk them: Address the exact concern with approved documentation, clear ownership, and a scoped rollout plan
+- Claims to avoid: Guaranteed adoption, guaranteed forecast improvement, or unsupported security statements
+- Proof needed: Approved security materials, implementation responsibilities, permissioning details, and referenced customer evidence
+
+## Differentiation
+
+- Main alternatives: Manual call review, CRM inspection, spreadsheets, generic meeting recorders, and disconnected point tools
+- Main competitors: CRM-native conversation intelligence, revenue-forecasting platforms, and specialist conversation-intelligence tools
+- Why we win: The buyer values customer-interaction context across deal execution, coaching, forecasting, and engagement—and leadership commits to using it in the operating rhythm
+- Why we lose: The evaluation is recording-only, price is the only criterion, executive sponsorship is absent, or the team has no adoption owner
+- Claims we can prove: Only claims supported by current Gong product material, approved customer stories, and the evidence attached to the opportunity
+- Claims we cannot make: Guaranteed ROI, guaranteed revenue, invented benchmarks, unsupported competitive claims, or certainty about buyer pain
+- Competitive landmines: Feature checklists without workflow context; dismissing the CRM; overselling AI; attacking an incumbent before understanding why it was chosen
+- Best customer story by competitor: Match the proof to the buyer's current alternative and use only the approved source
+
+## Proof Points
+
+### Customer Proof
+
+- Customer: Select a published Gong customer with similar scale and workflow
+- Problem: Name the operating problem exactly as the customer described it
+- Outcome: Use the published outcome without extrapolating it to the prospect
+- Metric: Quote the approved number with its source and timeframe
+- Source / verification: Gong customer story URL saved in the opportunity record
+
+### Metric Proof
+
+- Metric: The account-specific measure agreed during discovery
+- Baseline: Captured from the buyer, not assumed
+- Result: Proposed target until validated; never presented as guaranteed
+- Timeframe: Agreed evaluation or rollout period
+- Source / verification: Buyer confirmation plus approved Gong evidence
+
+### Narrative Proof
+
+- Story: A revenue leader replaced anecdotal deal inspection with a consistent, interaction-informed operating rhythm
+- Why it matters: It connects the product to manager behavior and decision quality rather than novelty
+- Buyer persona it helps: CRO, VP Sales, RevOps, and Enablement
+- When to use it: After the buyer confirms a visibility, coaching, or forecast workflow problem
+
+## Messaging Rules
+
+- My voice should sound: Direct, commercially literate, curious, and grounded in how revenue teams actually operate
+- My voice should not sound: Hype-driven, surveillance-oriented, overly familiar, or certain about pain I have not verified
+- Words I use: Customer reality, operating rhythm, deal risk, manager leverage, inspection, adoption, and evidence
+- Words I avoid: Revolutionary, effortless, guaranteed, magical, game-changing, and single source of truth without qualification
+- CTA style: One low-friction question tied to a named workflow
+- Subject line style: Short, specific, and connected to a real account signal
+- Follow-up style: Add one useful observation or artifact; never send “just bumping this”
+- How direct I want to be: Direct about the hypothesis and transparent about what still needs validation
+- How much humor is acceptable: Light and situational; never in security, procurement, or executive-risk conversations
+
+## Outreach Standards
+
+- Open with a verified account signal or clearly labeled hypothesis
+- Connect that signal to one revenue workflow, not the entire platform
+- Be useful before asking for time
+- Keep first touch under 120 words
+- Use one proof point only when it matches the buyer and problem
+- End with one clear question that is easy to answer
+
+## First Call Standards
+
+- Confirm the operating problem, current workflow, affected roles, and why the issue matters now
+- Understand how managers inspect deals and how leaders call the forecast today
+- Separate symptoms from measurable business impact
+- Identify who owns adoption, governance, security, and economic approval
+- Demonstrate only the workflow the buyer has validated
+- End with a mutual next step, named stakeholders, owner, and date
+
+## Qualification Standards
+
+- Methodology: MEDDPICC
+- Required qualification fields: Measurable workflow problem; economic buyer; champion; impacted users; current process; decision criteria; decision process; security path; implementation owner; competition; compelling event
+- What counts as a real next step: A scheduled action with the correct stakeholder, a mutual objective, an owner, and a date
+- What counts as fake pipeline: A demo request without a business problem, timeline, stakeholder path, or agreed next action
+- Red flags: Transcription-only interest; no manager participation; no business metric; single-threaded evaluation; procurement before value; unverified deadline
+- Deal risks to surface early: Adoption ownership, CRM overlap, call-recording policy, legal review, security requirements, data residency, and executive access
+- Manager questions I should be ready to answer: Why change; why now; why Gong; who cares; what is measurable; who can stop it; what happens next
+
+## Objections
+
+### “We already have this in our CRM.”
+
+- What they usually mean: They believe existing activity data and dashboards provide enough visibility
+- Best response: Clarify how managers currently inspect customer reality, diagnose deal risk, and coach from the existing workflow
+- Proof to use: A relevant approved workflow comparison or customer story
+- Follow-up question: Where does the current inspection process still depend on rep memory or manual review?
+
+### “Our reps will not adopt another tool.”
+
+- What they usually mean: Previous rollouts created work without improving the rep or manager experience
+- Best response: Make adoption a design requirement and map Gong into the operating rhythms already in place
+- Proof to use: Approved adoption or implementation evidence matched to a similar organization
+- Follow-up question: Which manager-led workflow would need to change for this to become useful rather than additive?
+
+### “We only need call recording.”
+
+- What they usually mean: The buyer has not connected interaction data to a broader revenue problem
+- Best response: Do not force the platform story; determine whether a deal, coaching, forecast, or engagement workflow actually needs improvement
+- Follow-up question: Beyond keeping a record, what decisions should those conversations help your team make?
+
+## Pricing And Commercial Rules
+
+- Pricing model: Annual subscription based on the selected platform package, users, scope, and approved commercial terms
+- Discounting rules: Any concession requires a documented give/get such as term, timing, scope, reference participation, or expansion commitment
+- Procurement path: Business validation, executive sponsorship, security review, legal review, order form, implementation ownership, and launch plan
+- Legal / security notes: Use approved Gong security and privacy materials; never answer beyond documented policy
+- Commercial claims I can make: The approved proposal, package scope, implementation responsibilities, and sourced customer evidence
+- Commercial claims I cannot make: Guaranteed revenue, guaranteed forecast accuracy, unapproved roadmap commitments, or informal security assurances
+- ROI assumptions allowed: Buyer-validated baselines for manager inspection time, coaching coverage, deal-risk visibility, and forecast workflow effort
+- ROI assumptions not allowed: Generic productivity percentages, automatic win-rate improvement, or benefits copied from an unrelated customer
+
+## Customer And Account Memory
+
+- Top target accounts: Northstar Cloud; AlderWorks; Meridian Software; Harbor Systems; Ridgeway Data
+- Active opportunities: Northstar Cloud—forecast inspection and manager-coaching evaluation; AlderWorks—early discovery around tool consolidation
+- Closed-lost lessons: Deals stall when the champion cannot secure frontline-manager participation or when the business case stays at recording and transcription
+- Messaging that got replies: Specific observations about a new revenue leader, manager growth, forecast pressure, and methodology rollout
+- Messaging that failed: Generic AI language, unsupported efficiency claims, and messages that name too many use cases
+- Account triggers that led to meetings: CRO arrival, sales-operations transformation, manager hiring, forecast misses, and enablement redesign
+- Customer language worth reusing: “We cannot inspect every deal,” “the CRM tells us what reps entered,” and “coaching quality depends on the manager”
+- Competitor patterns: CRM-native options gain attention during consolidation; point tools win when the evaluation remains recording-only
+- Pricing precedent: Protect value, scope the rollout clearly, and trade concessions for commitment rather than discounting without a give/get
+
+## AI Output Quality Bar
+
+- Is the account signal specific, current, and sourced?
+- Is the buyer, operating problem, and revenue workflow clear?
+- Are facts separated from hypotheses?
+- Are every product and commercial claim grounded in approved material?
+- Is the message concise enough to send without editing around AI language?
+- Does it sound like a commercially credible mid-market AE?
+- Would Maya actually send it?
+`;
+
     const defaults = {
       sellerName: "",
       role: "",
       company: "",
       segment: "",
+      territory: "",
       product: "",
       icp: "",
       personas: "",
@@ -692,6 +2982,60 @@
     const form = document.querySelector("#seller-form");
     const preview = document.querySelector("#preview");
     const toast = document.querySelector("#toast");
+    const aiPromptPreview = document.querySelector("#ai-prompt");
+    const wizardSteps = Array.from(document.querySelectorAll("[data-wizard-step]"));
+    const wizardStage = document.querySelector("[data-wizard-stage]");
+    const wizardActions = document.querySelector("[data-wizard-actions]");
+    const wizardFinish = document.querySelector("[data-wizard-finish]");
+    const wizardBack = document.querySelector("[data-wizard-back]");
+    const wizardNext = document.querySelector("[data-wizard-next]");
+    const wizardRestart = document.querySelector("[data-wizard-restart]");
+    const wizardStepLabel = document.querySelector("#wizard-step-label");
+    const wizardProgressBar = document.querySelector("#wizard-progress-bar");
+    const finishSummary = document.querySelector("#finish-summary");
+    let wizardIndex = 0;
+
+    const sellerInterviewPrompt = `You are my sales operating-context interviewer. Your job is to help me create a complete, useful SELLER.md file that another AI agent can read before it researches accounts, writes outreach, prepares meetings, builds sales artifacts, or recommends actions.
+
+Interview me one question at a time. Do not send me a long questionnaire. Start with the highest-leverage basics, then go deeper where my answers are vague or unsupported.
+
+Rules for the interview:
+- Ask one clear question at a time and wait for my answer.
+- Prefer concrete examples, exact buyer language, named workflows, ranges, and verified proof.
+- Challenge generic claims such as "save time," "drive value," or "best in class."
+- Separate facts I can prove from hypotheses, opinions, and things I do not know yet.
+- Never invent customers, metrics, competitors, pricing, buyer pain, or product capabilities.
+- If I cannot answer something, preserve it as [fill in] instead of guessing.
+- Briefly summarize each completed section and let me correct it before moving on.
+- Adapt follow-up questions to my role, segment, deal size, sales cycle, and methodology.
+- Keep the final writing concise, specific, and usable by another AI system.
+
+Cover these sections:
+1. Seller Identity
+2. Territory: coverage model, account-list source, tiers, priority accounts, exclusions, and territory thesis
+3. What I Sell
+4. Ideal Customer Profile
+5. Buyer Personas: Economic Buyer, Technical Buyer, Champion, and Blocker
+6. Differentiation
+7. Proof Points: customer, metric, and narrative proof with sources
+8. Messaging Rules and Banned Phrases
+9. Outreach Standards
+10. First Call Standards
+11. Qualification Standards
+12. Objections using exact buyer wording
+13. Pricing and Commercial Rules
+14. Customer and Account Memory
+15. AI Output Quality Bar
+
+When the interview is complete, output only one clean Markdown document beginning with # SELLER.md. Use the section headings above. Preserve [fill in] for unresolved fields. Do not add commentary before or after the file.
+
+Begin by asking what I sell, who I sell it to, and my role—but ask only the first question now.`;
+
+    const aiDeepLinks = {
+      ChatGPT: (prompt) => `https://chatgpt.com/?q=${encodeURIComponent(prompt)}`,
+      Claude: (prompt) => `https://claude.ai/new?q=${encodeURIComponent(prompt)}`,
+      Gemini: (prompt) => `https://gemini.google.com/app?text=${encodeURIComponent(prompt)}`
+    };
 
     function fieldValue(name) {
       const value = new FormData(form).get(name);
@@ -711,6 +3055,10 @@ The goal is not to make AI sound like a generic seller. The goal is to give it m
 - Role: ${fieldValue("role")}
 - Company: ${fieldValue("company")}
 - Segment / patch: ${fieldValue("segment")}
+
+## Territory
+
+${fieldValue("territory")}
 
 ## What I Sell
 
@@ -842,23 +3190,41 @@ If the answer is no, do not polish weak work. Tell me what context is missing an
     }
 
     function render() {
-      preview.textContent = generateMarkdown() + "\n" + "█";
+      preview.textContent = exampleMarkdown;
     }
 
-    async function copyMarkdown() {
-      const markdown = generateMarkdown();
+    async function writeClipboard(text) {
       try {
-        await navigator.clipboard.writeText(markdown);
+        await navigator.clipboard.writeText(text);
       } catch (error) {
         const area = document.createElement("textarea");
-        area.value = markdown;
+        area.value = text;
         document.body.appendChild(area);
         area.select();
         document.execCommand("copy");
         area.remove();
       }
+    }
+
+    function showToast(message) {
+      toast.textContent = message;
       toast.classList.add("show");
       window.setTimeout(() => toast.classList.remove("show"), 1400);
+    }
+
+    async function copyMarkdown() {
+      await writeClipboard(generateMarkdown());
+      showToast("Copied SELLER.md");
+    }
+
+    async function copyInterviewPrompt(destination = "your AI") {
+      await writeClipboard(sellerInterviewPrompt);
+      showToast(`Prompt copied — paste into ${destination}`);
+    }
+
+    async function openWithInterviewPrompt(link) {
+      await writeClipboard(sellerInterviewPrompt);
+      showToast(`Opening ${link.dataset.ai} with the prompt — copied as backup`);
     }
 
     function downloadMarkdown() {
@@ -873,16 +3239,73 @@ If the answer is no, do not polish weak work. Tell me what context is missing an
       URL.revokeObjectURL(url);
     }
 
-    form.addEventListener("input", render);
-    form.addEventListener("reset", () => window.setTimeout(render, 0));
+    function showWizardStep(index, focusField = false) {
+      wizardIndex = Math.max(0, Math.min(index, wizardSteps.length - 1));
+      wizardStage.hidden = false;
+      wizardActions.hidden = false;
+      wizardFinish.hidden = true;
+      wizardSteps.forEach((step, stepIndex) => step.classList.toggle("active", stepIndex === wizardIndex));
+      wizardStepLabel.textContent = `Question ${wizardIndex + 1} of ${wizardSteps.length}`;
+      wizardProgressBar.style.width = `${((wizardIndex + 1) / wizardSteps.length) * 100}%`;
+      wizardBack.style.visibility = wizardIndex === 0 ? "hidden" : "visible";
+      wizardNext.textContent = wizardIndex === wizardSteps.length - 1 ? "Finish →" : "Next →";
+      if (focusField) {
+        const field = wizardSteps[wizardIndex].querySelector("input, textarea");
+        window.setTimeout(() => field?.focus({ preventScroll: true }), 80);
+      }
+    }
+
+    function finishWizard() {
+      const answered = wizardSteps.filter((step) => {
+        const field = step.querySelector("input, textarea");
+        return field && field.value.trim();
+      }).length;
+      wizardStage.hidden = true;
+      wizardActions.hidden = true;
+      wizardFinish.hidden = false;
+      wizardStepLabel.textContent = "Complete";
+      wizardProgressBar.style.width = "100%";
+      finishSummary.textContent = `${answered} of ${wizardSteps.length} answers captured. Your seller context is ready to copy, download, and use with every sales agent.`;
+    }
+
+    wizardNext.addEventListener("click", () => {
+      if (wizardIndex === wizardSteps.length - 1) {
+        finishWizard();
+      } else {
+        showWizardStep(wizardIndex + 1, true);
+      }
+    });
+
+    wizardBack.addEventListener("click", () => showWizardStep(wizardIndex - 1, true));
+    wizardRestart.addEventListener("click", () => {
+      form.reset();
+      showWizardStep(0, true);
+    });
+
+    form.addEventListener("keydown", (event) => {
+      if (event.key === "Enter" && event.target instanceof HTMLInputElement) {
+        event.preventDefault();
+        wizardNext.click();
+      }
+    });
+
     document.querySelectorAll("[data-copy]").forEach((button) => button.addEventListener("click", copyMarkdown));
     document.querySelector("[data-download]").addEventListener("click", downloadMarkdown);
+    document.querySelectorAll("[data-ai]").forEach((link) => {
+      const destination = link.dataset.ai;
+      const buildDeepLink = aiDeepLinks[destination];
+      if (buildDeepLink) link.href = buildDeepLink(sellerInterviewPrompt);
+      link.addEventListener("click", () => openWithInterviewPrompt(link));
+    });
+    document.querySelector("[data-prompt-copy]").addEventListener("click", () => copyInterviewPrompt());
+    aiPromptPreview.textContent = sellerInterviewPrompt;
 
     Object.entries(defaults).forEach(([key, value]) => {
       const field = form.elements[key];
       if (field) field.value = value;
     });
 
+    showWizardStep(0);
     render();
   </script>
 </body>

@@ -18,6 +18,24 @@ The goal is not to make AI sound like a generic seller. The goal is to give it y
 - My strongest selling motion:
 - My weakest selling habit:
 
+## Territory
+
+Use this section to describe the patch. Keep large account lists in a CRM or CSV and reference the source here rather than pasting hundreds of accounts into this file.
+
+- Territory name:
+- Coverage model: Named accounts / geographic / vertical / segment
+- Region:
+- Company-size range:
+- Priority industries:
+- Total account count:
+- Tiering rules:
+- Priority accounts:
+- Excluded accounts:
+- Account-list source: CRM view / CSV filename / system URL
+- Current territory thesis:
+- Review cadence:
+- Last reviewed:
+
 ## What I Sell
 
 - Product / service:

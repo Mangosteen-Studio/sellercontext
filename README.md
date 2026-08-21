@@ -1,29 +1,36 @@
 # Seller Context
 
-Seller Context is a one-page static site for creating a `SELLER.md` file.
+Seller Context is a static, client-side builder for creating a portable `SELLER.md` file.
 
-`SELLER.md` gives AI agents the seller context they usually miss: what you sell, who you sell to, proof points, messaging standards, qualification rules, objections, and the quality bar for customer-facing output.
+`SELLER.md` gives AI sales agents the context they usually miss: territory, offer, ICP, buyer personas, proof, messaging standards, qualification rules, objections, commercial rules, and the quality bar for customer-facing work.
 
-## Domain
+## Production
 
-Planned domain: `sellercontext.com`
+- Domain: `sellercontext.com`
+- Homepage: `index.html`
+- Hosting target: Cloudflare Pages
+- Build step: none
+- Runtime dependencies: none
 
-## Local Use
+The form runs entirely in the browser. Seller answers are not uploaded or sent to a backend. The ChatGPT, Claude, and Gemini buttons use web-app deep links and copy the interview prompt as a fallback.
 
-Open `index.html` in a browser. The site works without a build step.
+## Local Preview
+
+Open `index.html` directly, or serve the directory with any static file server.
 
 ## Files
 
-- `index.html` - editable one-page generator
-- `SELLER.md` - canonical blank template
+- `index.html` — production landing page and guided `SELLER.md` builder
+- `SELLER.md` — canonical blank template
+- `assets/` — AI-provider logos used by the page
+- `robots.txt` and `sitemap.xml` — search discovery files
+- `_headers` — Cloudflare Pages security headers
 
 ## Recommended Use
 
-1. Fill out the fields on the page.
-2. Copy or download the generated `SELLER.md`.
-3. Add it to your Claude Project, ChatGPT GPT/Project, Gemini Gem, Codex workspace, Cursor project, or sales-agent folder.
+1. Generate or build a `SELLER.md`.
+2. Review the file and replace anything unresolved.
+3. Add it to Claude Projects, ChatGPT Projects/GPTs, Gemini Gems, Codex, Cursor, or a sales-agent workspace.
 4. Reuse it before running Greenfield, POV, Account Expansion, Executive Briefing, QBR, or First Call Deck workflows.
 
-## License
-
-Free to use, share, and remix with attribution to Mangosteen Studio.
+Copyright Mangosteen Studio 2026.
