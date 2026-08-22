@@ -1,8 +1,10 @@
 # Seller Context
 
-Seller Context is a static, client-side builder for creating a portable `SELLER.md` file.
+Seller Context turns the recurring patterns behind how someone sells into a portable `SELLER.md` file every sales agent can use.
 
-`SELLER.md` gives AI sales agents the context they usually miss: territory, offer, ICP, buyer personas, proof, messaging standards, taste, judgment, ethical boundaries, objections, commercial rules, and what good customer-facing work looks like to the seller.
+The recommended path opens a context-compiler prompt inside the seller's personal AI. When connected sources are available and explicitly authorized, the AI can learn from seller-authored email, calendar patterns, sales documents, call notes, and CRM context. The manual path remains a 14-question, client-side builder.
+
+`SELLER.md` records provenance, observed patterns, declared standards, confidence, privacy rules, territory, offer, ICP, buyer personas, proof, messaging standards, taste, judgment, ethical boundaries, objections, commercial rules, and what good customer-facing work looks like to the seller.
 
 ## Production
 
@@ -12,7 +14,7 @@ Seller Context is a static, client-side builder for creating a portable `SELLER.
 - Build step: none
 - Runtime dependencies: none
 
-The form runs entirely in the browser. Seller answers are not uploaded or sent to a backend. The ChatGPT, Claude, and Gemini buttons use web-app deep links and copy the interview prompt as a fallback.
+The manual form runs entirely in the browser. Seller answers are not uploaded or sent to a backend. The ChatGPT, Claude, and Gemini buttons use web-app deep links and copy the compiler prompt as a fallback. Seller Context itself does not receive access to the user's connected sources; any source access happens inside the user's chosen AI under that product's permissions.
 
 ## Local Preview
 
@@ -28,9 +30,10 @@ Open `index.html` directly, or serve the directory with any static file server.
 
 ## Recommended Use
 
-1. Generate or build a `SELLER.md`.
-2. Review the file and replace anything unresolved.
-3. Add it to Claude Projects, ChatGPT Projects/GPTs, Gemini Gems, Codex, Cursor, or a sales-agent workspace.
-4. Reuse it before running Greenfield, POV, Account Expansion, Executive Briefing, QBR, or First Call Deck workflows.
+1. Open the compiler prompt in your personal AI or answer the 14 manual questions.
+2. Authorize only the sources you want the AI to review.
+3. Review inferred patterns, resolve gaps, and confirm the rules you want to keep.
+4. Add the resulting file to Claude Projects, ChatGPT Projects/GPTs, Gemini Gems, Codex, Cursor, or a sales-agent workspace.
+5. Refresh it as your selling patterns, territory, and commercial context change.
 
 Copyright Mangosteen Studio 2026.
