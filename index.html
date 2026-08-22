@@ -3,20 +3,20 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#e4f2dc">
-  <title>Seller Context | Make your sales agents perform better</title>
-  <meta name="description" content="Build a portable SELLER.md that teaches ChatGPT, Claude, Gemini, Codex, Cursor, and other AI sales agents what you sell, who matters, and how you work.">
+  <meta name="theme-color" content="#1a2e1f">
+  <title>Seller Context | Give your sales agents better taste</title>
+  <meta name="description" content="Build a portable SELLER.md that teaches AI how you sell, what you care about, and what good sales work looks like.">
   <meta name="robots" content="index, follow">
   <link rel="canonical" href="https://sellercontext.com/">
-  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%233f6e46'/%3E%3Cpath d='M19 20h27v7H27v7h16v7H27v4h19v7H19z' fill='%23f6fbf3'/%3E%3C/svg%3E">
-  <meta property="og:title" content="Seller Context | Make your sales agents perform better">
-  <meta property="og:description" content="SELLER.md is the portable context layer that helps every AI sales agent research, write, brief, and prepare more like you.">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='13' fill='%231a2e1f'/%3E%3Cpath d='M7 7h31L27 28H7z' fill='%23d2913c'/%3E%3Cpath d='M38 7h19v29L27 28z' fill='%236f8872'/%3E%3Cpath d='M7 28h20L18 57H7z' fill='%23f1dfb4'/%3E%3Cpath d='M27 28l30 8v21H18z' fill='%23344e41'/%3E%3Cpath d='M7 28h20L38 7M27 28l30 8M18 57l9-29' fill='none' stroke='%23fffaf0' stroke-width='2'/%3E%3C/svg%3E">
+  <meta property="og:title" content="Seller Context | Give your sales agents better taste">
+  <meta property="og:description" content="Teach AI what to notice, what to question, what evidence to trust, and what you would actually send.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://sellercontext.com/">
   <meta property="og:site_name" content="Seller Context">
   <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="Seller Context | Make your sales agents perform better">
-  <meta name="twitter:description" content="Build one portable SELLER.md so every AI sales agent understands what you sell, who matters, and how you work.">
+  <meta name="twitter:title" content="Seller Context | Give your sales agents better taste">
+  <meta name="twitter:description" content="Build one portable SELLER.md that teaches every AI sales agent what good work looks like to you.">
   <style>
     :root {
       color-scheme: light;
@@ -2493,6 +2493,773 @@
       scroll-margin-top: 86px;
     }
   </style>
+  <style>
+    /* Stained-glass editorial edition. */
+    :root {
+      --forest-950: #102219;
+      --forest-900: #1a2e1f;
+      --forest-800: #253d2d;
+      --forest-700: #344e41;
+      --sage: #718373;
+      --amber: #d2913c;
+      --amber-soft: #e7bd78;
+      --cream: #f4efe3;
+      --cream-light: #fffaf0;
+      --paper: #fbf8f0;
+      --ink: #172019;
+      --muted: #657067;
+      --line: rgba(26, 46, 31, 0.17);
+      --line-light: rgba(255, 250, 240, 0.18);
+      --shadow: rgba(16, 34, 25, 0.17);
+      --sans: "Avenir Next", Avenir, "Helvetica Neue", Helvetica, Arial, sans-serif;
+      --serif: Georgia, "Times New Roman", serif;
+      --mono: "SFMono-Regular", Consolas, "Liberation Mono", monospace;
+    }
+
+    html {
+      background: var(--cream);
+    }
+
+    body {
+      background:
+        radial-gradient(circle at 83% 6%, rgba(210, 145, 60, 0.14), transparent 24rem),
+        linear-gradient(rgba(26, 46, 31, 0.025) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(26, 46, 31, 0.025) 1px, transparent 1px),
+        var(--cream);
+      background-size: auto, 36px 36px, 36px 36px, auto;
+      color: var(--ink);
+      font-family: var(--sans);
+    }
+
+    body::before {
+      display: block;
+      background:
+        linear-gradient(118deg, transparent 0 80%, rgba(52, 78, 65, 0.06) 80.1% 80.35%, transparent 80.45%),
+        linear-gradient(42deg, transparent 0 88%, rgba(210, 145, 60, 0.08) 88.1% 88.35%, transparent 88.45%);
+      opacity: 1;
+    }
+
+    body::after {
+      display: none;
+    }
+
+    .notion-sidebar {
+      display: none;
+    }
+
+    .shell {
+      width: min(1180px, calc(100vw - 40px));
+      padding: 22px 0 46px;
+    }
+
+    .nav {
+      position: sticky;
+      top: 14px;
+      z-index: 30;
+      min-height: 72px;
+      padding: 12px 14px 12px 16px;
+      border: 1px solid rgba(255, 250, 240, 0.12);
+      border-radius: 0;
+      background: rgba(16, 34, 25, 0.96);
+      box-shadow: 0 18px 52px rgba(16, 34, 25, 0.18);
+      backdrop-filter: blur(18px);
+    }
+
+    .brand.wordmark {
+      display: inline-flex;
+      align-items: center;
+      gap: 11px;
+      color: var(--cream-light);
+      font-family: var(--serif);
+      font-size: 22px;
+      font-weight: 700;
+      letter-spacing: -0.045em;
+      text-transform: none;
+    }
+
+    .brand-mark {
+      width: 38px;
+      height: 38px;
+      flex: 0 0 auto;
+      filter: drop-shadow(0 8px 14px rgba(0, 0, 0, 0.22));
+    }
+
+    .brand-name {
+      display: inline-flex;
+      align-items: baseline;
+    }
+
+    .wordmark .domain {
+      color: var(--amber-soft);
+      font-family: var(--sans);
+      font-size: 0.5em;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+      margin-left: 0.28em;
+      text-transform: uppercase;
+    }
+
+    .nav-links {
+      gap: 4px;
+    }
+
+    .nav-links a {
+      padding: 9px 12px;
+      border-radius: 999px;
+      color: rgba(255, 250, 240, 0.72);
+      font-size: 12px;
+      font-weight: 650;
+    }
+
+    .nav-links a:hover {
+      background: rgba(255, 250, 240, 0.09);
+      color: var(--cream-light);
+    }
+
+    .hero {
+      grid-template-columns: minmax(0, 1.02fr) minmax(430px, 0.98fr);
+      gap: 0;
+      min-height: 650px;
+      padding: 28px 0 0;
+    }
+
+    .hero-copy,
+    .terminal {
+      min-width: 0;
+      min-height: 620px;
+      border: 0;
+      border-radius: 0;
+      box-shadow: 0 28px 72px rgba(16, 34, 25, 0.16);
+      transform: none;
+    }
+
+    .hero-copy {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: clamp(42px, 6vw, 76px);
+      background: var(--forest-700);
+      color: var(--cream-light);
+      isolation: isolate;
+    }
+
+    .hero-copy::after {
+      content: "SELLER.MD";
+      display: block;
+      right: -12px;
+      bottom: -30px;
+      color: rgba(255, 250, 240, 0.055);
+      font-family: var(--serif);
+      font-size: clamp(60px, 9vw, 108px);
+      font-weight: 800;
+      letter-spacing: -0.07em;
+    }
+
+    .hero-copy > :not(.hero-mosaic) {
+      position: relative;
+      z-index: 2;
+    }
+
+    .hero-mosaic {
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 47%;
+      height: 38%;
+      z-index: 0;
+      opacity: 0.9;
+      pointer-events: none;
+    }
+
+    .hero-mosaic span {
+      position: absolute;
+      inset: 0;
+      border-left: 1px solid rgba(255, 250, 240, 0.22);
+      border-bottom: 1px solid rgba(255, 250, 240, 0.18);
+    }
+
+    .hero-mosaic span:nth-child(1) {
+      background: rgba(210, 145, 60, 0.62);
+      clip-path: polygon(38% 0, 100% 0, 100% 58%, 73% 46%);
+    }
+
+    .hero-mosaic span:nth-child(2) {
+      background: rgba(16, 34, 25, 0.52);
+      clip-path: polygon(38% 0, 73% 46%, 42% 73%, 0 43%);
+    }
+
+    .hero-mosaic span:nth-child(3) {
+      background: rgba(241, 223, 180, 0.18);
+      clip-path: polygon(0 43%, 42% 73%, 28% 100%, 0 100%);
+    }
+
+    .hero-note {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 26px;
+      color: var(--amber-soft);
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: 0.17em;
+      text-transform: uppercase;
+    }
+
+    .hero-note::before {
+      content: "";
+      width: 34px;
+      height: 3px;
+      background: var(--amber);
+    }
+
+    h1 {
+      max-width: 11ch;
+      margin: 0 0 24px;
+      color: var(--cream-light);
+      font-family: var(--serif);
+      font-size: clamp(54px, 6.1vw, 78px);
+      font-weight: 800;
+      line-height: 0.94;
+      letter-spacing: -0.055em;
+    }
+
+    h1::before,
+    h1::after {
+      display: none;
+    }
+
+    .hero-copy p {
+      max-width: 49ch;
+      color: rgba(255, 250, 240, 0.78);
+      font-size: clamp(16px, 1.8vw, 19px);
+      line-height: 1.62;
+    }
+
+    .hero-copy code,
+    .how-section code {
+      color: inherit;
+      font-family: var(--mono);
+      font-size: 0.88em;
+    }
+
+    .button {
+      min-height: 46px;
+      padding: 0 18px;
+      border: 1px solid var(--amber);
+      border-radius: 2px;
+      background: var(--amber);
+      color: var(--forest-950);
+      font-family: var(--sans);
+      font-size: 12px;
+      font-weight: 800;
+      box-shadow: 0 12px 26px rgba(16, 34, 25, 0.17);
+    }
+
+    .button:hover {
+      background: var(--amber-soft);
+      box-shadow: 0 15px 32px rgba(16, 34, 25, 0.22);
+    }
+
+    .button.secondary {
+      border-color: rgba(255, 250, 240, 0.32);
+      background: transparent;
+      color: var(--cream-light);
+      box-shadow: none;
+    }
+
+    .hero-copy .button.secondary:hover {
+      background: rgba(255, 250, 240, 0.08);
+    }
+
+    .badge-strip span,
+    .badge-strip span:nth-child(n) {
+      padding: 6px 0;
+      border: 0;
+      border-radius: 0;
+      background: transparent;
+      color: rgba(255, 250, 240, 0.62);
+      font-size: 10px;
+      text-transform: uppercase;
+      letter-spacing: 0.07em;
+    }
+
+    .badge-strip span + span::before {
+      content: "/";
+      margin-right: 8px;
+      color: var(--amber);
+    }
+
+    .terminal {
+      border-top: 0;
+      border-left: 1px solid rgba(26, 46, 31, 0.12);
+      background: var(--paper);
+    }
+
+    .terminal-bar {
+      min-height: 58px;
+      padding: 14px 18px;
+      border-color: var(--line);
+      background: var(--cream-light);
+      color: var(--muted);
+    }
+
+    .lights span {
+      width: 7px;
+      height: 7px;
+      border-radius: 0;
+      background: var(--sage) !important;
+    }
+
+    .lights span:nth-child(2) {
+      background: var(--amber) !important;
+    }
+
+    .lights span:nth-child(3) {
+      background: var(--forest-700) !important;
+    }
+
+    .example-label {
+      border: 0;
+      border-radius: 0;
+      background: var(--forest-700);
+      color: var(--cream-light);
+      letter-spacing: 0.08em;
+    }
+
+    .preview {
+      padding: 28px 30px;
+      color: #26332a;
+      font-size: 12px;
+      line-height: 1.72;
+    }
+
+    .ai-launcher {
+      position: relative;
+      grid-template-columns: minmax(0, 0.9fr) minmax(360px, 1.1fr);
+      gap: 54px;
+      margin-top: 28px;
+      padding: clamp(34px, 5vw, 58px);
+      overflow: hidden;
+      border: 0;
+      border-radius: 0;
+      background:
+        linear-gradient(116deg, transparent 0 75%, rgba(210, 145, 60, 0.23) 75.1% 86%, transparent 86.1%),
+        linear-gradient(48deg, transparent 0 82%, rgba(255, 250, 240, 0.08) 82.1% 92%, transparent 92.1%),
+        var(--forest-900);
+      color: var(--cream-light);
+      box-shadow: 0 24px 66px rgba(16, 34, 25, 0.18);
+    }
+
+    .ai-launcher .eyebrow {
+      color: var(--amber-soft);
+      font-family: var(--sans);
+      font-size: 10px;
+      letter-spacing: 0.16em;
+    }
+
+    .ai-launcher .eyebrow::before {
+      height: 3px;
+      background: var(--amber);
+    }
+
+    .ai-launcher h2,
+    .how-section h2,
+    .module h2 {
+      font-family: var(--serif);
+      font-weight: 800;
+      letter-spacing: -0.045em;
+    }
+
+    .ai-launcher h2 {
+      max-width: 12ch;
+      color: var(--cream-light);
+      font-size: clamp(40px, 5vw, 60px);
+      line-height: 0.96;
+    }
+
+    .ai-launcher p {
+      color: rgba(255, 250, 240, 0.72);
+    }
+
+    .ai-button {
+      min-height: 96px;
+      border: 1px solid rgba(255, 250, 240, 0.16);
+      border-radius: 0;
+      background: rgba(255, 250, 240, 0.94);
+      color: var(--forest-950);
+    }
+
+    .ai-button:hover {
+      border-color: var(--amber);
+      background: var(--cream-light);
+      transform: translateY(-2px);
+    }
+
+    .prompt-copy-link,
+    .prompt-details summary {
+      color: var(--amber-soft);
+    }
+
+    .prompt-details pre {
+      border-radius: 0;
+      background: var(--forest-950);
+    }
+
+    .grid {
+      display: block;
+      margin-top: 72px;
+    }
+
+    .module > h2 {
+      max-width: 14ch;
+      color: var(--forest-900);
+      font-size: clamp(44px, 6vw, 68px);
+      line-height: 0.95;
+    }
+
+    .module > p {
+      max-width: 64ch;
+      color: var(--muted);
+      line-height: 1.65;
+    }
+
+    .privacy-note {
+      display: flex;
+      justify-content: center;
+      color: var(--forest-700);
+    }
+
+    .privacy-note::before {
+      border-radius: 0;
+      background: var(--amber);
+      color: var(--forest-950);
+    }
+
+    .build-time {
+      color: var(--forest-700);
+    }
+
+    .build-time span {
+      border-color: var(--line);
+      border-radius: 0;
+      background: var(--paper);
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+    }
+
+    .wizard-form {
+      max-width: 960px;
+      min-height: 540px;
+      margin: 28px auto 0;
+      padding: clamp(28px, 4vw, 46px);
+      border: 0;
+      border-radius: 0;
+      background:
+        linear-gradient(125deg, transparent 0 81%, rgba(210, 145, 60, 0.28) 81.1% 90%, transparent 90.1%),
+        linear-gradient(48deg, transparent 0 86%, rgba(255, 250, 240, 0.07) 86.1% 95%, transparent 95.1%),
+        var(--forest-700);
+      box-shadow: 0 26px 72px rgba(16, 34, 25, 0.2);
+    }
+
+    .wizard-progress,
+    .wizard-progress span {
+      border-radius: 0;
+    }
+
+    .wizard-progress span {
+      background: var(--amber);
+    }
+
+    .wizard-stage {
+      min-height: 330px;
+      padding-top: 66px;
+    }
+
+    .question-kicker {
+      color: var(--amber-soft);
+      font-family: var(--sans);
+      font-size: 10px;
+      font-weight: 800;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+    }
+
+    .wizard-question,
+    .wizard-finish h3 {
+      color: var(--cream-light);
+      font-family: var(--serif);
+      font-weight: 800;
+      letter-spacing: -0.04em;
+    }
+
+    .wizard-question {
+      max-width: 19ch;
+      font-size: clamp(32px, 4.5vw, 48px);
+    }
+
+    .wizard-step input,
+    .wizard-step textarea {
+      border: 1px solid rgba(255, 250, 240, 0.2);
+      border-radius: 0;
+      background: var(--cream-light);
+      color: var(--forest-950);
+      box-shadow: 0 10px 28px rgba(16, 34, 25, 0.17);
+    }
+
+    .wizard-step input:focus,
+    .wizard-step textarea:focus {
+      border-color: var(--amber);
+      box-shadow: 0 0 0 4px rgba(210, 145, 60, 0.22);
+    }
+
+    .question-help,
+    .wizard-meta,
+    .wizard-finish p {
+      color: rgba(255, 250, 240, 0.67);
+    }
+
+    .wizard-visual {
+      color: var(--amber-soft);
+      opacity: 0.14;
+    }
+
+    .wizard-actions button,
+    .wizard-finish .button,
+    .finish-mark {
+      border-radius: 0;
+    }
+
+    .wizard-next,
+    .wizard-finish .button,
+    .finish-mark {
+      border-color: var(--amber);
+      background: var(--amber);
+      color: var(--forest-950);
+    }
+
+    .wizard-back {
+      color: var(--cream-light);
+    }
+
+    .wizard-finish .button.secondary {
+      border-color: rgba(255, 250, 240, 0.3);
+      color: var(--cream-light);
+    }
+
+    .how-section {
+      position: relative;
+      margin-top: 72px;
+      padding: clamp(36px, 5vw, 62px);
+      overflow: hidden;
+      border: 1px solid var(--line);
+      border-radius: 0;
+      background: var(--paper);
+      box-shadow: 0 24px 66px rgba(16, 34, 25, 0.1);
+    }
+
+    .how-section::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 210px;
+      height: 150px;
+      background:
+        linear-gradient(142deg, transparent 0 47%, var(--amber) 47.5% 70%, transparent 70.5%),
+        linear-gradient(40deg, transparent 0 55%, var(--forest-700) 55.5% 78%, transparent 78.5%);
+      opacity: 0.2;
+      pointer-events: none;
+    }
+
+    .how-section-head {
+      grid-template-columns: minmax(0, 1.1fr) minmax(320px, 0.9fr);
+    }
+
+    .how-section h2 {
+      max-width: 15ch;
+      color: var(--forest-900);
+      font-size: clamp(42px, 5vw, 62px);
+      line-height: 0.98;
+    }
+
+    .how-section h2::after {
+      right: 34%;
+      bottom: -14px;
+      border-color: var(--amber);
+      border-radius: 0;
+      transform: none;
+    }
+
+    .how-section-head p {
+      color: var(--muted);
+      line-height: 1.7;
+    }
+
+    .how-section .steps {
+      border-top: 1px solid var(--line);
+    }
+
+    .how-section .step {
+      border: 0;
+      border-radius: 0;
+      background: transparent;
+    }
+
+    .how-section .step + .step {
+      border-left: 1px solid var(--line);
+    }
+
+    .how-section .step strong {
+      color: var(--forest-700);
+      letter-spacing: 0.08em;
+    }
+
+    .how-section .step::before {
+      background: var(--amber);
+    }
+
+    .footer {
+      margin-top: 26px;
+      padding: 24px 0 0;
+      border-color: var(--line);
+      color: var(--muted);
+    }
+
+    .footer a {
+      color: var(--forest-700);
+      text-decoration-color: var(--amber);
+    }
+
+    .toast {
+      border-radius: 0;
+      background: var(--forest-950);
+      color: var(--cream-light);
+    }
+
+    @media (max-width: 900px) {
+      .nav {
+        top: 8px;
+      }
+
+      .hero {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-copy,
+      .terminal {
+        min-height: auto;
+      }
+
+      .hero-copy {
+        padding: clamp(42px, 8vw, 70px);
+      }
+
+      .terminal {
+        min-height: 500px;
+        border-top: 1px solid var(--line);
+        border-left: 0;
+      }
+
+      .ai-launcher,
+      .how-section-head {
+        grid-template-columns: 1fr;
+      }
+
+      .wizard-stage {
+        padding-right: 4px;
+      }
+    }
+
+    @media (max-width: 620px) {
+      .shell {
+        width: min(100% - 24px, 1180px);
+        padding-top: 12px;
+      }
+
+      .nav {
+        min-height: 62px;
+        padding: 10px 12px;
+      }
+
+      .brand.wordmark {
+        font-size: 18px;
+      }
+
+      .brand-mark {
+        width: 32px;
+        height: 32px;
+      }
+
+      .nav-links a {
+        display: none;
+      }
+
+      .nav-links a:first-child {
+        display: inline-flex;
+        padding: 8px 10px;
+        border: 1px solid rgba(255, 250, 240, 0.18);
+      }
+
+      .hero {
+        padding-top: 14px;
+      }
+
+      .hero-copy {
+        padding: 44px 25px 40px;
+      }
+
+      h1 {
+        font-size: clamp(50px, 15vw, 68px);
+      }
+
+      .cta-row,
+      .cta-row .button {
+        width: 100%;
+      }
+
+      .ai-launcher,
+      .how-section {
+        padding: 32px 22px;
+      }
+
+      .ai-actions {
+        grid-template-columns: 1fr;
+      }
+
+      .ai-button {
+        min-height: 58px;
+        flex-direction: row;
+      }
+
+      .wizard-form {
+        min-height: 590px;
+        padding: 24px 19px;
+      }
+
+      .wizard-stage {
+        min-height: 390px;
+        padding-top: 48px;
+      }
+
+      .wizard-question {
+        font-size: 32px;
+      }
+
+      .wizard-visual {
+        top: 106px;
+        right: -65px;
+      }
+
+      .how-section .steps {
+        grid-template-columns: 1fr;
+      }
+
+      .how-section .step + .step {
+        border-top: 1px solid var(--line);
+        border-left: 0;
+      }
+    }
+  </style>
 </head>
 <body>
   <aside class="notion-sidebar" aria-label="Workspace navigation">
@@ -2515,7 +3282,15 @@
   <main class="shell">
     <nav class="nav" aria-label="Primary navigation">
       <a class="brand wordmark" href="#top" aria-label="sellercontext.com">
-        <span aria-hidden="true">sel<span class="pen-letter">l</span>ercontext<span class="domain">.com</span></span>
+        <svg class="brand-mark" viewBox="0 0 44 44" aria-hidden="true">
+          <rect x="1" y="1" width="42" height="42" fill="#102219" stroke="rgba(255,250,240,.55)"/>
+          <path d="M2 2h25L19 19H2z" fill="#d2913c"/>
+          <path d="M27 2h15v25l-23-8z" fill="#718373"/>
+          <path d="M2 19h17l-7 23H2z" fill="#f1dfb4"/>
+          <path d="M19 19l23 8v15H12z" fill="#344e41"/>
+          <path d="M2 19h17L27 2M19 19l23 8M12 42l7-23" fill="none" stroke="#fffaf0" stroke-opacity=".72"/>
+        </svg>
+        <span class="brand-name">seller context<span class="domain">.com</span></span>
       </a>
       <div class="nav-links">
         <a href="#generate">Generate</a>
@@ -2527,9 +3302,11 @@
 
     <section id="top" class="hero">
       <div class="hero-copy">
-        <h1>Make your sales agents perform better.</h1>
+        <div class="hero-mosaic" aria-hidden="true"><span></span><span></span><span></span></div>
+        <div class="hero-note">Portable context for every sales agent</div>
+        <h1>Give your sales agents better taste.</h1>
         <p>
-          <code>SELLER.md</code> teaches AI what you sell, who matters, what proof is credible, and how you work—before it researches an account or writes a word.
+          Build a <code>SELLER.md</code> that teaches AI how you sell, what you care about, and what good work looks like—before it researches an account or writes a word.
         </p>
         <div class="cta-row">
           <a class="button" href="#build">Build your SELLER.md</a>
@@ -2538,7 +3315,7 @@
         <div class="badge-strip" aria-label="Supported workflows">
           <span>one file · every agent</span>
           <span>no signup</span>
-          <span>built for AEs</span>
+          <span>human judgment</span>
           <span>free to use</span>
         </div>
       </div>
@@ -2586,12 +3363,12 @@
         </p>
         <p class="privacy-note">Your answers stay on this page and are never uploaded.</p>
         <div class="build-time" aria-label="Estimated completion time">
-          <span>About 6 minutes</span>
-          <span>13 focused questions</span>
+          <span>About 7 minutes</span>
+          <span>14 focused questions</span>
         </div>
         <form id="seller-form" class="wizard-form">
           <div class="wizard-head">
-            <div class="wizard-meta"><span id="wizard-step-label">Question 1 of 13</span><span>About 6 minutes</span></div>
+            <div class="wizard-meta"><span id="wizard-step-label">Question 1 of 14</span><span>About 7 minutes</span></div>
             <div class="wizard-progress" aria-hidden="true"><span id="wizard-progress-bar"></span></div>
           </div>
 
@@ -2662,9 +3439,15 @@
             </div>
             <div class="wizard-step" data-wizard-step>
               <span class="question-kicker">Sound like you</span>
-              <label class="wizard-question" for="voice">How should your sales agents communicate?</label>
-              <textarea id="voice" name="voice" placeholder="Voice, words to use, banned phrases, CTA style, directness, and humor."></textarea>
-              <span class="question-help">Describe what you would actually send—not what corporate copy sounds like.</span>
+              <label class="wizard-question" for="voice">How should your agent sound—and how should it treat buyers?</label>
+              <textarea id="voice" name="voice" placeholder="Voice, directness, boundaries, banned phrases, CTA style, and what respectful communication means to you."></textarea>
+              <span class="question-help">Describe what you would actually send and how care should show up in the work—not what corporate copy sounds like.</span>
+            </div>
+            <div class="wizard-step" data-wizard-step>
+              <span class="question-kicker">Your judgment</span>
+              <label class="wizard-question" for="judgment">When should your agent slow down, challenge, or recommend not buying?</label>
+              <textarea id="judgment" name="judgment" placeholder="Signals that deserve more attention, when curiosity is better than a recommendation, when to challenge respectfully, promises to protect, and where you will not force a sale."></textarea>
+              <span class="question-help">Good judgment includes knowing when not to optimize for the next meeting.</span>
             </div>
             <div class="wizard-step" data-wizard-step>
               <span class="question-kicker">Buyer resistance</span>
@@ -2673,10 +3456,10 @@
               <span class="question-help">Exact buyer language is much more useful than generic objection labels.</span>
             </div>
             <div class="wizard-step" data-wizard-step>
-              <span class="question-kicker">The standard</span>
-              <label class="wizard-question" for="qualityBar">What must be true before you would send AI-generated work?</label>
-              <textarea id="qualityBar" name="qualityBar" placeholder="Specificity, verification, business impact, voice, length, and any non-negotiable checks."></textarea>
-              <span class="question-help">This becomes the final quality gate for every customer-facing output.</span>
+              <span class="question-kicker">Your taste</span>
+              <label class="wizard-question" for="qualityBar">What does good sales work look like to you?</label>
+              <textarea id="qualityBar" name="qualityBar" placeholder="Share something you would send, something you would reject, and explain the difference."></textarea>
+              <span class="question-help">Examples reveal your actual taste more clearly than a list of adjectives.</span>
             </div>
           </div>
 
@@ -2703,13 +3486,13 @@
       <div class="how-section-head">
         <h2 id="why-title">Better models help. Better seller context compounds.</h2>
         <p>
-          Prompts ask for work. Seller context improves every piece of work that follows. <code>SELLER.md</code> is the portable performance layer your AI tools should read before touching anything customer-facing.
+          Prompts ask for work. Seller context teaches an agent how to judge the work. <code>SELLER.md</code> carries your commercial context, communication standards, and human judgment into every AI tool you use.
         </p>
       </div>
         <div class="steps">
           <div class="step">
             <strong>01 / capture</strong>
-            <p>Write down how you sell: market, ICP, personas, proof, objections, claims, and voice.</p>
+            <p>Write down how you sell: market, ICP, proof, voice, judgment, boundaries, and what good work looks like to you.</p>
           </div>
           <div class="step">
             <strong>02 / attach</strong>
@@ -2723,7 +3506,7 @@
         <div class="steps" style="margin-top: 18px;">
           <div class="step">
             <strong>anti-slop</strong>
-            <p>Blocks vague outreach, unsupported claims, fake personalization, and feature-tour decks.</p>
+            <p>Blocks vague outreach, unsupported claims, fake personalization, simulated empathy, and feature-tour decks.</p>
           </div>
           <div class="step">
             <strong>sales memory</strong>
@@ -2836,6 +3619,25 @@
 - How to de-risk them: Address the exact concern with approved documentation, clear ownership, and a scoped rollout plan
 - Claims to avoid: Guaranteed adoption, guaranteed forecast improvement, or unsupported security statements
 - Proof needed: Approved security materials, implementation responsibilities, permissioning details, and referenced customer evidence
+
+## Taste And Judgment
+
+- What I notice that other sellers often miss: The passing comment that reveals the stated problem is not the operating problem; mismatched priorities across the buying group; and commitments that sounded agreeable but never gained an owner
+- What makes sales work feel thoughtful and credible: It names a real workflow, distinguishes evidence from hypothesis, respects the buyer's language, and gives the customer something useful before asking for time
+- What makes sales work feel generic or careless: Treating an activity signal as personalization, recycling one value proposition across every stakeholder, manufacturing urgency, or using an impressive proof point that does not fit the buyer's problem
+- When the agent should slow down and remain curious: When the buyer's examples conflict with the stated problem, when a stakeholder goes quiet around risk, or when the next step has no clear commitment
+- When the agent should respectfully challenge the buyer: When the status quo is being treated as cost-free, when the buying group is optimizing one workflow at the expense of another, or when a success criterion cannot be measured
+- When the agent should recommend not buying: The evaluation is transcription-only, there is no owner for adoption, the business problem is unverified, or the customer cannot meet a non-negotiable security requirement
+- How the agent should communicate uncertainty: Label a hypothesis as a hypothesis, explain what supports it, and ask one useful question to test it
+- Promises and commitments that must be protected: Follow-up dates, customer requests, security answers, pricing boundaries, mutual-action-plan owners, and anything promised to a champion for an internal meeting
+- Behaviors that feel manipulative or out of bounds: Fabricated familiarity, invented pain, false scarcity, hidden pressure, exploiting personal information, or pretending certainty to advance the deal
+- Example of work I would send: "Your new forecast cadence suggests inspection consistency may matter more than adding another dashboard. Is that close, or am I reading the change incorrectly?"
+- Example of work I would reject: "Congratulations on the exciting growth. Gong can unlock value and transform your revenue organization. Do you have 15 minutes next week?"
+- Why the difference matters: The first message makes a specific, falsifiable observation and gives the buyer room to correct it; the second performs familiarity and asks for time without earning it
+
+Do not perform empathy, fabricate familiarity, or infer emotions as facts.
+
+Demonstrate care through attention, accuracy, useful questions, honest uncertainty, respectful challenge, and reliable follow-through.
 
 ## Differentiation
 
@@ -2963,9 +3765,11 @@
 - Is the account signal specific, current, and sourced?
 - Is the buyer, operating problem, and revenue workflow clear?
 - Are facts separated from hypotheses?
-- Are every product and commercial claim grounded in approved material?
+- Is every product and commercial claim grounded in approved material?
 - Is the message concise enough to send without editing around AI language?
 - Does it sound like a commercially credible mid-market AE?
+- Does it reflect Maya's taste and judgment standards?
+- Does it demonstrate care through attention rather than simulated empathy?
 - Would Maya actually send it?
 `;
 
@@ -2981,6 +3785,7 @@
       proof: "",
       differentiation: "",
       voice: "",
+      judgment: "",
       objections: "",
       qualityBar: ""
     };
@@ -3014,6 +3819,8 @@ Rules for the interview:
 - If I cannot answer something, preserve it as [fill in] instead of guessing.
 - Briefly summarize each completed section and let me correct it before moving on.
 - Adapt follow-up questions to my role, segment, deal size, sales cycle, and methodology.
+- Ask for examples of work I would send and reject; do not accept vague descriptions of "good taste."
+- Treat care as attention, accuracy, honest uncertainty, respectful challenge, and follow-through—not simulated empathy.
 - Keep the final writing concise, specific, and usable by another AI system.
 
 Cover these sections:
@@ -3022,16 +3829,17 @@ Cover these sections:
 3. What I Sell
 4. Ideal Customer Profile
 5. Buyer Personas: Economic Buyer, Technical Buyer, Champion, and Blocker
-6. Differentiation
-7. Proof Points: customer, metric, and narrative proof with sources
-8. Messaging Rules and Banned Phrases
-9. Outreach Standards
-10. First Call Standards
-11. Qualification Standards
-12. Objections using exact buyer wording
-13. Pricing and Commercial Rules
-14. Customer and Account Memory
-15. AI Output Quality Bar
+6. Taste And Judgment: what deserves attention, when to remain curious, when to challenge, when not to sell, commitments to protect, ethical boundaries, and examples of work I would send or reject
+7. Differentiation
+8. Proof Points: customer, metric, and narrative proof with sources
+9. Messaging Rules and Banned Phrases
+10. Outreach Standards
+11. First Call Standards
+12. Qualification Standards
+13. Objections using exact buyer wording
+14. Pricing and Commercial Rules
+15. Customer and Account Memory
+16. AI Output Quality Bar
 
 When the interview is complete, output only one clean Markdown document beginning with # SELLER.md. Use the section headings above. Preserve [fill in] for unresolved fields. Do not add commentary before or after the file.
 
@@ -3053,7 +3861,7 @@ Begin by asking what I sell, who I sell it to, and my role—but ask only the fi
 
 Use this file to teach an AI agent how I sell before it writes, researches, briefs, follows up, or builds sales artifacts.
 
-The goal is not to make AI sound like a generic seller. The goal is to give it my context, standards, proof, constraints, and voice so it can work like a trained sales teammate.
+The goal is not to make AI imitate a caring seller. The goal is to give it my commercial context, communication standards, proof, constraints, taste, and judgment so it can produce work I would actually stand behind.
 
 ## Seller Identity
 
@@ -3077,6 +3885,20 @@ ${fieldValue("icp")}
 ## Buyer Personas
 
 ${fieldValue("personas")}
+
+## Taste And Judgment
+
+Taste is not sounding sophisticated. It is knowing what deserves attention, what good work looks like, and what should never be sent.
+
+${fieldValue("judgment")}
+
+### Examples And Quality Standard
+
+${fieldValue("qualityBar")}
+
+Do not perform empathy, fabricate familiarity, or infer emotions as facts.
+
+Demonstrate care through attention, accuracy, useful questions, honest uncertainty, respectful challenge, and reliable follow-through.
 
 ## Differentiation
 
@@ -3179,8 +4001,6 @@ Keep these updated as the territory changes:
 
 ## AI Output Quality Bar
 
-${fieldValue("qualityBar")}
-
 Before giving me anything customer-facing, check:
 
 - Is the account context specific?
@@ -3189,6 +4009,8 @@ Before giving me anything customer-facing, check:
 - Is the business impact explicit?
 - Is the draft concise enough to send?
 - Does it sound like me?
+- Does it reflect my taste and judgment standards?
+- Does it demonstrate care through attention rather than simulated empathy?
 - Would I actually send this?
 
 If the answer is no, do not polish weak work. Tell me what context is missing and ask one question at a time.

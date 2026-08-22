@@ -2,7 +2,7 @@
 
 Seller Context is a static, client-side builder for creating a portable `SELLER.md` file.
 
-`SELLER.md` gives AI sales agents the context they usually miss: territory, offer, ICP, buyer personas, proof, messaging standards, qualification rules, objections, commercial rules, and the quality bar for customer-facing work.
+`SELLER.md` gives AI sales agents the context they usually miss: territory, offer, ICP, buyer personas, proof, messaging standards, taste, judgment, ethical boundaries, objections, commercial rules, and what good customer-facing work looks like to the seller.
 
 ## Production
 
