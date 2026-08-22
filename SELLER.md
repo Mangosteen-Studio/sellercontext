@@ -33,6 +33,7 @@ Make it clear where this context came from and how confident the seller should b
 - Seller confirmed on:
 - Sources intentionally excluded:
 - Overall confidence: Low / medium / high
+- Required 14-question coverage: Confirmed / proposed / partial / missing
 - Important gaps:
 
 ## Learning And Privacy Policy
@@ -43,6 +44,10 @@ Make it clear where this context came from and how confident the seller should b
 - Distill patterns; do not paste raw emails, transcripts, customer names, personal information, or unnecessary confidential details into this file.
 - Separate observed patterns, declared standards, and seller-confirmed rules.
 - Treat an inferred pattern as a hypothesis until the seller confirms it.
+- Connected context may propose an answer, but it does not eliminate the required seller questions.
+- Mark every required answer as confirmed, proposed, partial, or missing.
+- Show proposed answers to the seller and ask them to confirm, correct, or remove each one.
+- Ask every partial or missing question one at a time; do not declare the profile complete while required context remains unconfirmed.
 - Explicit seller instructions override inferred behavior.
 - Ask before replacing or materially changing a confirmed rule.
 - Preserve disagreements between what the seller says and what their behavior suggests for review; do not resolve them silently.

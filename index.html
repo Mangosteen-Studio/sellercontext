@@ -3333,7 +3333,7 @@
         <div class="eyebrow">Recommended</div>
         <h2 id="generate-title">Your AI already has the raw material.</h2>
         <p>
-          Open the compiler prompt in your personal AI. It will check which authorized sources are available, learn from your seller-authored work, and ask only about the gaps before creating your <code>SELLER.md</code>.
+          Open the compiler prompt in your personal AI. It checks authorized context against the same 14-question framework, proposes answers it can support, and then asks one question at a time for anything missing or uncertain.
         </p>
       </div>
       <div class="ai-actions" aria-label="Generate SELLER.md with an AI assistant">
@@ -3495,11 +3495,11 @@
           </div>
           <div class="step">
             <strong>02 / learn</strong>
-            <p>Your AI looks for recurring patterns in seller-authored work—how you write, use proof, challenge, follow up, and make judgment calls.</p>
+            <p>Your AI uses seller-authored work to propose answers to the 14 core questions—not to skip the questions or quietly fill the gaps.</p>
           </div>
           <div class="step">
             <strong>03 / confirm</strong>
-            <p>Review what it learned, correct weak inferences, and approve the rules before they become part of your portable context.</p>
+            <p>Confirm what it learned, correct weak inferences, and answer every unresolved question before the file becomes your portable context.</p>
           </div>
         </div>
         <div class="steps" style="margin-top: 18px;">
@@ -3554,6 +3554,7 @@
 - Seller confirmed on: August 22, 2026
 - Sources intentionally excluded: Personal email, HR, legal, security conversations, and unrelated private documents
 - Overall confidence: High for outreach and follow-up; medium for pricing and executive presentations
+- Required 14-question coverage: 14 confirmed; 0 proposed; 0 partial; 0 missing
 - Important gaps: Limited evidence from closed-lost executive evaluations
 
 ## Learning And Privacy Policy
@@ -3563,6 +3564,9 @@
 - Use incoming buyer messages for buyer language and deal context, not as evidence of Maya's personal style
 - Store distilled patterns, confidence, and recency—not raw private content
 - Treat inferred behavior as a hypothesis until Maya confirms it
+- Use connected context to propose answers to the 14 core questions, not to skip them
+- Ask Maya to confirm every proposed answer and answer every partial or missing question
+- Do not declare the profile complete while required context remains unconfirmed
 - Maya's explicit rules override inferred patterns
 - Ask before materially changing a confirmed rule
 
@@ -3882,7 +3886,26 @@ If authorized sources are available:
 
 If connected sources are unavailable, say so plainly and switch to a one-question-at-a-time interview.
 
-After reviewing authorized context, ask only the highest-leverage questions needed to resolve gaps or weak inferences. Ask one clear question at a time and wait for my answer. Show me any conflict between what I say and what my behavior suggests; do not resolve it silently.
+Use this required 14-question coverage checklist. For every item, mark the answer as Confirmed, Proposed from authorized context, Partial, or Missing. Connected context can propose an answer, but it never removes the need to confirm the answer or gather what is missing.
+
+1. What should my sales agents call me?
+2. What is my role, responsibility, quota, deal size, sales cycle, and methodology?
+3. Which company do I sell for, and what company or product context matters?
+4. What segment, region, industry, or named-account patch do I own?
+5. How is my territory organized, tiered, sourced, reviewed, and prioritized?
+6. What do I sell, what outcomes does it create, and where is it not a fit?
+7. Who is the ideal customer, what triggers matter, and what disqualifies an account?
+8. Who buys, champions, evaluates, or blocks the sale, and what does each person care about?
+9. What customer, metric, and narrative proof am I allowed to use, and how is it verified?
+10. Why do I win, why do I lose, what alternatives appear, and what claims can I not make?
+11. How should my agent sound, treat buyers, use calls to action, and communicate uncertainty?
+12. When should my agent remain curious, challenge respectfully, recommend action, or recommend not buying?
+13. What objections do I hear, what do they usually mean, and how should I respond?
+14. Show one piece of work I would send and one I would reject. What makes the difference?
+
+For every Proposed item, show me the proposed answer and the evidence pattern behind it, then ask me to confirm, correct, or remove it. For every Partial or Missing item, ask a clear question. Ask one question at a time and wait for my answer. If no connected sources are available, ask all 14 questions. Do not declare the profile complete while any required item is unconfirmed.
+
+After the 14 core questions, ask any additional gap questions required for qualification standards, pricing and commercial rules, legal or security boundaries, customer memory, and the AI output quality bar. Show me any conflict between what I say and what my behavior suggests; do not resolve it silently.
 
 Rules:
 - Explicit instructions override inferred behavior.
@@ -3957,6 +3980,7 @@ This profile was created from my answers. No connected sources were reviewed. Th
 - Seller confirmed on: [fill in]
 - Sources intentionally excluded: All external sources
 - Overall confidence: Seller-provided context; no behavioral inference
+- Required 14-question coverage: Seller answered all 14 manual questions
 - Important gaps: Any field marked [fill in]
 
 ## Learning And Privacy Policy
@@ -3967,6 +3991,9 @@ This profile was created from my answers. No connected sources were reviewed. Th
 - Distill patterns; do not paste raw emails, transcripts, customer names, personal information, or unnecessary confidential details into this file.
 - Separate observed patterns, declared standards, and seller-confirmed rules.
 - Treat an inferred pattern as a hypothesis until I confirm it.
+- Connected context may propose an answer, but it does not eliminate the required seller questions.
+- Show me every proposed answer and ask me to confirm, correct, or remove it.
+- Ask every partial or missing question one at a time; do not declare the profile complete while required context remains unconfirmed.
 - My explicit instructions override inferred behavior.
 - Ask before replacing or materially changing a confirmed rule.
 - Preserve disagreements between what I say and what my behavior suggests for review.
