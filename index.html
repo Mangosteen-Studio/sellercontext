@@ -2587,16 +2587,17 @@
     .brand-name {
       display: inline-flex;
       align-items: baseline;
+      white-space: nowrap;
     }
 
     .wordmark .domain {
       color: var(--amber-soft);
-      font-family: var(--sans);
-      font-size: 0.5em;
-      font-weight: 700;
-      letter-spacing: 0.04em;
-      margin-left: 0.28em;
-      text-transform: uppercase;
+      font-family: var(--serif);
+      font-size: 0.64em;
+      font-weight: 600;
+      letter-spacing: -0.025em;
+      margin-left: 0;
+      text-transform: lowercase;
     }
 
     .nav-links {
@@ -2617,10 +2618,11 @@
     }
 
     .hero {
-      grid-template-columns: minmax(0, 1.02fr) minmax(430px, 0.98fr);
-      gap: 0;
+      grid-template-columns: minmax(0, 1.14fr) minmax(360px, 0.86fr);
+      gap: 28px;
       min-height: 650px;
       padding: 28px 0 0;
+      align-items: center;
     }
 
     .hero-copy,
@@ -2644,15 +2646,8 @@
     }
 
     .hero-copy::after {
-      content: "SELLER.MD";
-      display: block;
-      right: -12px;
-      bottom: -30px;
-      color: rgba(255, 250, 240, 0.055);
-      font-family: var(--serif);
-      font-size: clamp(60px, 9vw, 108px);
-      font-weight: 800;
-      letter-spacing: -0.07em;
+      content: none;
+      display: none;
     }
 
     .hero-copy > :not(.hero-mosaic) {
@@ -2790,9 +2785,13 @@
     }
 
     .terminal {
-      border-top: 0;
-      border-left: 1px solid rgba(26, 46, 31, 0.12);
+      width: 100%;
+      min-height: 540px;
+      max-height: 560px;
+      align-self: center;
+      border: 1px solid rgba(26, 46, 31, 0.16);
       background: var(--paper);
+      box-shadow: 0 22px 58px rgba(16, 34, 25, 0.14);
     }
 
     .terminal-bar {
@@ -3156,8 +3155,8 @@
 
       .terminal {
         min-height: 500px;
+        max-height: 560px;
         border-top: 1px solid var(--line);
-        border-left: 0;
       }
 
       .ai-launcher,
@@ -3290,7 +3289,7 @@
           <path d="M19 19l23 8v15H12z" fill="#344e41"/>
           <path d="M2 19h17L27 2M19 19l23 8M12 42l7-23" fill="none" stroke="#fffaf0" stroke-opacity=".72"/>
         </svg>
-        <span class="brand-name">seller context<span class="domain">.com</span></span>
+        <span class="brand-name">sellercontext<span class="domain">.com</span></span>
       </a>
       <div class="nav-links">
         <a href="#generate">Generate</a>
@@ -3323,7 +3322,7 @@
       <section class="terminal" aria-label="Illustrative SELLER.md example for a fictional Gong account executive">
         <div class="terminal-bar">
           <div class="lights" aria-hidden="true"><span></span><span></span><span></span></div>
-          <span><b class="example-label">Fictitious example</b>gong-mid-market/SELLER.md</span>
+          <span><b class="example-label">Example</b>gong-mid-market/SELLER.md</span>
         </div>
         <pre id="preview" class="preview"></pre>
       </section>
