@@ -54,6 +54,25 @@ Make it clear where this context came from and how confident the seller should b
 - Never learn from personal, HR, medical, legal, security, or unrelated private content unless the seller specifically includes it for a defined reason.
 - Never use this context for shared model training without separate, explicit permission.
 
+## Context Scope And Precedence
+
+- This file contains durable seller context, not live account or opportunity state.
+- Apply context in this order: the seller's current explicit instruction; verified live account or opportunity facts; confirmed rules in this file; observed patterns; defaults.
+- When sources conflict, show the conflict and ask instead of resolving it silently.
+- Keep changing account lists, opportunity details, pricing approvals, and customer activity in their source systems. Reference those sources here instead of duplicating stale data.
+- For important rules, record where the rule applies, known exceptions, and when it was last confirmed.
+
+## Refresh And Change Control
+
+- Profile owner:
+- Profile version:
+- Review cadence:
+- Next review date:
+- Refresh triggers: Role / territory / product / pricing / policy / methodology / major win-loss pattern change
+- Sections most likely to expire:
+- Last material change:
+- Change summary:
+
 ## Territory
 
 Use this section to describe the patch. Keep large account lists in a CRM or CSV and reference the source here rather than pasting hundreds of accounts into this file.
@@ -339,12 +358,14 @@ A first-call deck should not:
 - ROI assumptions allowed:
 - ROI assumptions not allowed:
 
-## Customer And Account Memory
+## Customer And Account Memory References
 
-Keep these updated as the territory changes:
+Keep volatile account state in its source system and record only the references and durable lessons here:
 
-- Top target accounts:
-- Active opportunities:
+- System of record:
+- Territory list source:
+- Active-opportunity source:
+- Last checked:
 - Closed-lost lessons:
 - Messaging that got replies:
 - Messaging that failed:

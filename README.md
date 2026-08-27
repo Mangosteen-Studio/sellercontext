@@ -14,7 +14,7 @@ The recommended path opens a context-compiler prompt inside the seller's persona
 - Build step: none
 - Runtime dependencies: none
 
-The manual form runs entirely in the browser. Seller answers are not uploaded or sent to a backend. The ChatGPT, Claude, and Gemini buttons use web-app deep links and copy the compiler prompt as a fallback. Seller Context itself does not receive access to the user's connected sources; any source access happens inside the user's chosen AI under that product's permissions.
+The manual form runs entirely in the browser. Seller answers are not uploaded or sent to a backend. The ChatGPT and Claude buttons use web-app deep links and copy the compiler prompt as a fallback. Gemini does not support a reliable public prompt-prefill link, so its button copies the compiler prompt before opening a new Gemini chat. Seller Context itself does not receive access to the user's connected sources; any source access happens inside the user's chosen AI under that product's permissions.
 
 ## Local Preview
 

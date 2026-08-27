@@ -2022,6 +2022,15 @@
       cursor: pointer;
     }
 
+    .ai-handoff-note {
+      grid-column: 1 / -1;
+      margin: 2px 0 0 !important;
+      color: #c7ddca !important;
+      font-size: 11px !important;
+      line-height: 1.45 !important;
+      text-align: right;
+    }
+
     .prompt-copy-link:hover {
       color: #ffffff;
     }
@@ -3230,6 +3239,10 @@
         flex-direction: row;
       }
 
+      .ai-handoff-note {
+        text-align: left;
+      }
+
       .wizard-form {
         min-height: 590px;
         padding: 24px 19px;
@@ -3343,9 +3356,10 @@
         <a class="ai-button" href="https://claude.ai/" target="_blank" rel="noopener" data-ai="Claude">
           <img class="ai-brand-logo" src="assets/anthropic.svg" alt=""><span>Build with Claude</span><span class="ai-arrow" aria-hidden="true">↗</span>
         </a>
-        <a class="ai-button" href="https://gemini.google.com/" target="_blank" rel="noopener" data-ai="Gemini">
-          <img class="ai-brand-logo" src="assets/gemini.svg" alt=""><span>Build with Gemini</span><span class="ai-arrow" aria-hidden="true">↗</span>
+        <a class="ai-button" href="https://gemini.google.com/app" data-ai="Gemini" data-launch-mode="clipboard">
+          <img class="ai-brand-logo" src="assets/gemini.svg" alt=""><span>Copy prompt + open Gemini</span><span class="ai-arrow" aria-hidden="true">↗</span>
         </a>
+        <p class="ai-handoff-note">Gemini does not reliably accept prompt links from websites. We copy the compiler prompt first; paste it into the new chat.</p>
         <button class="prompt-copy-link" type="button" data-prompt-copy>Copy the compiler prompt</button>
       </div>
       <details class="prompt-details">
@@ -3384,9 +3398,9 @@
             </div>
             <div class="wizard-step" data-wizard-step>
               <span class="question-kicker">Your role</span>
-              <label class="wizard-question" for="role">What is your role?</label>
-              <input id="role" name="role" placeholder="Enterprise AE, Mid-Market AE, Founder">
-              <span class="question-help">Be specific enough for the agent to understand your responsibilities and motion.</span>
+              <label class="wizard-question" for="role">What is your role—and what kind of deals do you own?</label>
+              <input id="role" name="role" placeholder="Enterprise AE; $1M quota; $80K ACV; 90-day cycle; MEDDPICC">
+              <span class="question-help">Include your responsibility, quota, typical deal size, sales cycle, and methodology when relevant.</span>
             </div>
             <div class="wizard-step" data-wizard-step>
               <span class="question-kicker">Your company</span>
@@ -3469,7 +3483,7 @@
 
           <div class="wizard-finish" data-wizard-finish hidden>
             <span class="finish-mark" aria-hidden="true">✓</span>
-            <h3>Your SELLER.md is ready.</h3>
+            <h3 data-finish-title>Your SELLER.md is ready.</h3>
             <p id="finish-summary">Your seller context is ready for ChatGPT, Claude, Gemini, Codex, Cursor, and the sales agents you use next.</p>
             <div class="finish-actions">
               <button class="button" type="button" data-copy>Copy SELLER.md</button>
@@ -3811,10 +3825,12 @@ Demonstrate care through attention, accuracy, useful questions, honest uncertain
 - ROI assumptions allowed: Buyer-validated baselines for manager inspection time, coaching coverage, deal-risk visibility, and forecast workflow effort
 - ROI assumptions not allowed: Generic productivity percentages, automatic win-rate improvement, or benefits copied from an unrelated customer
 
-## Customer And Account Memory
+## Customer And Account Memory References
 
-- Top target accounts: Northstar Cloud; AlderWorks; Meridian Software; Harbor Systems; Ridgeway Data
-- Active opportunities: Northstar Cloud—forecast inspection and manager-coaching evaluation; AlderWorks—early discovery around tool consolidation
+- System of record: Salesforce
+- Territory list source: “FY26 NA Mid-Market Named Accounts” report
+- Active-opportunity source: “Maya Chen — Open Pipeline” Salesforce view
+- Last checked: August 20, 2026
 - Closed-lost lessons: Deals stall when the champion cannot secure frontline-manager participation or when the business case stays at recording and transcription
 - Messaging that got replies: Specific observations about a new revenue leader, manager growth, forecast pressure, and methodology rollout
 - Messaging that failed: Generic AI language, unsupported efficiency claims, and messages that name too many use cases
@@ -3868,6 +3884,7 @@ Demonstrate care through attention, accuracy, useful questions, honest uncertain
     const wizardStepLabel = document.querySelector("#wizard-step-label");
     const wizardProgressBar = document.querySelector("#wizard-progress-bar");
     const finishSummary = document.querySelector("#finish-summary");
+    const finishTitle = document.querySelector("[data-finish-title]");
     let wizardIndex = 0;
 
     const sellerInterviewPrompt = `You are my Seller Context compiler. Your job is to create a complete, useful SELLER.md that another AI agent can read before it researches accounts, writes outreach, prepares meetings, builds sales artifacts, or recommends an action.
@@ -3916,27 +3933,31 @@ Rules:
 - Preserve unresolved fields as [fill in] instead of guessing.
 - Ask for an example I would send and one I would reject, then explain the difference.
 - Treat care as attention, accuracy, honest uncertainty, respectful challenge, and follow-through—not simulated empathy.
+- Treat SELLER.md as durable context. Reference live account lists, opportunities, activity, and approvals in their source systems instead of copying volatile state into the file.
+- Apply context in this order: my current explicit instruction; verified live account or opportunity facts; confirmed rules; observed patterns; defaults.
 - Keep the final writing concise, specific, and useful to another AI system.
 
 Build these sections:
 1. Seller Identity
 2. Context Provenance: creation method, authorized sources, analysis period, artifacts reviewed, behavioral signals, last refresh, exclusions, confidence, and gaps
 3. Learning And Privacy Policy
-4. Territory
-5. What I Sell
-6. Ideal Customer Profile
-7. Buyer Personas
-8. Seller Taste Profile: observed patterns, declared standards, judgment patterns, evidence pairs, and cross-workflow consistency
-9. Differentiation
-10. Proof Points
-11. Messaging Rules and Banned Phrases
-12. Outreach Standards
-13. First Call Standards
-14. Qualification Standards
-15. Objections using exact buyer wording
-16. Pricing And Commercial Rules
-17. Customer And Account Memory
-18. AI Output Quality Bar
+4. Context Scope And Precedence
+5. Refresh And Change Control
+6. Territory
+7. What I Sell
+8. Ideal Customer Profile
+9. Buyer Personas
+10. Seller Taste Profile: observed patterns, declared standards, judgment patterns, evidence pairs, and cross-workflow consistency
+11. Differentiation
+12. Proof Points
+13. Messaging Rules and Banned Phrases
+14. Outreach Standards
+15. First Call Standards
+16. Qualification Standards
+17. Objections using exact buyer wording
+18. Pricing And Commercial Rules
+19. Customer And Account Memory References
+20. AI Output Quality Bar
 
 Before writing the final file, show me a short list of the most important inferred patterns and ask me to confirm, correct, or remove them.
 
@@ -3947,8 +3968,16 @@ Begin by telling me which connected sources you can access and asking what I aut
     const aiDeepLinks = {
       ChatGPT: (prompt) => `https://chatgpt.com/?q=${encodeURIComponent(prompt)}`,
       Claude: (prompt) => `https://claude.ai/new?q=${encodeURIComponent(prompt)}`,
-      Gemini: (prompt) => `https://gemini.google.com/app?text=${encodeURIComponent(prompt)}`
+      Gemini: () => "https://gemini.google.com/app"
     };
+
+    function questionCoverage() {
+      const confirmed = wizardSteps.filter((step) => {
+        const field = step.querySelector("input, textarea");
+        return field && field.value.trim();
+      }).length;
+      return { confirmed, missing: wizardSteps.length - confirmed };
+    }
 
     function fieldValue(name) {
       const value = new FormData(form).get(name);
@@ -3956,6 +3985,7 @@ Begin by telling me which connected sources you can access and asking what I aut
     }
 
     function generateMarkdown() {
+      const coverage = questionCoverage();
       return `# SELLER.md
 
 Use this file to give an AI agent persistent context about how I sell before it writes, researches, briefs, follows up, or recommends an action.
@@ -3980,8 +4010,26 @@ This profile was created from my answers. No connected sources were reviewed. Th
 - Seller confirmed on: [fill in]
 - Sources intentionally excluded: All external sources
 - Overall confidence: Seller-provided context; no behavioral inference
-- Required 14-question coverage: Seller answered all 14 manual questions
+- Required 14-question coverage: ${coverage.confirmed} confirmed; 0 proposed; 0 partial; ${coverage.missing} missing
 - Important gaps: Any field marked [fill in]
+
+## Context Scope And Precedence
+
+- This file contains durable seller context, not live account or opportunity state.
+- Apply context in this order: my current explicit instruction; verified live account or opportunity facts; confirmed rules in this file; observed patterns; defaults.
+- When sources conflict, show the conflict and ask instead of silently choosing one.
+- Keep changing account lists, opportunity details, pricing approvals, and customer activity in their source systems; reference those sources here instead of duplicating stale data.
+
+## Refresh And Change Control
+
+- Profile owner: ${fieldValue("sellerName")}
+- Profile version: 1.0
+- Review cadence: Quarterly, and after a material change
+- Next review date: [fill in]
+- Refresh triggers: Role / territory / product / pricing / policy / methodology / major win-loss pattern change
+- Sections most likely to expire: Territory; proof; differentiation; pricing and commercial rules
+- Last material change: Initial manual profile
+- Change summary: Created from the Seller Context 14-question builder
 
 ## Learning And Privacy Policy
 
@@ -4130,12 +4178,14 @@ ${fieldValue("objections")}
 - ROI assumptions allowed: [fill in]
 - ROI assumptions not allowed: [fill in]
 
-## Customer And Account Memory
+## Customer And Account Memory References
 
-Keep these updated as the territory changes:
+Keep volatile account state in its source system and record only the references and durable lessons here:
 
-- Top target accounts: [fill in]
-- Active opportunities: [fill in]
+- System of record: [fill in]
+- Territory list source: [fill in]
+- Active-opportunity source: [fill in]
+- Last checked: [fill in]
 - Closed-lost lessons: [fill in]
 - Messaging that got replies: [fill in]
 - Messaging that failed: [fill in]
@@ -4170,13 +4220,16 @@ If the answer is no, do not polish weak work. Tell me what context is missing an
     async function writeClipboard(text) {
       try {
         await navigator.clipboard.writeText(text);
+        return true;
       } catch (error) {
         const area = document.createElement("textarea");
         area.value = text;
         document.body.appendChild(area);
         area.select();
-        document.execCommand("copy");
+        const copied = document.execCommand("copy");
         area.remove();
+        if (!copied) throw error;
+        return true;
       }
     }
 
@@ -4196,9 +4249,22 @@ If the answer is no, do not polish weak work. Tell me what context is missing an
       showToast(`Compiler prompt copied — paste into ${destination}`);
     }
 
-    async function openWithInterviewPrompt(link) {
+    async function openWithInterviewPrompt(event, link) {
+      const destination = link.dataset.ai;
+      if (link.dataset.launchMode === "clipboard") {
+        event.preventDefault();
+        try {
+          await writeClipboard(sellerInterviewPrompt);
+          showToast(`Prompt copied — paste it into ${destination}`);
+          window.setTimeout(() => window.location.assign(link.href), 180);
+        } catch (error) {
+          showToast("Could not copy the prompt — use the copy link below");
+        }
+        return;
+      }
+
       await writeClipboard(sellerInterviewPrompt);
-      showToast(`Opening ${link.dataset.ai} with the compiler prompt copied as backup`);
+      showToast(`Opening ${destination} with the compiler prompt copied as backup`);
     }
 
     function downloadMarkdown() {
@@ -4230,16 +4296,16 @@ If the answer is no, do not polish weak work. Tell me what context is missing an
     }
 
     function finishWizard() {
-      const answered = wizardSteps.filter((step) => {
-        const field = step.querySelector("input, textarea");
-        return field && field.value.trim();
-      }).length;
+      const coverage = questionCoverage();
       wizardStage.hidden = true;
       wizardActions.hidden = true;
       wizardFinish.hidden = false;
-      wizardStepLabel.textContent = "Complete";
+      wizardStepLabel.textContent = coverage.missing === 0 ? "Complete" : "Draft";
       wizardProgressBar.style.width = "100%";
-      finishSummary.textContent = `${answered} of ${wizardSteps.length} answers captured. Your seller context is ready to copy, download, and use with every sales agent.`;
+      finishTitle.textContent = coverage.missing === 0 ? "Your SELLER.md is ready." : "Your SELLER.md draft is ready.";
+      finishSummary.textContent = coverage.missing === 0
+        ? `All ${wizardSteps.length} answers captured. Your seller context is ready to copy, download, and use with every sales agent.`
+        : `${coverage.confirmed} of ${wizardSteps.length} answers captured. The downloaded file will keep ${coverage.missing} missing answer${coverage.missing === 1 ? "" : "s"} marked [fill in].`;
     }
 
     wizardNext.addEventListener("click", () => {
@@ -4269,7 +4335,7 @@ If the answer is no, do not polish weak work. Tell me what context is missing an
       const destination = link.dataset.ai;
       const buildDeepLink = aiDeepLinks[destination];
       if (buildDeepLink) link.href = buildDeepLink(sellerInterviewPrompt);
-      link.addEventListener("click", () => openWithInterviewPrompt(link));
+      link.addEventListener("click", (event) => openWithInterviewPrompt(event, link));
     });
     document.querySelector("[data-prompt-copy]").addEventListener("click", () => copyInterviewPrompt());
     aiPromptPreview.textContent = sellerInterviewPrompt;
