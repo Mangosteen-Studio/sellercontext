@@ -38,3 +38,7 @@ Open `index.html` directly, or serve the directory with any static file server.
 6. Refresh it as your selling patterns, territory, and commercial context change.
 
 Copyright Mangosteen Studio 2026.
+
+## License
+
+Seller Context is open source under the [MIT License](LICENSE).
