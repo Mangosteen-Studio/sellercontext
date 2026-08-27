@@ -24,7 +24,8 @@ Open `index.html` directly, or serve the directory with any static file server.
 
 - `index.html` — production landing page and guided `SELLER.md` builder
 - `SELLER.md` — canonical blank template
-- `assets/` — AI-provider logos used by the page
+- `favicon.ico` — legacy browser favicon fallback
+- `assets/` — AI-provider logos, favicon files, and the social-preview artwork
 - `robots.txt` and `sitemap.xml` — search discovery files
 - `_headers` — Cloudflare Pages security headers
 

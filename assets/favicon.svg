@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <title>Seller Context</title>
+  <rect width="64" height="64" rx="13" fill="#102219"/>
+  <path d="M7 7h31L27 28H7z" fill="#d2913c"/>
+  <path d="M38 7h19v29L27 28z" fill="#718373"/>
+  <path d="M7 28h20L18 57H7z" fill="#f1dfb4"/>
+  <path d="M27 28l30 8v21H18z" fill="#344e41"/>
+  <path d="M7 28h20L38 7M27 28l30 8M18 57l9-29" fill="none" stroke="#fffaf0" stroke-width="2"/>
+</svg>

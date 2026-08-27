@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-labelledby="title description">
+  <title id="title">Seller Context social preview</title>
+  <desc id="description">Let your AI learn how you sell. One portable SELLER.md for every sales agent.</desc>
+  <rect width="1200" height="630" fill="#f4efe3"/>
+  <path d="M0 0h1200v18H0z" fill="#102219"/>
+  <path d="M878 18h322v238L1030 162z" fill="#d2913c" opacity=".92"/>
+  <path d="M1030 162l170 94v224L930 332z" fill="#718373"/>
+  <path d="M930 332l270 148v150H790z" fill="#344e41"/>
+  <path d="M790 630l140-298-232 146z" fill="#f1dfb4"/>
+  <path d="M878 18l152 144 170 94M1030 162L930 332l270 148M930 332L790 630M698 478l232-146" fill="none" stroke="#fffaf0" stroke-width="4" opacity=".74"/>
+
+  <g transform="translate(74 64)">
+    <rect width="82" height="82" rx="16" fill="#102219"/>
+    <path d="M9 9h40L35 36H9z" fill="#d2913c"/>
+    <path d="M49 9h24v38L35 36z" fill="#718373"/>
+    <path d="M9 36h26L24 73H9z" fill="#f1dfb4"/>
+    <path d="M35 36l38 11v26H24z" fill="#344e41"/>
+    <path d="M9 36h26L49 9M35 36l38 11M24 73l11-37" fill="none" stroke="#fffaf0" stroke-width="2.3"/>
+  </g>
+
+  <text x="178" y="114" fill="#102219" font-family="Avenir Next, Helvetica Neue, Arial, sans-serif" font-size="32" font-weight="700" letter-spacing="-1.2">sellercontext<tspan fill="#718373">.com</tspan></text>
+  <text x="76" y="261" fill="#102219" font-family="Georgia, Times New Roman, serif" font-size="70" font-weight="700" letter-spacing="-2.4">Let your AI learn</text>
+  <text x="76" y="338" fill="#102219" font-family="Georgia, Times New Roman, serif" font-size="70" font-weight="700" letter-spacing="-2.4">how you sell.</text>
+  <text x="78" y="408" fill="#526157" font-family="Avenir Next, Helvetica Neue, Arial, sans-serif" font-size="28">One portable SELLER.md for every sales agent.</text>
+
+  <g transform="translate(78 500)">
+    <rect width="234" height="54" fill="#102219"/>
+    <text x="22" y="35" fill="#fffaf0" font-family="Avenir Next, Helvetica Neue, Arial, sans-serif" font-size="18" font-weight="700" letter-spacing="1.5">OPEN SOURCE · MIT</text>
+  </g>
+  <text x="338" y="535" fill="#718373" font-family="SFMono-Regular, Consolas, monospace" font-size="18">github.com/Mangosteen-Studio/sellercontext</text>
+</svg>
