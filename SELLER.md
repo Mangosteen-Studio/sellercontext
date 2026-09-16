@@ -1,14 +1,28 @@
 # SELLER.md
 
-Use this file to give an AI agent persistent context about how you sell before it writes, researches, briefs, follows up, or recommends an action.
+Use this one file to give an AI agent persistent context about how you or your company sells before it writes, researches, briefs, follows up, or recommends an action.
 
 This context can be created from your answers or compiled by your personal AI from sources you explicitly authorize, such as seller-authored email, calendar patterns, sales documents, call notes, and CRM context.
 
-The goal is not to copy private messages or make AI imitate a caring seller. The goal is to distill the recurring patterns behind what you send, edit, reject, reuse, and stand behind so every sales agent can produce work that reflects your commercial judgment.
+The goal is not to copy private messages or make AI imitate a caring seller. The goal is to combine company sales truth, individual judgment when relevant, territory logic, and references to live systems in one portable context file.
 
-## Seller Identity
+## Context Scope
+
+- Context mode: Individual seller / founder-seller / company sales team / combined
+- Context owner:
+- Applies to:
+- Company sales context included: Yes / no
+- Individual seller context included: Yes / no / not applicable
+- Territory context included: Yes / reference only / not applicable
+- Live source systems referenced:
+- Scope notes:
+
+## Context Owner
+
+Complete the personal fields for an individual or founder-seller. For company context, identify the team, roles, and owner responsible for maintaining the shared sales context.
 
 - Seller name:
+- Team / function:
 - Role:
 - Company:
 - Segment / patch:
@@ -33,7 +47,7 @@ Make it clear where this context came from and how confident the seller should b
 - Seller confirmed on:
 - Sources intentionally excluded:
 - Overall confidence: Low / medium / high
-- Required 14-question coverage: Confirmed / proposed / partial / missing
+- Adaptive interview coverage: Confirmed / proposed / partial / missing
 - Important gaps:
 
 ## Learning And Privacy Policy
@@ -44,7 +58,7 @@ Make it clear where this context came from and how confident the seller should b
 - Distill patterns; do not paste raw emails, transcripts, customer names, personal information, or unnecessary confidential details into this file.
 - Separate observed patterns, declared standards, and seller-confirmed rules.
 - Treat an inferred pattern as a hypothesis until the seller confirms it.
-- Connected context may propose an answer, but it does not eliminate the required seller questions.
+- Connected context may propose an answer, but it does not eliminate the relevant questions for the selected context mode.
 - Mark every required answer as confirmed, proposed, partial, or missing.
 - Show proposed answers to the seller and ask them to confirm, correct, or remove each one.
 - Ask every partial or missing question one at a time; do not declare the profile complete while required context remains unconfirmed.
@@ -56,7 +70,8 @@ Make it clear where this context came from and how confident the seller should b
 
 ## Context Scope And Precedence
 
-- This file contains durable seller context, not live account or opportunity state.
+- Keep one `SELLER.md`. Company sales context, individual judgment, territory logic, and system references are sections of this file—not separate files the user must manage.
+- This file contains durable selling context, not live account or opportunity state.
 - Apply context in this order: the seller's current explicit instruction; verified live account or opportunity facts; confirmed rules in this file; observed patterns; defaults.
 - When sources conflict, show the conflict and ask instead of resolving it silently.
 - Keep changing account lists, opportunity details, pricing approvals, and customer activity in their source systems. Reference those sources here instead of duplicating stale data.
@@ -75,7 +90,7 @@ Make it clear where this context came from and how confident the seller should b
 
 ## Territory
 
-Use this section to describe the patch. Keep large account lists in a CRM or CSV and reference the source here rather than pasting hundreds of accounts into this file.
+Use this section when the context includes a territory or account patch. Do not create a separate territory file by default. Keep large account lists in a CRM or CSV and reference the source here rather than pasting hundreds of accounts into this file.
 
 - Territory name:
 - Coverage model: Named accounts / geographic / vertical / segment
@@ -91,8 +106,11 @@ Use this section to describe the patch. Keep large account lists in a CRM or CSV
 - Review cadence:
 - Last reviewed:
 
-## What I Sell
+## Company Sales Context
 
+Use this section for the shared commercial truth behind how the company sells. For an individual seller, inherit approved company context and add personal judgment elsewhere in this file.
+
+- Company:
 - Product / service:
 - Category:
 - One-sentence description:
@@ -152,9 +170,9 @@ Use this section to describe the patch. Keep large account lists in a CRM or CSV
 - Claims to avoid:
 - Proof needed:
 
-## Seller Taste Profile
+## Selling Standards And Judgment
 
-Taste is not a list of favorite phrases or a tone preset. It is the recurring pattern behind what the seller notices, sends, edits, rejects, reuses, and stands behind across different sales workflows.
+For an individual, capture the recurring pattern behind what the seller notices, sends, edits, rejects, reuses, and stands behind. For a company or team, capture approved sales standards without pretending every seller has the same personal style.
 
 ### Observed Patterns
 
@@ -384,7 +402,7 @@ Before giving me anything customer-facing, check:
 - Is the business impact explicit?
 - Is the draft concise enough to send?
 - Does it sound like me?
-- Does it reflect the confirmed patterns in my Seller Taste Profile?
+- Does it reflect the confirmed patterns in my Selling Standards And Judgment?
 - Is it relying on an inferred pattern that still needs my confirmation?
 - Does it demonstrate care through attention rather than simulated empathy?
 - Would I actually send this?

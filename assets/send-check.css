@@ -1,0 +1,25 @@
+.send-check { background: #f6f7fc; }
+.send-check #send-draft { min-height: 240px; background: #fff; }
+.send-check #send-banned { min-height: 100px; }
+.send-check .send-settings { display: grid; grid-template-columns: minmax(120px, .6fr) minmax(0, 1fr); gap: 24px; }
+.send-check input[type=number], .send-check select { width: 100%; min-height: 48px; padding: 12px; border: 1px solid #969cb8; border-radius: 0; background: #fff; color: var(--ink); font: 16px var(--sans); }
+.send-result-head { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 20px; padding: 26px 0 10px; border-top: 3px solid var(--blue); }
+.send-result-head h3 { font: 400 clamp(26px, 3vw, 38px)/1.15 var(--serif); margin: 0 0 10px; color: var(--blue); }
+.send-result-head p { margin: 0; }
+.send-findings { list-style: none; padding: 0; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px; }
+.send-findings li { min-width: 0; border: 1px solid var(--line); border-top: 4px solid var(--pink); padding: 24px; background: #fff; overflow-wrap: anywhere; }
+.send-category { font: 600 12px var(--sans); text-transform: uppercase; letter-spacing: .07em; color: var(--blue); }
+.send-findings blockquote { margin: 16px 0; padding: 0; border: 0; font-weight: 600; color: var(--ink); max-height: 180px; overflow: auto; white-space: pre-wrap; }
+.send-findings p { font-size: 16px; margin: 12px 0; }
+.send-locate { background: transparent; border: 0; border-bottom: 1px solid var(--blue); color: var(--blue); padding: 8px 0; font: 600 14px var(--sans); }
+.send-check .send-annotated { font: 16px/1.8 var(--sans); background: #fff; max-height: 400px; }
+.send-annotated mark { color: var(--ink); background: #ffdf93; }
+.send-method p { font-size: 14px; color: var(--muted); }
+.send-method a { color: var(--blue); text-underline-offset: 3px; }
+.send-check .send-rhythm { display: flex; align-items: flex-start; gap: 10px; text-transform: none; letter-spacing: normal; font-weight: 400; }
+.send-check .send-rhythm input { appearance: auto; flex: 0 0 auto; width: 18px; height: 18px; margin: 1px 0 0; padding: 0; accent-color: var(--blue); }
+@media (max-width: 720px) {
+  .send-check .send-settings, .send-findings { grid-template-columns: 1fr; }
+  .send-check .comparison-actions button { width: 100%; }
+  .send-findings li { padding: 20px; }
+}

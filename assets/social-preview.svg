@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-labelledby="title description">
   <title id="title">Seller Context social preview</title>
-  <desc id="description">Let your AI learn how you sell. One portable SELLER.md for every sales agent.</desc>
+  <desc id="description">One adaptive SELLER.md with the full context behind how you sell.</desc>
   <rect width="1200" height="630" fill="#f4efe3"/>
   <path d="M0 0h1200v18H0z" fill="#102219"/>
   <path d="M878 18h322v238L1030 162z" fill="#d2913c" opacity=".92"/>
@@ -19,9 +19,9 @@
   </g>
 
   <text x="178" y="114" fill="#102219" font-family="Avenir Next, Helvetica Neue, Arial, sans-serif" font-size="32" font-weight="700" letter-spacing="-1.2">sellercontext<tspan fill="#718373">.com</tspan></text>
-  <text x="76" y="261" fill="#102219" font-family="Georgia, Times New Roman, serif" font-size="70" font-weight="700" letter-spacing="-2.4">Let your AI learn</text>
-  <text x="76" y="338" fill="#102219" font-family="Georgia, Times New Roman, serif" font-size="70" font-weight="700" letter-spacing="-2.4">how you sell.</text>
-  <text x="78" y="408" fill="#526157" font-family="Avenir Next, Helvetica Neue, Arial, sans-serif" font-size="28">One portable SELLER.md for every sales agent.</text>
+  <text x="76" y="261" fill="#102219" font-family="Georgia, Times New Roman, serif" font-size="64" font-weight="700" letter-spacing="-2.4">One file. The full context</text>
+  <text x="76" y="334" fill="#102219" font-family="Georgia, Times New Roman, serif" font-size="64" font-weight="700" letter-spacing="-2.4">behind how you sell.</text>
+  <text x="78" y="408" fill="#526157" font-family="Avenir Next, Helvetica Neue, Arial, sans-serif" font-size="25">Company truth, seller judgment, territory logic—together.</text>
 
   <g transform="translate(78 500)">
     <rect width="234" height="54" fill="#102219"/>

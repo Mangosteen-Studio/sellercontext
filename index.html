@@ -3,9 +3,9 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#1a2e1f">
-  <title>Seller Context | Let your AI learn how you sell</title>
-  <meta name="description" content="Turn the emails, meetings, documents, and sales work your AI can already access into a portable SELLER.md for every agent you use.">
+  <meta name="theme-color" content="#303d80">
+  <title>Seller Context | One file that teaches AI how you sell</title>
+  <meta name="description" content="Build one adaptive SELLER.md containing company sales context, individual judgment, territory logic, and references to live systems.">
   <meta name="robots" content="index, follow">
   <meta name="application-name" content="Seller Context">
   <link rel="canonical" href="https://sellercontext.com/">
@@ -13,8 +13,8 @@
   <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
   <link rel="icon" href="/assets/favicon-32x32.png" type="image/png" sizes="32x32">
   <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" sizes="180x180">
-  <meta property="og:title" content="Seller Context | Let your AI learn how you sell">
-  <meta property="og:description" content="Your AI may already have the raw material. Seller Context turns it into portable context every sales agent can use.">
+  <meta property="og:title" content="Seller Context | One file that teaches AI how you sell">
+  <meta property="og:description" content="Start with yourself, your company, or both. Seller Context asks what matters next and builds one portable SELLER.md.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://sellercontext.com/">
   <meta property="og:site_name" content="Seller Context">
@@ -23,12 +23,12 @@
   <meta property="og:image:type" content="image/png">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
-  <meta property="og:image:alt" content="Seller Context — Let your AI learn how you sell. One portable SELLER.md for every sales agent.">
+  <meta property="og:image:alt" content="Seller Context — one adaptive SELLER.md containing the context behind how you sell.">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Seller Context | Let your AI learn how you sell">
-  <meta name="twitter:description" content="Turn the patterns behind what you send, edit, reject, and stand behind into context every sales agent can use.">
+  <meta name="twitter:title" content="Seller Context | One file that teaches AI how you sell">
+  <meta name="twitter:description" content="Company truth, seller judgment, territory logic, and live-system references in one adaptive context file.">
   <meta name="twitter:image" content="https://sellercontext.com/assets/social-preview.png">
-  <meta name="twitter:image:alt" content="Seller Context — Let your AI learn how you sell. One portable SELLER.md for every sales agent.">
+  <meta name="twitter:image:alt" content="Seller Context — one adaptive SELLER.md containing the context behind how you sell.">
   <style>
     :root {
       color-scheme: light;
@@ -561,6 +561,7 @@
       }
     }
   </style>
+  <link rel="stylesheet" href="assets/comparison.css">
   <style>
     /* Notion-inspired edition: quiet workspace chrome, document-first hierarchy. */
     :root {
@@ -2744,6 +2745,21 @@
       display: none;
     }
 
+    .hero-title-lead {
+      display: block;
+      margin-bottom: 14px;
+      color: var(--amber-soft);
+      font-family: var(--sans);
+      font-size: clamp(18px, 1.7vw, 23px);
+      font-weight: 750;
+      line-height: 1;
+      letter-spacing: 0;
+    }
+
+    .hero-title-main {
+      display: block;
+    }
+
     .hero-copy p {
       max-width: 49ch;
       color: rgba(255, 250, 240, 0.78);
@@ -3293,7 +3309,113 @@
         border-left: 0;
       }
     }
+
+    .context-map {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      margin: 18px 0 70px;
+      border: 1px solid var(--line);
+      background: var(--cream-light);
+      box-shadow: 0 22px 56px rgba(16, 34, 25, 0.09);
+    }
+
+    .context-map-intro {
+      grid-column: 1 / -1;
+      display: flex;
+      align-items: end;
+      justify-content: space-between;
+      gap: 28px;
+      padding: clamp(28px, 4vw, 48px);
+      border-bottom: 1px solid var(--line);
+      background: var(--forest-950);
+      color: var(--cream-light);
+    }
+
+    .context-map-intro h2 {
+      max-width: 680px;
+      margin: 0;
+      font-family: var(--serif);
+      font-size: clamp(34px, 5vw, 62px);
+      line-height: 0.98;
+      letter-spacing: -0.045em;
+    }
+
+    .context-map-intro p {
+      max-width: 430px;
+      margin: 0;
+      color: rgba(255, 250, 240, 0.68);
+      font-size: 15px;
+    }
+
+    .context-piece {
+      min-height: 210px;
+      padding: 28px;
+      border-right: 1px solid var(--line);
+    }
+
+    .context-piece:last-child {
+      border-right: 0;
+    }
+
+    .context-piece strong {
+      display: block;
+      margin-bottom: 24px;
+      color: var(--amber);
+      font-size: 11px;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+    }
+
+    .context-piece h3 {
+      margin: 0 0 10px;
+      font-family: var(--serif);
+      font-size: 27px;
+      line-height: 1;
+      letter-spacing: -0.03em;
+    }
+
+    .context-piece p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    @media (max-width: 900px) {
+      .context-map {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .context-map-intro {
+        display: block;
+      }
+
+      .context-map-intro p {
+        margin-top: 18px;
+      }
+
+      .context-piece:nth-child(3) {
+        border-right: 0;
+      }
+
+      .context-piece:nth-child(n + 4) {
+        border-top: 1px solid var(--line);
+      }
+    }
+
+    @media (max-width: 560px) {
+      .context-map {
+        grid-template-columns: 1fr;
+        margin-bottom: 44px;
+      }
+
+      .context-piece {
+        min-height: 0;
+        border-top: 1px solid var(--line);
+        border-right: 0;
+      }
+    }
   </style>
+  <link rel="stylesheet" href="assets/geometric-theme.css">
 </head>
 <body>
   <aside class="notion-sidebar" aria-label="Workspace navigation">
@@ -3302,7 +3424,7 @@
     <div class="sidebar-label">Private</div>
     <a class="sidebar-link active" href="#top">📄 <span>Build SELLER.md</span></a>
     <a class="sidebar-link" href="#generate">✦ <span>Generate with AI</span></a>
-    <a class="sidebar-link" href="#build">✎ <span>Seller profile</span></a>
+    <a class="sidebar-link" href="#build">✎ <span>One context file</span></a>
     <a class="sidebar-link" href="#how">↗ <span>How it works</span></a>
     <div class="sidebar-label">Top AE skills</div>
     <a class="sidebar-link" href="https://greenfield.tools/" rel="noopener">01 <span>Greenfield</span></a>
@@ -3311,22 +3433,23 @@
     <a class="sidebar-link" href="https://greenfield.tools/pov/" rel="noopener">04 <span>Point of View</span></a>
     <a class="sidebar-link" href="https://greenfield.tools/qbr/" rel="noopener">05 <span>QBR</span></a>
     <a class="sidebar-link" href="https://greenfield.tools/first-call-deck/" rel="noopener">06 <span>First Call Deck</span></a>
-    <div class="sidebar-footer">A portable performance layer for every sales agent you use.</div>
+    <div class="sidebar-footer">One adaptive context file for every sales agent you use.</div>
   </aside>
   <main class="shell">
     <nav class="nav" aria-label="Primary navigation">
       <a class="brand wordmark" href="#top" aria-label="sellercontext.com">
         <svg class="brand-mark" viewBox="0 0 44 44" aria-hidden="true">
-          <rect x="1" y="1" width="42" height="42" fill="#102219" stroke="rgba(255,250,240,.55)"/>
-          <path d="M2 2h25L19 19H2z" fill="#d2913c"/>
-          <path d="M27 2h15v25l-23-8z" fill="#718373"/>
-          <path d="M2 19h17l-7 23H2z" fill="#f1dfb4"/>
-          <path d="M19 19l23 8v15H12z" fill="#344e41"/>
-          <path d="M2 19h17L27 2M19 19l23 8M12 42l7-23" fill="none" stroke="#fffaf0" stroke-opacity=".72"/>
+          <rect width="44" height="44" fill="#303d80"/>
+          <path d="M0 22A22 22 0 0 1 22 0V22Z" fill="#ffba36"/>
+          <path d="M22 0A22 22 0 0 1 44 22H22Z" fill="#ff693b"/>
+          <path d="M0 22H22V44Z" fill="#ffbabc"/>
+          <path d="M22 22H44A22 22 0 0 1 22 44Z" fill="#fffff5"/>
         </svg>
         <span class="brand-name">sellercontext<span class="domain">.com</span></span>
       </a>
       <div class="nav-links">
+        <a href="/before-you-send/">Before You Send ↗</a>
+        <a href="#compare">See the difference</a>
         <a href="#generate">Generate</a>
         <a href="#build">Build</a>
         <a href="#how">How it works</a>
@@ -3335,40 +3458,123 @@
     </nav>
 
     <section id="top" class="hero">
+      <div class="geometry-panel" aria-hidden="true">
+        <img src="assets/context-geometry.svg" width="400" height="400" alt="">
+      </div>
       <div class="hero-copy">
-        <div class="hero-mosaic" aria-hidden="true"><span></span><span></span><span></span></div>
-        <div class="hero-note">Personal context for every sales agent</div>
-        <h1>Let your AI learn how you sell.</h1>
+        <div class="hero-note">One context, shaped to how you sell</div>
+        <h1><span class="hero-title-main">How you sell.<br>In one file.</span></h1>
         <p>
-          Your personal AI may already know the emails you send, meetings you prepare for, and work you approve. Seller Context turns those patterns into a portable <code>SELLER.md</code> every sales agent can use.
+          Start with yourself, your company, or both. Seller Context asks the next relevant question and builds one portable <code>SELLER.md</code> with company sales truth, your judgment, territory logic, and references to live systems.
         </p>
         <div class="cta-row">
-          <a class="button" href="#generate">Build from my AI</a>
-          <a class="button secondary" href="#build">Answer 14 questions</a>
+          <a class="button" href="#generate">Build my Seller Context</a>
+          <a class="button secondary" href="#build">Build it manually</a>
         </div>
         <div class="badge-strip" aria-label="Product highlights">
-          <span>learns your patterns</span>
-          <span>asks permission first</span>
+          <span>adaptive questions</span>
           <span>one portable file</span>
+          <span>asks permission first</span>
           <span><a href="https://github.com/Mangosteen-Studio/sellercontext" target="_blank" rel="noopener">open source · MIT ↗</a></span>
         </div>
       </div>
 
-      <section class="terminal" aria-label="Illustrative SELLER.md example for a Gong account executive">
+    </section>
+
+    <details class="context-example">
+      <summary><span>Inside the file</span> Explore a SELLER.md example <span class="example-summary-arrow" aria-hidden="true">↗</span></summary>
+      <section class="terminal" aria-label="Pre-launch combined SELLER.md example for DeadAccount and its founder-seller">
         <div class="terminal-bar">
           <div class="lights" aria-hidden="true"><span></span><span></span><span></span></div>
-          <span><b class="example-label">Example</b>gong-mid-market/SELLER.md</span>
+          <span><b class="example-label">Pre-launch example</b>deadaccount-founder/SELLER.md</span>
         </div>
         <pre id="preview" class="preview"></pre>
       </section>
+    </details>
+
+
+    <section id="compare" class="comparison" aria-labelledby="comparison-title">
+      <span class="comparison-kicker">Start with the output</span>
+      <h2 id="comparison-title">Same brief. More of your judgment.</h2>
+      <p class="comparison-intro">Your AI already knows how to write an email. Seller Context gives it your standards for what is worth sending. See how the same buyer facts can become a more personal approach.</p>
+      <noscript><p>Enable JavaScript to view the outreach comparison and prepare prompts with your own SELLER.md.</p></noscript>
+      <div data-comparison="interactive" hidden>
+        <div class="comparison-brief"><strong>The shared brief</strong><p data-comparison="brief"></p></div>
+        <div class="comparison-columns">
+          <article class="comparison-output" aria-labelledby="comparison-baseline-title">
+            <h3 id="comparison-baseline-title">Without Seller Context</h3>
+            <div data-comparison="baseline"></div>
+          </article>
+          <article class="comparison-output comparison-output-context" aria-labelledby="comparison-contextual-title">
+            <h3 id="comparison-contextual-title">With Seller Context</h3>
+            <div data-comparison="contextual"></div>
+          </article>
+        </div>
+        <ul class="comparison-changes" data-comparison="changes" aria-label="What the seller context changed"></ul>
+        <p class="comparison-note" data-comparison="provenance"></p>
+        <details><summary>See the SELLER.md behind this example</summary><pre data-comparison="context"></pre></details>
+        <details>
+          <summary>Prepare comparison prompts for your own AI</summary>
+          <p>Use the same brief and AI model for both outputs. Add your SELLER.md only to the second. Compare relevance, claims, voice, and the next step.</p>
+          <p class="comparison-note">Preparing prompts happens in your browser. Nothing is uploaded or generated here. Review the context before pasting it into your chosen AI.</p>
+          <form class="comparison-form" data-comparison="form">
+            <button type="button" class="button secondary" data-comparison="sample">Use the example</button>
+            <label for="comparison-own-brief">Buyer brief</label>
+            <textarea id="comparison-own-brief" data-comparison="own-brief" maxlength="12000" required placeholder="Who are you writing to? What do you sell? What buyer facts are known? What should the email achieve?"></textarea>
+            <label for="comparison-file">Load a SELLER.md file (optional)</label>
+            <input id="comparison-file" data-comparison="file" type="file" accept=".md,.markdown,.txt,text/plain,text/markdown">
+            <label for="comparison-own-context">Your SELLER.md</label>
+            <textarea id="comparison-own-context" data-comparison="own-context" maxlength="60000" required placeholder="Paste or load your seller context. You can review and edit it here."></textarea>
+            <div class="comparison-actions"><button class="button" type="submit">Prepare both prompts</button><a class="button secondary" href="#generate">Build my Seller Context</a></div>
+          </form>
+          <p class="comparison-status" data-comparison="status" role="status" aria-live="polite"></p>
+          <div data-comparison="prompts" hidden>
+            <p>Open two separate fresh chats in the same AI, using the same model and settings. Disable memory and connected sources for both, so the first chat cannot already know your seller context. Repeat the pair before drawing conclusions; one result can reflect normal model variation.</p>
+            <div class="comparison-actions">
+              <button type="button" class="button secondary" data-comparison="copy-baseline">Copy without-context prompt</button>
+              <button type="button" class="button secondary" data-comparison="copy-contextual">Copy with-context prompt</button>
+              <button type="button" class="button secondary" data-comparison="download">Download comparison pack</button>
+            </div>
+            <details><summary>Without-context prompt</summary><pre data-comparison="baseline-prompt"></pre></details>
+            <details><summary>With-context prompt</summary><pre data-comparison="contextual-prompt"></pre></details>
+          </div>
+        </details>
+      </div>
+    </section>
+
+    <section class="context-map" aria-labelledby="one-file-title">
+      <div class="context-map-intro">
+        <h2 id="one-file-title">Not four files to remember. Four kinds of context in one place.</h2>
+        <p>The skill begins with scope, then asks only what applies. A founder, an AE, and a sales team should not get the same interview—but they can use the same simple format.</p>
+      </div>
+      <article class="context-piece">
+        <strong>inside SELLER.md / 01</strong>
+        <h3>Company sales context</h3>
+        <p>What you sell, who buys, approved proof, differentiation, pricing boundaries, and what the company will not claim.</p>
+      </article>
+      <article class="context-piece">
+        <strong>inside SELLER.md / 02</strong>
+        <h3>Selling judgment</h3>
+        <p>How you treat buyers, what you approve or reject, when to stay curious, and when not to force the sale.</p>
+      </article>
+      <article class="context-piece">
+        <strong>inside SELLER.md / 03</strong>
+        <h3>Territory logic</h3>
+        <p>Your patch, tiering rules, priorities, exclusions, and the thesis behind where attention belongs.</p>
+      </article>
+      <article class="context-piece">
+        <strong>inside SELLER.md / 04</strong>
+        <h3>Live references</h3>
+        <p>Where the current accounts, opportunities, approvals, and activity live—without copying stale CRM data into the file.</p>
+      </article>
     </section>
 
     <section id="generate" class="ai-launcher" aria-labelledby="generate-title">
       <div>
         <div class="eyebrow">Recommended</div>
-        <h2 id="generate-title">Your AI already has the raw material.</h2>
+        <h2 id="generate-title">Tell it who this is for. It adapts from there.</h2>
         <p>
-          Open the compiler prompt in your personal AI. It checks authorized context against the same 14-question framework, proposes answers it can support, and then asks one question at a time for anything missing or uncertain.
+          A founder gets company context and personal judgment together. An AE inherits company truth, then adds territory and taste. A team captures shared standards without pretending everyone sells the same. The skill asks one question at a time and keeps everything in one file.
         </p>
       </div>
       <div class="ai-actions" aria-label="Generate SELLER.md with an AI assistant">
@@ -3394,12 +3600,12 @@
       <section class="module" aria-labelledby="editor-title">
         <h2 id="editor-title">Prefer to build it yourself?</h2>
         <p>
-          Answer 14 focused questions. We will turn your answers into a portable seller context you can copy, download, and give to every sales agent you use.
+          Start by telling us whether this is for you, your company, or both. Answer up to 14 focused questions and skip anything that does not apply. The result is still one portable context file.
         </p>
         <p class="privacy-note">Your answers stay on this page and are never uploaded.</p>
         <div class="build-time" aria-label="Estimated completion time">
           <span>About 7 minutes</span>
-          <span>14 focused questions</span>
+          <span>Up to 14 adaptive questions</span>
         </div>
         <form id="seller-form" class="wizard-form">
           <div class="wizard-head">
@@ -3413,20 +3619,20 @@
 
           <div class="wizard-stage" data-wizard-stage>
             <div class="wizard-step active" data-wizard-step>
-              <span class="question-kicker">Start with you</span>
-              <label class="wizard-question" for="sellerName">What should your sales agents call you?</label>
-              <input id="sellerName" name="sellerName" autocomplete="name" placeholder="Yousuf Imran">
-              <span class="question-help">Use the name you want to appear in your generated seller context.</span>
+              <span class="question-kicker">Choose the scope</span>
+              <label class="wizard-question" for="contextType">Who is this Seller Context for?</label>
+              <input id="contextType" name="contextType" placeholder="Me as a founder-seller, me as an AE, my company sales team, or both">
+              <span class="question-help">This answer determines which questions matter. The output is always one SELLER.md.</span>
             </div>
             <div class="wizard-step" data-wizard-step>
-              <span class="question-kicker">Your role</span>
-              <label class="wizard-question" for="role">What is your role—and what kind of deals do you own?</label>
-              <input id="role" name="role" placeholder="Enterprise AE; $1M quota; $80K ACV; 90-day cycle; MEDDPICC">
-              <span class="question-help">Include your responsibility, quota, typical deal size, sales cycle, and methodology when relevant.</span>
+              <span class="question-kicker">Context owner</span>
+              <label class="wizard-question" for="identity">Who owns this context—and who should use it?</label>
+              <input id="identity" name="identity" placeholder="Yousuf, founder-seller; or North America mid-market sales team">
+              <span class="question-help">For an individual, include your role and deal motion. For a company, name the team, roles, and maintainer.</span>
             </div>
             <div class="wizard-step" data-wizard-step>
-              <span class="question-kicker">Your company</span>
-              <label class="wizard-question" for="company">Which company do you sell for?</label>
+              <span class="question-kicker">Company sales context</span>
+              <label class="wizard-question" for="company">Which company and sales motion should the file represent?</label>
               <input id="company" name="company" placeholder="Company name">
               <span class="question-help">This anchors the product, proof, policies, and competitive context.</span>
             </div>
@@ -3491,10 +3697,11 @@
               <span class="question-help">Exact buyer language is much more useful than generic objection labels.</span>
             </div>
             <div class="wizard-step" data-wizard-step>
-              <span class="question-kicker">Your taste</span>
-              <label class="wizard-question" for="qualityBar">What does good sales work look like to you?</label>
-              <textarea id="qualityBar" name="qualityBar" placeholder="Share something you would send, something you would reject, and explain the difference."></textarea>
-              <span class="question-help">Examples reveal your actual taste more clearly than a list of adjectives.</span>
+              <span class="question-kicker">Teach it your standards</span>
+              <label class="wizard-question" for="qualityBar">What would you change—and why?</label>
+              <p class="question-help">Think of an email, proposal, or slide. What would you keep, change, or refuse to send? Explain why, then write the standard you want your AI to follow.</p>
+              <textarea id="qualityBar" name="qualityBar" placeholder="Change: Ask about the buyer’s workflow instead of assuming they have a problem.&#10;Why: We have not confirmed their pain.&#10;Remember: Start with a useful question.&#10;Applies when: First-touch outreach.&#10;Exception: If the buyer has confirmed the problem, use their words."></textarea>
+              <span class="question-help">Your answer goes into this SELLER.md as your declared standard. Keep buyer names and confidential details out. Leave blank if you have no example yet.</span>
             </div>
           </div>
 
@@ -3505,7 +3712,7 @@
 
           <div class="wizard-finish" data-wizard-finish hidden>
             <span class="finish-mark" aria-hidden="true">✓</span>
-            <h3 data-finish-title>Your SELLER.md is ready.</h3>
+              <h3 data-finish-title>Your one SELLER.md is ready.</h3>
             <p id="finish-summary">Your seller context is ready for ChatGPT, Claude, Gemini, Codex, Cursor, and the sales agents you use next.</p>
             <div class="finish-actions">
               <button class="button" type="button" data-copy>Copy SELLER.md</button>
@@ -3519,37 +3726,37 @@
 
     <section id="how" class="how-section" aria-labelledby="why-title">
       <div class="how-section-head">
-        <h2 id="why-title">Turn everyday selling into context every agent can use.</h2>
+        <h2 id="why-title">One context. The skill decides what to ask next.</h2>
         <p>
-          Taste is the pattern behind what you send, edit, reject, reuse, and stand behind. Seller Context makes that pattern visible, confirms it with you, and carries it into every AI tool you use.
+          You should not need to understand a context architecture before your AI can help you sell. Start with who the context is for. Seller Context selects the right branch, confirms what it learns, and returns one file.
         </p>
       </div>
         <div class="steps">
           <div class="step">
-            <strong>01 / authorize</strong>
-            <p>Choose what your AI may review. Sent email, calendar, sales documents, call notes, and CRM context are all optional.</p>
+            <strong>01 / set the scope</strong>
+            <p>Say whether this is for an individual seller, founder-seller, company sales team, or both.</p>
           </div>
           <div class="step">
-            <strong>02 / learn</strong>
-            <p>Your AI uses seller-authored work to propose answers to the 14 core questions—not to skip the questions or quietly fill the gaps.</p>
+            <strong>02 / follow the branch</strong>
+            <p>The skill asks only relevant questions, using authorized work to propose answers without quietly filling gaps.</p>
           </div>
           <div class="step">
-            <strong>03 / confirm</strong>
-            <p>Confirm what it learned, correct weak inferences, and answer every unresolved question before the file becomes your portable context.</p>
+            <strong>03 / build one file</strong>
+            <p>Confirm what it learned, correct weak inferences, and receive one SELLER.md shaped to your selling reality.</p>
           </div>
         </div>
         <div class="steps" style="margin-top: 18px;">
           <div class="step">
-            <strong>personalized output</strong>
-            <p>Agents can compare drafts with the patterns behind work you would actually send—not a generic tone preset.</p>
+            <strong>company truth</strong>
+            <p>Product, ICP, proof, claims, pricing, and commercial boundaries stay clear and reusable.</p>
           </div>
           <div class="step">
-            <strong>protected context</strong>
-            <p>The file stores distilled patterns, not copied emails or unnecessary customer details. Explicit rules always beat inference.</p>
+            <strong>human judgment</strong>
+            <p>For individuals, the file also captures taste, voice, buyer treatment, and the work they would actually send.</p>
           </div>
           <div class="step">
-            <strong>portable context</strong>
-            <p>Use one plain Markdown file across ChatGPT, Claude, Gemini, Codex, Cursor, and the sales agents you use next.</p>
+            <strong>live data stays live</strong>
+            <p>The file references CRM views and source systems instead of becoming another stale copy of the territory.</p>
           </div>
         </div>
       </section>
@@ -3564,321 +3771,9 @@
   <div id="toast" class="toast" role="status" aria-live="polite">Copied SELLER.md</div>
 
   <script>
-    const exampleMarkdown = `# SELLER.md
-
-## Seller Identity
-
-- Seller name: Maya Chen
-- Role: Mid-Market Account Executive
-- Company: Gong
-- Segment / patch: North American B2B software companies with 200–2,000 employees and established revenue teams
-- Region: United States and Canada
-- Quota responsibility: $1.1M in annual net-new ARR
-- Typical deal size: $45K–$120K ARR
-- Typical sales cycle: 60–120 days
-- Sales methodology: MEDDPICC
-- My strongest selling motion: Multithreading from frontline workflow pain to an executive operating priority
-- My weakest selling habit: Staying too long with an enthusiastic champion before earning economic-buyer access
-
-## Context Provenance
-
-- Profile creation method: Personal AI compiler, reviewed and confirmed by Maya
-- Connected sources reviewed: Seller-authored sent email, calendar patterns, approved sales documents, call notes, and Salesforce opportunity context
-- Analysis period: Previous 90 days
-- Seller-authored artifacts reviewed: 64 sent emails, 18 follow-ups, 6 decks, 8 account plans, and 12 call summaries
-- Behavioral signals reviewed: Sent, edited, rejected, reused, and approved
-- Last refreshed: August 22, 2026
-- Seller confirmed on: August 22, 2026
-- Sources intentionally excluded: Personal email, HR, legal, security conversations, and unrelated private documents
-- Overall confidence: High for outreach and follow-up; medium for pricing and executive presentations
-- Required 14-question coverage: 14 confirmed; 0 proposed; 0 partial; 0 missing
-- Important gaps: Limited evidence from closed-lost executive evaluations
-
-## Learning And Privacy Policy
-
-- Review only sources Maya explicitly authorizes
-- Learn Maya's voice and standards from work she authored
-- Use incoming buyer messages for buyer language and deal context, not as evidence of Maya's personal style
-- Store distilled patterns, confidence, and recency—not raw private content
-- Treat inferred behavior as a hypothesis until Maya confirms it
-- Use connected context to propose answers to the 14 core questions, not to skip them
-- Ask Maya to confirm every proposed answer and answer every partial or missing question
-- Do not declare the profile complete while required context remains unconfirmed
-- Maya's explicit rules override inferred patterns
-- Ask before materially changing a confirmed rule
-
-## Territory
-
-- Territory name: North America Mid-Market — B2B Software
-- Coverage model: Named accounts plus a defined segment-and-industry pool
-- Region: United States and Canada
-- Company-size range: 200–2,000 employees
-- Priority industries: B2B software, technology-enabled services, financial services, and business services
-- Total account count: 186
-- Tiering rules: Tier 1 has an active revenue-workflow trigger plus ICP fit; Tier 2 has strong fit without verified urgency; Tier 3 is nurture or monitor
-- Priority accounts: Northstar Cloud; AlderWorks; Meridian Software; Harbor Systems; Ridgeway Data
-- Excluded accounts: Existing strategic ownership, active global-parent opportunities, sub-15-seller companies, and transcription-only buyers
-- Account-list source: Salesforce report “FY26 NA Mid-Market Named Accounts,” exported weekly to territory-accounts.csv
-- Current territory thesis: New revenue leaders and forecast pressure create the strongest entry point; lead with one operating workflow before expanding the platform story
-- Review cadence: Weekly signal review; monthly tier review; quarterly territory reset
-- Last reviewed: August 20, 2026
-
-## What I Sell
-
-- Product / service: Gong Revenue AI OS
-- Category: Revenue intelligence
-- One-sentence description: Gong uses customer-interaction signals to help revenue teams improve deal execution, coaching, forecasting, and engagement.
-- Core use cases: Deal inspection; pipeline visibility; sales coaching; forecast confidence; sales engagement
-- Primary business outcomes: Earlier visibility into deal risk, more consistent manager coaching, stronger operating discipline, and better-informed forecasting
-- What we are not: A basic meeting recorder, a generic note-taking tool, or a substitute for a defined sales process
-- Where we are strongest: Revenue organizations with multiple managers, repeatable sales motions, and a leadership mandate to improve how the team operates
-- Where we are not a fit: Very small teams seeking transcription alone or organizations without an owner for adoption and operating change
-
-## Ideal Customer Profile
-
-- Best-fit company size: 200–2,000 employees with 50–500 revenue users
-- Best-fit industries: B2B software, technology-enabled services, financial services, and business services with consultative sales motions
-- Best-fit maturity level: A documented sales process, an established CRM, frontline management layers, and regular deal or forecast reviews
-- Best-fit buying trigger: A new revenue leader, repeated forecast misses, inconsistent deal inspection, uneven coaching, or a tool-consolidation initiative
-- Bad-fit accounts: Founder-led teams with fewer than 15 sellers, low conversation volume, transactional sales cycles, or no change-management owner
-- Disqualifiers: No access to a revenue-workflow owner; no defined business problem; transcription-only evaluation; security requirements that cannot be satisfied; no willingness to involve impacted managers
-- Account signals I care about: CRO or VP Sales arrival; RevOps hiring; enablement investment; manager expansion; forecast pressure; methodology rollout; CRM transformation; acquisition integration
-- Account signals that are usually noise: Generic hiring growth, undated transformation claims, or AI announcements without a named revenue workflow
-
-## Buyer Personas
-
-### Economic Buyer
-
-- Common titles: CRO; Chief Sales Officer; VP Sales; Chief Revenue Officer
-- What they care about: Predictable growth, pipeline visibility, execution consistency, and manager effectiveness
-- Metrics they own: Revenue attainment, forecast accuracy, win rate, sales-cycle length, pipeline coverage, and rep productivity
-- Risks they fear: Forecast surprises, stalled strategic deals, weak inspection, inconsistent execution, and low adoption
-- Language that resonates: Operating visibility, deal risk, manager leverage, predictable execution, and customer reality
-- Language to avoid: AI magic, guaranteed revenue, surveillance, and generic transformation
-- Best proof for this persona: A sourced story showing how a comparable revenue organization improved a named operating workflow
-
-### Technical Buyer
-
-- Common titles: VP Revenue Operations; Head of Sales Operations; GTM Systems leader; Security stakeholder
-- What they care about: Data quality, CRM fit, governance, integrations, deployment effort, permissioning, and adoption
-- Metrics they own: Data completeness, workflow compliance, system adoption, forecast process integrity, and support burden
-- Risks they fear: Another disconnected tool, duplicate data, integration debt, privacy gaps, and poor field adoption
-- Language that resonates: Governed workflows, implementation plan, system-of-record alignment, permissioning, and measurable adoption
-- Best proof for this persona: Architecture, security documentation, implementation plan, and a comparable deployment reference
-
-### Champion
-
-- Common titles: VP Sales Enablement; Director of Revenue Operations; Regional VP; frontline sales leader
-- What they need to believe: Gong will make an existing operating rhythm more useful rather than adding another dashboard
-- What they need to sell internally: A measurable workflow problem, cross-functional value, an adoption plan, and executive sponsorship
-- What makes them look good: A disciplined rollout tied to manager behavior and visible business outcomes
-- What makes them hesitate: Weak sponsorship, unclear ownership, tool fatigue, or a feature-led business case
-- Best assets to give them: Mutual action plan, workflow map, security package, role-based demo, and an approved customer story
-
-### Blocker
-
-- Common titles: Procurement; Legal; Security; CRM owner; skeptical frontline manager
-- Why they block: Cost, change burden, data handling, workflow overlap, or fear of rep surveillance
-- How to de-risk them: Address the exact concern with approved documentation, clear ownership, and a scoped rollout plan
-- Claims to avoid: Guaranteed adoption, guaranteed forecast improvement, or unsupported security statements
-- Proof needed: Approved security materials, implementation responsibilities, permissioning details, and referenced customer evidence
-
-## Seller Taste Profile
-
-Taste is the recurring pattern behind what Maya notices, sends, edits, rejects, reuses, and stands behind across sales workflows.
-
-### Observed Patterns
-
-- What Maya consistently responds to: Specific observations, named workflows, useful questions, and proof matched to the buyer's actual problem
-- What Maya consistently edits out: Generic openings, repeated product language, unsupported urgency, long setup, and vague calls to action
-- What Maya immediately rejects: Fabricated familiarity, invented pain, false scarcity, copied personalization, or certainty unsupported by evidence
-- What Maya notices that other sellers often miss: The passing comment that reveals the stated problem is not the operating problem; mismatched priorities across the buying group; and commitments that never gained an owner
-- Evidence Maya finds credible: Current, sourced proof from a comparable customer tied to the same workflow and buyer role
-- Signals Maya considers weak: Generic growth, undated transformation claims, and activity signals without a commercial implication
-- Typical level of directness: Direct about the hypothesis; transparent about what still needs validation
-- Typical level of detail: Short in first-touch outreach; structured and evidence-rich in account plans and business cases
-- Confidence: High across 82 outreach and follow-up artifacts; medium across 6 presentation artifacts
-
-### Declared Standards
-
-- Thoughtful work names a real workflow, separates evidence from hypothesis, respects buyer language, and gives the customer something useful before asking for time
-- Careless work recycles one value proposition across stakeholders, manufactures urgency, or uses proof that does not fit the buyer's problem
-- Communicate uncertainty by labeling a hypothesis, explaining what supports it, and asking one useful question to test it
-- Protect follow-up dates, customer requests, security answers, pricing boundaries, mutual-action-plan owners, and champion commitments
-
-### Judgment Patterns
-
-- Slow down when the buyer's examples conflict with the stated problem, a stakeholder goes quiet around risk, or the next step has no clear commitment
-- Challenge when the status quo is treated as cost-free or a success criterion cannot be measured
-- Recommend not buying when the evaluation is transcription-only, adoption has no owner, the problem is unverified, or a non-negotiable security requirement cannot be met
-
-### Evidence Pairs
-
-#### Work Maya Would Send
-
-"Your new forecast cadence suggests inspection consistency may matter more than adding another dashboard. Is that close, or am I reading the change incorrectly?"
-
-Why it works: It makes a specific, falsifiable observation and gives the buyer room to correct it.
-
-#### Work Maya Would Reject
-
-"Congratulations on the exciting growth. Gong can unlock value and transform your revenue organization. Do you have 15 minutes next week?"
-
-Why it fails: It performs familiarity and asks for time without earning it.
-
-### Cross-Workflow Consistency
-
-- Outreach: One sourced observation, one workflow, one useful question
-- Research: Facts separated from hypotheses and unknowns
-- Discovery: Curiosity before recommendation
-- Follow-up: Protect commitments and add new value
-- Presentations: Show only the story the buyer has validated
-- Deal recommendations: Make the tradeoff visible and ask when context is missing
-
-Do not perform empathy, fabricate familiarity, or infer emotions as facts.
-
-Demonstrate care through attention, accuracy, useful questions, honest uncertainty, respectful challenge, and reliable follow-through.
-
-## Differentiation
-
-- Main alternatives: Manual call review, CRM inspection, spreadsheets, generic meeting recorders, and disconnected point tools
-- Main competitors: CRM-native conversation intelligence, revenue-forecasting platforms, and specialist conversation-intelligence tools
-- Why we win: The buyer values customer-interaction context across deal execution, coaching, forecasting, and engagement—and leadership commits to using it in the operating rhythm
-- Why we lose: The evaluation is recording-only, price is the only criterion, executive sponsorship is absent, or the team has no adoption owner
-- Claims we can prove: Only claims supported by current Gong product material, approved customer stories, and the evidence attached to the opportunity
-- Claims we cannot make: Guaranteed ROI, guaranteed revenue, invented benchmarks, unsupported competitive claims, or certainty about buyer pain
-- Competitive landmines: Feature checklists without workflow context; dismissing the CRM; overselling AI; attacking an incumbent before understanding why it was chosen
-- Best customer story by competitor: Match the proof to the buyer's current alternative and use only the approved source
-
-## Proof Points
-
-### Customer Proof
-
-- Customer: Select a published Gong customer with similar scale and workflow
-- Problem: Name the operating problem exactly as the customer described it
-- Outcome: Use the published outcome without extrapolating it to the prospect
-- Metric: Quote the approved number with its source and timeframe
-- Source / verification: Gong customer story URL saved in the opportunity record
-
-### Metric Proof
-
-- Metric: The account-specific measure agreed during discovery
-- Baseline: Captured from the buyer, not assumed
-- Result: Proposed target until validated; never presented as guaranteed
-- Timeframe: Agreed evaluation or rollout period
-- Source / verification: Buyer confirmation plus approved Gong evidence
-
-### Narrative Proof
-
-- Story: A revenue leader replaced anecdotal deal inspection with a consistent, interaction-informed operating rhythm
-- Why it matters: It connects the product to manager behavior and decision quality rather than novelty
-- Buyer persona it helps: CRO, VP Sales, RevOps, and Enablement
-- When to use it: After the buyer confirms a visibility, coaching, or forecast workflow problem
-
-## Messaging Rules
-
-- My voice should sound: Direct, commercially literate, curious, and grounded in how revenue teams actually operate
-- My voice should not sound: Hype-driven, surveillance-oriented, overly familiar, or certain about pain I have not verified
-- Words I use: Customer reality, operating rhythm, deal risk, manager leverage, inspection, adoption, and evidence
-- Words I avoid: Revolutionary, effortless, guaranteed, magical, game-changing, and single source of truth without qualification
-- CTA style: One low-friction question tied to a named workflow
-- Subject line style: Short, specific, and connected to a real account signal
-- Follow-up style: Add one useful observation or artifact; never send “just bumping this”
-- How direct I want to be: Direct about the hypothesis and transparent about what still needs validation
-- How much humor is acceptable: Light and situational; never in security, procurement, or executive-risk conversations
-
-## Outreach Standards
-
-- Open with a verified account signal or clearly labeled hypothesis
-- Connect that signal to one revenue workflow, not the entire platform
-- Be useful before asking for time
-- Keep first touch under 120 words
-- Use one proof point only when it matches the buyer and problem
-- End with one clear question that is easy to answer
-
-## First Call Standards
-
-- Confirm the operating problem, current workflow, affected roles, and why the issue matters now
-- Understand how managers inspect deals and how leaders call the forecast today
-- Separate symptoms from measurable business impact
-- Identify who owns adoption, governance, security, and economic approval
-- Demonstrate only the workflow the buyer has validated
-- End with a mutual next step, named stakeholders, owner, and date
-
-## Qualification Standards
-
-- Methodology: MEDDPICC
-- Required qualification fields: Measurable workflow problem; economic buyer; champion; impacted users; current process; decision criteria; decision process; security path; implementation owner; competition; compelling event
-- What counts as a real next step: A scheduled action with the correct stakeholder, a mutual objective, an owner, and a date
-- What counts as fake pipeline: A demo request without a business problem, timeline, stakeholder path, or agreed next action
-- Red flags: Transcription-only interest; no manager participation; no business metric; single-threaded evaluation; procurement before value; unverified deadline
-- Deal risks to surface early: Adoption ownership, CRM overlap, call-recording policy, legal review, security requirements, data residency, and executive access
-- Manager questions I should be ready to answer: Why change; why now; why Gong; who cares; what is measurable; who can stop it; what happens next
-
-## Objections
-
-### “We already have this in our CRM.”
-
-- What they usually mean: They believe existing activity data and dashboards provide enough visibility
-- Best response: Clarify how managers currently inspect customer reality, diagnose deal risk, and coach from the existing workflow
-- Proof to use: A relevant approved workflow comparison or customer story
-- Follow-up question: Where does the current inspection process still depend on rep memory or manual review?
-
-### “Our reps will not adopt another tool.”
-
-- What they usually mean: Previous rollouts created work without improving the rep or manager experience
-- Best response: Make adoption a design requirement and map Gong into the operating rhythms already in place
-- Proof to use: Approved adoption or implementation evidence matched to a similar organization
-- Follow-up question: Which manager-led workflow would need to change for this to become useful rather than additive?
-
-### “We only need call recording.”
-
-- What they usually mean: The buyer has not connected interaction data to a broader revenue problem
-- Best response: Do not force the platform story; determine whether a deal, coaching, forecast, or engagement workflow actually needs improvement
-- Follow-up question: Beyond keeping a record, what decisions should those conversations help your team make?
-
-## Pricing And Commercial Rules
-
-- Pricing model: Annual subscription based on the selected platform package, users, scope, and approved commercial terms
-- Discounting rules: Any concession requires a documented give/get such as term, timing, scope, reference participation, or expansion commitment
-- Procurement path: Business validation, executive sponsorship, security review, legal review, order form, implementation ownership, and launch plan
-- Legal / security notes: Use approved Gong security and privacy materials; never answer beyond documented policy
-- Commercial claims I can make: The approved proposal, package scope, implementation responsibilities, and sourced customer evidence
-- Commercial claims I cannot make: Guaranteed revenue, guaranteed forecast accuracy, unapproved roadmap commitments, or informal security assurances
-- ROI assumptions allowed: Buyer-validated baselines for manager inspection time, coaching coverage, deal-risk visibility, and forecast workflow effort
-- ROI assumptions not allowed: Generic productivity percentages, automatic win-rate improvement, or benefits copied from an unrelated customer
-
-## Customer And Account Memory References
-
-- System of record: Salesforce
-- Territory list source: “FY26 NA Mid-Market Named Accounts” report
-- Active-opportunity source: “Maya Chen — Open Pipeline” Salesforce view
-- Last checked: August 20, 2026
-- Closed-lost lessons: Deals stall when the champion cannot secure frontline-manager participation or when the business case stays at recording and transcription
-- Messaging that got replies: Specific observations about a new revenue leader, manager growth, forecast pressure, and methodology rollout
-- Messaging that failed: Generic AI language, unsupported efficiency claims, and messages that name too many use cases
-- Account triggers that led to meetings: CRO arrival, sales-operations transformation, manager hiring, forecast misses, and enablement redesign
-- Customer language worth reusing: “We cannot inspect every deal,” “the CRM tells us what reps entered,” and “coaching quality depends on the manager”
-- Competitor patterns: CRM-native options gain attention during consolidation; point tools win when the evaluation remains recording-only
-- Pricing precedent: Protect value, scope the rollout clearly, and trade concessions for commitment rather than discounting without a give/get
-
-## AI Output Quality Bar
-
-- Is the account signal specific, current, and sourced?
-- Is the buyer, operating problem, and revenue workflow clear?
-- Are facts separated from hypotheses?
-- Is every product and commercial claim grounded in approved material?
-- Is the message concise enough to send without editing around AI language?
-- Does it sound like a commercially credible mid-market AE?
-- Does it reflect the confirmed patterns in Maya's Seller Taste Profile?
-- Is it relying on an inferred pattern that still needs Maya's confirmation?
-- Does it demonstrate care through attention rather than simulated empathy?
-- Would Maya actually send it?
-`;
-
     const defaults = {
-      sellerName: "",
-      role: "",
+      contextType: "",
+      identity: "",
       company: "",
       segment: "",
       territory: "",
@@ -3910,83 +3805,33 @@ Demonstrate care through attention, accuracy, useful questions, honest uncertain
     const finishTitle = document.querySelector("[data-finish-title]");
     let wizardIndex = 0;
 
-    const sellerInterviewPrompt = `You are my Seller Context compiler. Your job is to create a complete, useful SELLER.md that another AI agent can read before it researches accounts, writes outreach, prepares meetings, builds sales artifacts, or recommends an action.
+    const sellerInterviewPrompt = `You are my Seller Context compiler. Build one durable SELLER.md that gives an AI the company truth, individual selling judgment when relevant, territory logic, and references to live systems behind how I sell.
 
-Start by telling me which connected sources, if any, you can access in this conversation. Possible sources include seller-authored sent email, calendar patterns, sales documents, call notes, and CRM context. Do not inspect any source until you name it and I explicitly authorize it.
+First determine scope: is this for me as an individual or founder-seller, for a company sales team, or for both? If I already answered, record it and continue. The output is always one SELLER.md—never separate company, territory, or CRM context files.
 
-If authorized sources are available:
-- Prefer a recent, representative period instead of scanning everything by default.
-- Learn voice and taste from work I authored, sent, edited, rejected, reused, or approved.
-- Use incoming buyer messages only for buyer language and deal context, not as evidence of my personal style.
-- Look for recurring patterns across outreach, follow-up, research, discovery, presentations, business cases, and deal recommendations.
-- Separate observed patterns, declared standards, and seller-confirmed rules.
-- Add evidence count, recency, and confidence where possible.
-- Distill patterns. Do not copy raw emails, transcripts, customer names, personal information, or unnecessary confidential details into the file.
-- Exclude personal, HR, medical, legal, security, and unrelated private content unless I explicitly include it for a defined reason.
+After scope is clear, name any sources you can access in this conversation. Do not inspect email, calendar, sales documents, call notes, CRM context, or any other source until I explicitly authorize it and the review period. Prefer a recent representative sample. Infer personal voice only from work I authored, sent, edited, rejected, reused, or approved. Use incoming buyer material only for buyer language and deal context.
 
-If connected sources are unavailable, say so plainly and switch to a one-question-at-a-time interview.
+Use an adaptive interview of no more than 14 primary questions. Ask one question at a time. Always gather: owner and users; company, offer, outcomes, and bad fit; ICP, triggers, and disqualifiers; buying group; approved proof and prohibited claims; differentiation; commercial, legal, security, and pricing boundaries.
 
-Use this required 14-question coverage checklist. For every item, mark the answer as Confirmed, Proposed from authorized context, Partial, or Missing. Connected context can propose an answer, but it never removes the need to confirm the answer or gather what is missing.
+For an individual or founder-seller, also gather: role and deal motion; territory and prioritization; personal voice and buyer treatment; judgment; objections; work I would send and reject; qualification and first-call standards; live-system references; refresh triggers.
 
-1. What should my sales agents call me?
-2. What is my role, responsibility, quota, deal size, sales cycle, and methodology?
-3. Which company do I sell for, and what company or product context matters?
-4. What segment, region, industry, or named-account patch do I own?
-5. How is my territory organized, tiered, sourced, reviewed, and prioritized?
-6. What do I sell, what outcomes does it create, and where is it not a fit?
-7. Who is the ideal customer, what triggers matter, and what disqualifies an account?
-8. Who buys, champions, evaluates, or blocks the sale, and what does each person care about?
-9. What customer, metric, and narrative proof am I allowed to use, and how is it verified?
-10. Why do I win, why do I lose, what alternatives appear, and what claims can I not make?
-11. How should my agent sound, treat buyers, use calls to action, and communicate uncertainty?
-12. When should my agent remain curious, challenge respectfully, recommend action, or recommend not buying?
-13. What objections do I hear, what do they usually mean, and how should I respond?
-14. Show one piece of work I would send and one I would reject. What makes the difference?
+For a company team, gather: supported roles and variations; territory policy; shared messaging, outreach, qualification, and follow-up standards; approved judgment and escalation rules; objections; approved and rejected work; governance; live-system references; refresh triggers. Do not pretend every seller has one personal voice.
 
-For every Proposed item, show me the proposed answer and the evidence pattern behind it, then ask me to confirm, correct, or remove it. For every Partial or Missing item, ask a clear question. Ask one question at a time and wait for my answer. If no connected sources are available, ask all 14 questions. Do not declare the profile complete while any required item is unconfirmed.
+Mark each relevant answer Confirmed, Proposed from authorized context, Partial, or Missing. Mark irrelevant branches Not applicable. For every proposed answer, show the answer and evidence pattern, then ask me to confirm, correct, or remove it. Ask a clear question for every partial or missing item. Preserve [fill in] instead of guessing.
 
-After the 14 core questions, ask any additional gap questions required for qualification standards, pricing and commercial rules, legal or security boundaries, customer memory, and the AI output quality bar. Show me any conflict between what I say and what my behavior suggests; do not resolve it silently.
+Make the output review part of this interview, not a separate tool or task. Use the work-I-would-send-and-reject question to ask: "What would you change—and why?" Invite a redacted email, proposal, or slide, or use an example from sources I already authorized. If I have no example, offer a short illustrative draft using only confirmed facts; do not invent buyer facts or proof. Ask what I would keep, change, or refuse to send and why. Distill my answer into a proposed reusable standard with when it applies and when to ask or make an exception. Show the exact standard and get my approval before adding it to Selling Standards And Judgment or AI Output Quality Bar. Keep one-off buyer feedback and raw private drafts out of the file. For a team profile, confirm this is a shared standard, not one person's preference. If I skip or cannot decide, leave it Missing rather than inventing my judgment. This replaces the generic quality-bar question within the 14-question limit; confirmation is a follow-up, not a new workflow.
 
 Rules:
 - Explicit instructions override inferred behavior.
-- Treat every inferred pattern as a hypothesis until I confirm it.
-- Prefer concrete examples, exact buyer language, named workflows, ranges, and verified proof.
-- Separate provable facts from hypotheses, opinions, and unknowns.
-- Never invent customers, metrics, competitors, pricing, buyer pain, or product capabilities.
-- Preserve unresolved fields as [fill in] instead of guessing.
-- Ask for an example I would send and one I would reject, then explain the difference.
-- Treat care as attention, accuracy, honest uncertainty, respectful challenge, and follow-through—not simulated empathy.
-- Treat SELLER.md as durable context. Reference live account lists, opportunities, activity, and approvals in their source systems instead of copying volatile state into the file.
-- Apply context in this order: my current explicit instruction; verified live account or opportunity facts; confirmed rules; observed patterns; defaults.
-- Keep the final writing concise, specific, and useful to another AI system.
+- Separate observed patterns, declared standards, confirmed rules, verified facts, hypotheses, and unknowns.
+- Never invent customers, metrics, competitors, pricing, buyer pain, product capabilities, security answers, or proof.
+- Keep volatile accounts, opportunities, activity, and approvals in their source systems; reference them from SELLER.md.
+- Treat care as attention, accuracy, useful questions, honest uncertainty, respectful challenge, and reliable follow-through—not simulated empathy.
+- Before generating the file, show the most important inferred patterns and conflicts for confirmation.
 
-Build these sections:
-1. Seller Identity
-2. Context Provenance: creation method, authorized sources, analysis period, artifacts reviewed, behavioral signals, last refresh, exclusions, confidence, and gaps
-3. Learning And Privacy Policy
-4. Context Scope And Precedence
-5. Refresh And Change Control
-6. Territory
-7. What I Sell
-8. Ideal Customer Profile
-9. Buyer Personas
-10. Seller Taste Profile: observed patterns, declared standards, judgment patterns, evidence pairs, and cross-workflow consistency
-11. Differentiation
-12. Proof Points
-13. Messaging Rules and Banned Phrases
-14. Outreach Standards
-15. First Call Standards
-16. Qualification Standards
-17. Objections using exact buyer wording
-18. Pricing And Commercial Rules
-19. Customer And Account Memory References
-20. AI Output Quality Bar
+The final file must begin with # SELLER.md and include these top-level sections: Context Scope; Context Owner; Context Provenance; Learning And Privacy Policy; Context Scope And Precedence; Refresh And Change Control; Territory; Company Sales Context; Ideal Customer Profile; Buyer Personas; Selling Standards And Judgment; Differentiation; Proof Points; Messaging Rules; Banned Phrases; Outreach Standards; First Call Standards; Qualification Standards; Objections; Pricing And Commercial Rules; Customer And Account Memory References; AI Output Quality Bar.
 
-Before writing the final file, show me a short list of the most important inferred patterns and ask me to confirm, correct, or remove them.
-
-When confirmed, output only one clean Markdown document beginning with # SELLER.md. Preserve [fill in] for unresolved fields. Do not add commentary before or after the file.
-
-Begin by telling me which connected sources you can access and asking what I authorize you to review.`;
+Begin by determining context scope.`;
 
     const aiDeepLinks = {
       ChatGPT: (prompt) => `https://chatgpt.com/?q=${encodeURIComponent(prompt)}`,
@@ -4011,16 +3856,32 @@ Begin by telling me which connected sources you can access and asking what I aut
       const coverage = questionCoverage();
       return `# SELLER.md
 
-Use this file to give an AI agent persistent context about how I sell before it writes, researches, briefs, follows up, or recommends an action.
+This file gives an AI durable context about the company, seller or team, territory, and selling standards behind the work.
 
-This profile was created from my answers. No connected sources were reviewed. The goal is to carry my commercial context, communication standards, proof, constraints, taste, and judgment into every sales agent I use.
+## Context Scope
 
-## Seller Identity
+- Context mode: ${fieldValue("contextType")}
+- Context owner: ${fieldValue("identity")}
+- Applies to: ${fieldValue("segment")}
+- Company sales context included: Yes
+- Individual seller context included: ${fieldValue("contextType")}
+- Territory context included: Yes / reference only / not applicable
+- Live source systems referenced: [fill in]
+- Scope notes: Created with the Seller Context manual builder
 
-- Seller name: ${fieldValue("sellerName")}
-- Role: ${fieldValue("role")}
+## Context Owner
+
+- Owner identity, role, and responsibility: ${fieldValue("identity")}
+- Team / function: [fill in]
 - Company: ${fieldValue("company")}
 - Segment / patch: ${fieldValue("segment")}
+- Region: [fill in]
+- Quota responsibility: [fill in]
+- Typical deal size: [fill in]
+- Typical sales cycle: [fill in]
+- Sales methodology: [fill in]
+- Strongest selling motion: [fill in]
+- Weakest selling habit: [fill in]
 
 ## Context Provenance
 
@@ -4033,48 +3894,44 @@ This profile was created from my answers. No connected sources were reviewed. Th
 - Seller confirmed on: [fill in]
 - Sources intentionally excluded: All external sources
 - Overall confidence: Seller-provided context; no behavioral inference
-- Required 14-question coverage: ${coverage.confirmed} confirmed; 0 proposed; 0 partial; ${coverage.missing} missing
+- Adaptive interview coverage: ${coverage.confirmed} confirmed; ${coverage.missing} missing
 - Important gaps: Any field marked [fill in]
-
-## Context Scope And Precedence
-
-- This file contains durable seller context, not live account or opportunity state.
-- Apply context in this order: my current explicit instruction; verified live account or opportunity facts; confirmed rules in this file; observed patterns; defaults.
-- When sources conflict, show the conflict and ask instead of silently choosing one.
-- Keep changing account lists, opportunity details, pricing approvals, and customer activity in their source systems; reference those sources here instead of duplicating stale data.
-
-## Refresh And Change Control
-
-- Profile owner: ${fieldValue("sellerName")}
-- Profile version: 1.0
-- Review cadence: Quarterly, and after a material change
-- Next review date: [fill in]
-- Refresh triggers: Role / territory / product / pricing / policy / methodology / major win-loss pattern change
-- Sections most likely to expire: Territory; proof; differentiation; pricing and commercial rules
-- Last material change: Initial manual profile
-- Change summary: Created from the Seller Context 14-question builder
 
 ## Learning And Privacy Policy
 
 - Review only sources I explicitly authorize.
-- Use seller-authored work to infer my voice, standards, and judgment.
-- Use incoming buyer messages for buyer language and deal context, not as evidence of my personal style.
-- Distill patterns; do not paste raw emails, transcripts, customer names, personal information, or unnecessary confidential details into this file.
-- Separate observed patterns, declared standards, and seller-confirmed rules.
-- Treat an inferred pattern as a hypothesis until I confirm it.
-- Connected context may propose an answer, but it does not eliminate the required seller questions.
-- Show me every proposed answer and ask me to confirm, correct, or remove it.
-- Ask every partial or missing question one at a time; do not declare the profile complete while required context remains unconfirmed.
-- My explicit instructions override inferred behavior.
-- Ask before replacing or materially changing a confirmed rule.
-- Preserve disagreements between what I say and what my behavior suggests for review.
-- Never use this context for shared model training without separate, explicit permission.
+- Learn personal voice from work the seller authored, edited, rejected, reused, or approved.
+- Distill patterns; do not paste raw private content into this file.
+- Treat inferred patterns as hypotheses until confirmed.
+- Ask one question at a time for missing context.
+- Never use this context for shared model training without explicit permission.
+
+## Context Scope And Precedence
+
+- Keep company context, individual judgment, territory logic, and live-system references in this one file.
+- Apply current explicit instructions first, then verified live facts, confirmed rules, observed patterns, and defaults.
+- When sources conflict, show the conflict and ask.
+- Keep live account and opportunity state in its source system.
+
+## Refresh And Change Control
+
+- Profile owner: ${fieldValue("identity")}
+- Profile version: 1.0 draft
+- Review cadence: Quarterly and after a material change
+- Next review date: [fill in]
+- Refresh triggers: Role / territory / product / pricing / policy / methodology / win-loss pattern
+- Sections most likely to expire: Territory; proof; pricing; integrations; commercial rules
+- Last material change: Initial manual profile
+- Change summary: Created from the Seller Context builder
 
 ## Territory
 
 ${fieldValue("territory")}
 
-## What I Sell
+## Company Sales Context
+
+- Company: ${fieldValue("company")}
+- Product, category, use cases, outcomes, and bad fit:
 
 ${fieldValue("product")}
 
@@ -4086,35 +3943,33 @@ ${fieldValue("icp")}
 
 ${fieldValue("personas")}
 
-## Seller Taste Profile
-
-Taste is not a list of favorite phrases or a tone preset. It is the recurring pattern behind what I notice, send, edit, reject, reuse, and stand behind.
+## Selling Standards And Judgment
 
 ### Observed Patterns
 
-No connected sources were reviewed for this manual profile. Treat the standards below as declared context until behavior provides evidence.
+- No connected sources were reviewed. Treat the following as declared context until behavior provides evidence.
 
-### Declared Standards And Judgment
+### Declared Standards
+
+${fieldValue("voice")}
+
+### Judgment Patterns
 
 ${fieldValue("judgment")}
 
-### Evidence Pairs And Quality Standard
+### Owner-Declared Output Standards
+
+The following is the owner's stated preference and reasoning, not independently verified buyer evidence. Apply reusable guidance only within its stated scope; ask about conflicts and exceptions.
 
 ${fieldValue("qualityBar")}
 
 ### Cross-Workflow Consistency
 
-- Outreach: Apply my messaging and evidence standards below
-- Account research: Separate verified facts from hypotheses
-- Discovery: Remain curious when the operating problem is unclear
-- Follow-up: Protect commitments and add something useful
-- Business cases: Use buyer-validated baselines and sourced proof
-- Presentations: Match the story to the confirmed buyer problem
-- Deal recommendations: Ask when context is missing instead of guessing
-
-Do not perform empathy, fabricate familiarity, or infer emotions as facts.
-
-Demonstrate care through attention, accuracy, useful questions, honest uncertainty, respectful challenge, and reliable follow-through.
+- Outreach: Apply the confirmed voice, proof, and buyer-treatment rules.
+- Research: Separate facts, hypotheses, and unknowns.
+- Discovery: Remain curious when the operating problem is unclear.
+- Follow-up: Protect commitments and add something useful.
+- Recommendations: Ask when context is missing instead of guessing.
 
 ## Differentiation
 
@@ -4130,61 +3985,34 @@ ${fieldValue("voice")}
 
 ## Banned Phrases
 
-Do not use these unless quoting a buyer or customer directly:
-
 - unlock value
 - drive transformation
-- empower teams
 - seamless solution
-- strategic partnership
 - cutting-edge
-- robust
-- holistic
-- leverage synergies
-- in today's landscape
-- at scale, unless quantified
 - game-changer
-- streamline, unless the workflow is named
+- guaranteed, unless quoting an approved guarantee
 
 ## Outreach Standards
 
-Every outbound draft must:
-
-- Lead with a specific account signal, buyer pain, or credible hypothesis.
+- Lead with a specific signal, buyer problem, or clearly labeled hypothesis.
 - Be useful before asking for time.
-- Avoid pretending to know pain that is not verified.
-- Separate verified facts from inferences.
-- Include one clear, low-friction CTA.
-- Sound like a human seller, not marketing copy.
+- Separate verified facts from inference.
+- Use one clear, low-friction CTA.
 
 ## First Call Standards
 
-A first call should:
-
-- Earn curiosity, not deliver a feature tour.
-- Introduce a hypothesis, not pretend certainty.
-- Confirm why this conversation matters now.
-- Create room for discovery.
-- Use proof only when it supports the buyer's problem.
+- Earn curiosity rather than giving a feature tour.
+- Confirm why the conversation matters now.
+- Use proof only when it fits the buyer's problem.
 - End with a mutual next step.
-
-A first-call deck should not:
-
-- Start with company history.
-- Put the product on slide 2.
-- Show a feature grid before the problem is validated.
-- Use generic industry statistics as personalization.
-- End with "Any questions?"
 
 ## Qualification Standards
 
 - Methodology: [fill in]
 - Required qualification fields: [fill in]
-- What counts as a real next step: [fill in]
-- What counts as fake pipeline: [fill in]
-- Red flags: [fill in]
-- Deal risks to surface early: [fill in]
-- Manager questions I should be ready to answer: [fill in]
+- Real next step: [fill in]
+- Fake pipeline: [fill in]
+- Deal risks: [fill in]
 
 ## Objections
 
@@ -4196,14 +4024,12 @@ ${fieldValue("objections")}
 - Discounting rules: [fill in]
 - Procurement path: [fill in]
 - Legal / security notes: [fill in]
-- Commercial claims I can make: [fill in]
-- Commercial claims I cannot make: [fill in]
+- Commercial claims allowed: [fill in]
+- Commercial claims prohibited: [fill in]
 - ROI assumptions allowed: [fill in]
-- ROI assumptions not allowed: [fill in]
+- ROI assumptions prohibited: [fill in]
 
 ## Customer And Account Memory References
-
-Keep volatile account state in its source system and record only the references and durable lessons here:
 
 - System of record: [fill in]
 - Territory list source: [fill in]
@@ -4213,31 +4039,58 @@ Keep volatile account state in its source system and record only the references 
 - Messaging that got replies: [fill in]
 - Messaging that failed: [fill in]
 - Account triggers that led to meetings: [fill in]
-- Customer language worth reusing: [fill in]
-- Competitor patterns: [fill in]
-- Pricing precedent: [fill in]
 
 ## AI Output Quality Bar
 
-Before giving me anything customer-facing, check:
-
-- Is the account context specific?
-- Is the buyer persona clear?
-- Are all factual claims verified or tagged?
-- Is the business impact explicit?
-- Is the draft concise enough to send?
-- Does it sound like me?
-- Does it reflect the confirmed patterns in my Seller Taste Profile?
-- Is it relying on an inferred pattern that still needs my confirmation?
+- Is the account and buyer context specific?
+- Are factual claims verified or tagged?
+- Does the work follow the confirmed voice and judgment rules?
 - Does it demonstrate care through attention rather than simulated empathy?
-- Would I actually send this?
+- Would the owner actually send it?
 
-If the answer is no, do not polish weak work. Tell me what context is missing and ask one question at a time.
+If not, state what context is missing and ask one question at a time.
 `;
     }
 
-    function render() {
-      preview.textContent = exampleMarkdown;
+    async function render() {
+      const deadAccountFallback = `# SELLER.md
+
+> DeadAccount is a pre-launch product. This example combines the intended company sales context with Yousuf's founder-selling judgment without implying live customers or verified outcomes.
+
+## Context Scope
+
+- Context mode: Combined
+- Context owner: Yousuf Imran
+- Company sales context included: Yes
+- Individual seller context included: Yes
+- Adaptive interview coverage: Proposed from authorized context
+
+## Company Sales Context
+
+- Company: DeadAccount.ai
+- Product stage: Pre-launch
+- Category: AI-native territory operations
+- One-sentence description: DeadAccount investigates, prioritizes, and continuously maintains a sales territory so the seller receives the territory ready to work.
+- Product / service: Proposed launch lineup — Agent software, the human-reviewed Managed Territory service, and Team later.
+
+## Selling Standards And Judgment
+
+- Sound direct, candid, useful, evidence-led, and human.
+- Name what is verified, inferred, and missing.
+- Show the completed work before explaining the technology.
+- Never promise pipeline or fabricate proof.
+
+Open this page through the local or hosted web server to load the complete example.`;
+
+      preview.textContent = deadAccountFallback;
+
+      try {
+        const response = await fetch("./examples/deadaccount-founder/SELLER.md", { cache: "no-store" });
+        if (!response.ok) throw new Error(`Example request failed: ${response.status}`);
+        preview.textContent = await response.text();
+      } catch (error) {
+        console.info("Using the embedded DeadAccount example because the full Markdown file could not be loaded.", error);
+      }
     }
 
     async function writeClipboard(text) {
@@ -4325,7 +4178,7 @@ If the answer is no, do not polish weak work. Tell me what context is missing an
       wizardFinish.hidden = false;
       wizardStepLabel.textContent = coverage.missing === 0 ? "Complete" : "Draft";
       wizardProgressBar.style.width = "100%";
-      finishTitle.textContent = coverage.missing === 0 ? "Your SELLER.md is ready." : "Your SELLER.md draft is ready.";
+      finishTitle.textContent = coverage.missing === 0 ? "Your one SELLER.md is ready." : "Your SELLER.md draft is ready.";
       finishSummary.textContent = coverage.missing === 0
         ? `All ${wizardSteps.length} answers captured. Your seller context is ready to copy, download, and use with every sales agent.`
         : `${coverage.confirmed} of ${wizardSteps.length} answers captured. The downloaded file will keep ${coverage.missing} missing answer${coverage.missing === 1 ? "" : "s"} marked [fill in].`;
@@ -4370,6 +4223,15 @@ If the answer is no, do not polish weak work. Tell me what context is missing an
 
     showWizardStep(0);
     render();
+  </script>
+  <script src="assets/comparison-core.js"></script>
+  <script src="assets/comparison-ui.js"></script>
+  <script>
+    function redirectLegacyChecker() {
+      if (window.location.hash === '#before-you-send') window.location.replace('/before-you-send/');
+    }
+    window.addEventListener('hashchange', redirectLegacyChecker);
+    redirectLegacyChecker();
   </script>
 </body>
 </html>
