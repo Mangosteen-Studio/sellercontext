@@ -25,14 +25,13 @@ The example's provenance is explicit. Do not present these hand-written outputs 
 
 ## Output standards inside context creation
 
-The comparison demonstrates the effect of context; it no longer contains a standalone AE review form. Feedback belongs in the two existing creation paths:
+The comparison demonstrates the effect of context; it does not contain a standalone AE review form. Standards are captured in the draft-first compiler, with an interview as the fallback. The website no longer has a manual questionnaire.
 
-- The manual builder's final question asks what the seller would change and why. The seller writes the reusable standard, its scope, and exceptions directly. That answer enters the same SELLER.md under Owner-Declared Output Standards. It is declared guidance, not inferred behavior or verified buyer evidence. Users are told not to include buyer names or confidential details. Blank answers stay [fill in].
-- The website's compiler prompt uses this review as its existing quality-bar interview question, within the 14-question limit. It can use a redacted user example, an authorized source, or an explicitly illustrative draft grounded in confirmed facts. It proposes an exact scoped rule and requires approval before adding it to the file. One-off feedback and private drafts are excluded. Skipping leaves a gap rather than inventing judgment.
+The compiler distinguishes observed patterns, declared preferences, supported company facts, and confirmed rules. It proposes exact wording, scope, and exceptions for inferred standards in the editable draft. The seller reviews the whole file rather than confirming every supported answer. If an important standard is unclear, the compiler asks what the seller would change in a redacted example and why. One-off feedback is not automatically a general rule, and skipping leaves a gap rather than inventing judgment.
 
-The old review-core.js and review-ui.js prototype remains in source but is not loaded by the homepage. Its ready/revise/hold exports are not current website features. The installable skill is a separate artifact; these changes update the website compiler prompt.
+The old review-core.js and review-ui.js prototype remains in source but is not loaded by the homepage. Its ready/revise/hold exports are not current website features. The website prompt, downloadable assistant instructions, and installable skill share the same draft-first protocol.
 
-There is no API call, automatic learning, persistent storage, or automatic send. Reloading clears the manual form. The compiler runs in the user's chosen external AI and depends on that AI following the prompt.
+There is no API call, automatic learning, persistent storage, or automatic send. The compiler runs in the user's chosen external AI and depends on that AI following the prompt.
 
 ## Future slide support
 
@@ -42,7 +41,7 @@ Sequence:
 
 1. Outreach: side-by-side examples and matched prompt export (implemented).
 2. Actual paired generation: provider adapter executes both prompts and stores outputs plus provider/model/settings, prompt version, context fingerprint, timestamps, and failures. Keep secrets server-side. Ask before uploading a visitor's context, cap spend, and allow deletion.
-3. Review: output standards are gathered during manual creation and the compiler interview. A separate review prototype remains off-page for potential future generation-linked workflows. Blind variant labels during formal evaluation; repeat runs to account for model variation. Keep a preference distinct from measured sales outcomes.
+3. Review: output standards are proposed in the draft and confirmed during whole-file review, with targeted questions when needed. A separate review prototype remains off-page for potential future generation-linked workflows. Blind variant labels during formal evaluation; repeat runs to account for model variation. Keep a preference distinct from measured sales outcomes.
 4. Slide outlines: compare narrative and evidence using the same paired generation contract.
 5. Deck export: render the chosen outline to HTML preview and PPTX using a shared template. Resolve assets and sources before export.
 
@@ -52,4 +51,4 @@ Personal context remains one SELLER.md; this feature does not introduce addition
 
 ## Validation
 
-Run `node --test tests/*.test.cjs`. Checks cover matched prompts, integration of declared output standards into the manual file, compiler approval instructions, and the retained off-page review prototype. The website prepares prompts and gathers output standards within context creation; it does not generate model outputs or export slides.
+Run `node --test tests/*.test.cjs`. Checks cover matched prompts, draft/interview modes, provider links, clipboard fallbacks, shared compiler instructions, and the retained off-page review prototype. The website prepares prompts and gathers output standards within context creation; it does not generate model outputs or export slides.

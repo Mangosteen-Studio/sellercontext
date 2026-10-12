@@ -2,7 +2,7 @@
 
 ## Scope
 
-A free, English-language writing checker at `/before-you-send/`. The standalone black page has one draft field, no settings panel, an original editorial illustration, and links to the homepage's AI compiler (`/#generate`) and manual builder (`/#build`). The old homepage `#before-you-send` fragment redirects here with JavaScript. Serve the project through HTTP for root-relative links.
+A free, English-language writing checker at `/before-you-send/`. The standalone black page has one draft field, no settings panel, an original editorial illustration, and links to the homepage's draft-first compiler (`/#generate`) and interview fallback (`/#interview`). The old homepage `#before-you-send` fragment redirects here with JavaScript. Serve the project through HTTP for root-relative links.
 
 Same exact text, settings, and rules version produce the same findings. Determinism does not establish correctness. These are email-originated heuristics, not a validated measure of LinkedIn performance. This is a review aid, not AI-authorship detection, semantic fact checking, confidentiality screening, or approval to send.
 

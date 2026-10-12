@@ -1,15 +1,7 @@
-# Gemini — Gem setup
+# Gemini handoff
 
-1. Go to gemini.google.com → **Gems** (left sidebar) → **New Gem**.
-2. **Name:** `Seller Context — SELLER.md Builder`
-3. **Instructions:** paste the block from `assistants/instructions.md`.
-4. **Knowledge:** upload `SELLER.md` from the repo root (the blank template).
-5. Save, then **Share** (Drive-style dialog) → **Anyone with the link → Viewer**.
-   Copy the share URL.
+The website opens Gemini and offers the prompt for pasting; it does not promise URL-based prompt injection. For existing context, paste the prompt into the relevant conversation instead.
 
-Note: this is the one platform where "authorized sources" gets real teeth — if the
-seller has Workspace connected, the Gem can propose answers from their Gmail and
-Docs after they authorize it in-chat. Worth saying in the launch post.
+If configuring a Gem, use assistants/instructions.md and the root SELLER.md template. Draft-first remains the default and Interview me instead is the fallback. Verify which files, memory, and connected sources are actually available in that environment.
 
-Send the final URL back so the site's "Build with Gemini" button can point at it.
-This also fixes the current weak spot: Gemini's ?text= prefill is unreliable.
+Do not assume a shared Gem inherits a user's chat history or source access. The website does not depend on a shared Gem being created.

@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#303d80">
   <title>Seller Context | One file that teaches AI how you sell</title>
-  <meta name="description" content="Build one adaptive SELLER.md containing company sales context, individual judgment, territory logic, and references to live systems.">
+  <meta name="description" content="Create an editable SELLER.md from the context already available to your AI. Review the draft, answer only missing questions, or choose the interview fallback.">
   <meta name="robots" content="index, follow">
   <meta name="application-name" content="Seller Context">
   <link rel="canonical" href="https://sellercontext.com/">
@@ -14,7 +14,7 @@
   <link rel="icon" href="/assets/favicon-32x32.png" type="image/png" sizes="32x32">
   <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" sizes="180x180">
   <meta property="og:title" content="Seller Context | One file that teaches AI how you sell">
-  <meta property="og:description" content="Start with yourself, your company, or both. Seller Context asks what matters next and builds one portable SELLER.md.">
+  <meta property="og:description" content="Draft your SELLER.md from existing AI context. Fill important gaps, review your standards, and take one file with you.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://sellercontext.com/">
   <meta property="og:site_name" content="Seller Context">
@@ -26,7 +26,7 @@
   <meta property="og:image:alt" content="Seller Context — one adaptive SELLER.md containing the context behind how you sell.">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Seller Context | One file that teaches AI how you sell">
-  <meta name="twitter:description" content="Company truth, seller judgment, territory logic, and live-system references in one adaptive context file.">
+  <meta name="twitter:description" content="An editable sales playbook from existing AI context, with an interview fallback. Free and open source.">
   <meta name="twitter:image" content="https://sellercontext.com/assets/social-preview.png">
   <meta name="twitter:image:alt" content="Seller Context — one adaptive SELLER.md containing the context behind how you sell.">
   <style>
@@ -2038,8 +2038,8 @@
     .ai-handoff-note {
       grid-column: 1 / -1;
       margin: 2px 0 0 !important;
-      color: #c7ddca !important;
-      font-size: 11px !important;
+      color: var(--muted);
+      font-size: 14px;
       line-height: 1.45 !important;
       text-align: right;
     }
@@ -2510,7 +2510,7 @@
     }
 
     #generate,
-    #build,
+    #interview,
     #how {
       scroll-margin-top: 86px;
     }
@@ -3423,8 +3423,8 @@
     <div class="sidebar-search">⌕&nbsp;&nbsp;Search</div>
     <div class="sidebar-label">Private</div>
     <a class="sidebar-link active" href="#top">📄 <span>Build SELLER.md</span></a>
-    <a class="sidebar-link" href="#generate">✦ <span>Generate with AI</span></a>
-    <a class="sidebar-link" href="#build">✎ <span>One context file</span></a>
+    <a class="sidebar-link" href="#generate">✦ <span>Create your file</span></a>
+    <a class="sidebar-link" href="#interview">✎ <span>Interview instead</span></a>
     <a class="sidebar-link" href="#how">↗ <span>How it works</span></a>
     <div class="sidebar-label">Top AE skills</div>
     <a class="sidebar-link" href="https://greenfield.tools/" rel="noopener">01 <span>Greenfield</span></a>
@@ -3450,8 +3450,8 @@
       <div class="nav-links">
         <a href="/before-you-send/">Before You Send ↗</a>
         <a href="#compare">See the difference</a>
-        <a href="#generate">Generate</a>
-        <a href="#build">Build</a>
+        <a href="#generate">Create your file</a>
+        <a href="#interview">Interview</a>
         <a href="#how">How it works</a>
         <a href="https://github.com/Mangosteen-Studio/sellercontext" target="_blank" rel="noopener">GitHub ↗</a>
       </div>
@@ -3462,17 +3462,17 @@
         <img src="assets/context-geometry.svg" width="400" height="400" alt="">
       </div>
       <div class="hero-copy">
-        <div class="hero-note">One context, shaped to how you sell</div>
-        <h1><span class="hero-title-main">How you sell.<br>In one file.</span></h1>
+        <div class="hero-note">Your context. Your standards. Your file.</div>
+        <h1><span class="hero-title-main">Your AI knows you.<br>Make it portable.</span></h1>
         <p>
-          Start with yourself, your company, or both. Seller Context asks the next relevant question and builds one portable <code>SELLER.md</code> with company sales truth, your judgment, territory logic, and references to live systems.
+          Turn the sales context available to your AI into one editable <code>SELLER.md</code>. Start with a draft, fill only the important gaps, and keep your judgment in charge.
         </p>
         <div class="cta-row">
-          <a class="button" href="#generate">Build my Seller Context</a>
-          <a class="button secondary" href="#build">Build it manually</a>
+          <a class="button" href="#generate">Create my SELLER.md</a>
+          <a class="button secondary" href="#interview">Interview me instead</a>
         </div>
         <div class="badge-strip" aria-label="Product highlights">
-          <span>adaptive questions</span>
+          <span>draft first, gaps second</span>
           <span>one portable file</span>
           <span>asks permission first</span>
           <span><a href="https://github.com/Mangosteen-Studio/sellercontext" target="_blank" rel="noopener">open source · MIT ↗</a></span>
@@ -3488,8 +3488,9 @@
           <div class="lights" aria-hidden="true"><span></span><span></span><span></span></div>
           <span><b class="example-label">Pre-launch example</b>deadaccount-founder/SELLER.md</span>
         </div>
-        <pre id="preview" class="preview"></pre>
+        <pre id="preview" class="preview">Loading the illustrative SELLER.md example…</pre>
       </section>
+      <p class="example-download"><a href="examples/deadaccount-founder/SELLER.md" download>Download the illustrative example</a></p>
     </details>
 
 
@@ -3525,7 +3526,7 @@
             <input id="comparison-file" data-comparison="file" type="file" accept=".md,.markdown,.txt,text/plain,text/markdown">
             <label for="comparison-own-context">Your SELLER.md</label>
             <textarea id="comparison-own-context" data-comparison="own-context" maxlength="60000" required placeholder="Paste or load your seller context. You can review and edit it here."></textarea>
-            <div class="comparison-actions"><button class="button" type="submit">Prepare both prompts</button><a class="button secondary" href="#generate">Build my Seller Context</a></div>
+            <div class="comparison-actions"><button class="button" type="submit">Prepare both prompts</button><a class="button secondary" href="#generate">Create my SELLER.md</a></div>
           </form>
           <p class="comparison-status" data-comparison="status" role="status" aria-live="polite"></p>
           <div data-comparison="prompts" hidden>
@@ -3544,8 +3545,8 @@
 
     <section class="context-map" aria-labelledby="one-file-title">
       <div class="context-map-intro">
-        <h2 id="one-file-title">Not four files to remember. Four kinds of context in one place.</h2>
-        <p>The skill begins with scope, then asks only what applies. A founder, an AE, and a sales team should not get the same interview—but they can use the same simple format.</p>
+        <h2 id="one-file-title">What belongs in your sales playbook.</h2>
+        <p>The AI organizes what it can support into one file. You review its proposed preferences, correct gaps, and keep current account details in their source systems.</p>
       </div>
       <article class="context-piece">
         <strong>inside SELLER.md / 01</strong>
@@ -3569,180 +3570,65 @@
       </article>
     </section>
 
-    <section id="generate" class="ai-launcher" aria-labelledby="generate-title">
+    <section id="generate" class="ai-launcher" data-compiler-mode="draft" aria-labelledby="draft-title">
       <div>
-        <div class="eyebrow">Recommended</div>
-        <h2 id="generate-title">Tell it who this is for. It adapts from there.</h2>
-        <p>
-          A founder gets company context and personal judgment together. An AE inherits company truth, then adds territory and taste. A team captures shared standards without pretending everyone sells the same. The skill asks one question at a time and keeps everything in one file.
-        </p>
+        <div class="eyebrow">Start with what your AI knows</div>
+        <h2 id="draft-title">Create my SELLER.md from what you know.</h2>
+        <p>Turn the context already available to your AI into an editable sales playbook. It drafts what it can support, labels inferences, and asks only about important gaps or conflicts.</p>
+        <p class="compiler-privacy">Use the conversation or project where your sales context already lives. Your AI can use only the memory, files, and tools available there. It asks before reading additional connected sources.</p>
       </div>
-      <div class="ai-actions" aria-label="Generate SELLER.md with an AI assistant">
-        <a class="ai-button" href="https://chatgpt.com/" target="_blank" rel="noopener" data-ai="ChatGPT">
-          <img class="ai-brand-logo" src="assets/openai.svg" alt=""><span>Build with ChatGPT</span><span class="ai-arrow" aria-hidden="true">↗</span>
-        </a>
-        <a class="ai-button" href="https://claude.ai/" target="_blank" rel="noopener" data-ai="Claude">
-          <img class="ai-brand-logo" src="assets/anthropic.svg" alt=""><span>Build with Claude</span><span class="ai-arrow" aria-hidden="true">↗</span>
-        </a>
-        <a class="ai-button" href="https://gemini.google.com/app" data-ai="Gemini" data-launch-mode="clipboard">
-          <img class="ai-brand-logo" src="assets/gemini.svg" alt=""><span>Copy prompt + open Gemini</span><span class="ai-arrow" aria-hidden="true">↗</span>
-        </a>
-        <p class="ai-handoff-note">Gemini does not reliably accept prompt links from websites. We copy the compiler prompt first; paste it into the new chat.</p>
-        <button class="prompt-copy-link" type="button" data-prompt-copy>Copy the compiler prompt</button>
+      <div class="ai-actions" aria-label="Create a draft from existing context">
+        <button class="button compiler-copy" type="button" data-compiler-copy>Copy draft-first prompt</button>
+        <p class="ai-handoff-note">Paste it into your existing AI conversation. Or open a new chat below; that chat may have less context.</p>
+        <a class="ai-button" href="https://chatgpt.com/" target="_blank" rel="noopener" data-ai="ChatGPT"><img class="ai-brand-logo" src="assets/openai.svg" alt=""><span>Open ChatGPT</span><span class="ai-arrow" aria-hidden="true">↗</span></a>
+        <a class="ai-button" href="https://claude.ai/" target="_blank" rel="noopener" data-ai="Claude"><img class="ai-brand-logo" src="assets/anthropic.svg" alt=""><span>Open Claude</span><span class="ai-arrow" aria-hidden="true">↗</span></a>
+        <a class="ai-button" href="https://gemini.google.com/app" target="_blank" rel="noopener" data-ai="Gemini"><img class="ai-brand-logo" src="assets/gemini.svg" alt=""><span>Open Gemini + paste prompt</span><span class="ai-arrow" aria-hidden="true">↗</span></a>
+        <p class="ai-handoff-note">We try to copy the prompt as a backup. If it does not appear in your AI, paste it. Gemini requires pasting.</p>
+        <p class="compiler-status" role="status" aria-live="polite" data-compiler-status></p>
       </div>
-      <details class="prompt-details">
-        <summary>Preview the context compiler prompt</summary>
-        <pre id="ai-prompt"></pre>
-      </details>
+      <details class="prompt-details"><summary>Read or manually copy the draft-first prompt</summary><pre data-compiler-preview>Enable JavaScript to preview the prompt, or use the downloadable instructions below.</pre></details>
+      <p class="compiler-download"><a href="assistants/instructions.md" download>Download compiler instructions</a> · <a href="https://github.com/Mangosteen-Studio/sellercontext/tree/main/skills/seller-context" target="_blank" rel="noopener">Get the reusable skill ↗</a></p>
     </section>
 
-    <section id="build" class="grid">
-      <section class="module" aria-labelledby="editor-title">
-        <h2 id="editor-title">Prefer to build it yourself?</h2>
-        <p>
-          Start by telling us whether this is for you, your company, or both. Answer up to 14 focused questions and skip anything that does not apply. The result is still one portable context file.
-        </p>
-        <p class="privacy-note">Your answers stay on this page and are never uploaded.</p>
-        <div class="build-time" aria-label="Estimated completion time">
-          <span>About 7 minutes</span>
-          <span>Up to 14 adaptive questions</span>
-        </div>
-        <form id="seller-form" class="wizard-form">
-          <div class="wizard-head">
-            <div class="wizard-meta"><span id="wizard-step-label">Question 1 of 14</span><span>About 7 minutes</span></div>
-            <div class="wizard-progress" aria-hidden="true"><span id="wizard-progress-bar"></span></div>
-          </div>
-
-          <svg class="wizard-visual" viewBox="0 0 240 240" aria-hidden="true">
-            <path d="M48 25h95l43 43v144H48zM143 25v43h43M72 166l17-44 67-67 29 29-67 67zM89 122l29 29M156 55l29 29M67 191c34-14 69-14 107 1" />
-          </svg>
-
-          <div class="wizard-stage" data-wizard-stage>
-            <div class="wizard-step active" data-wizard-step>
-              <span class="question-kicker">Choose the scope</span>
-              <label class="wizard-question" for="contextType">Who is this Seller Context for?</label>
-              <input id="contextType" name="contextType" placeholder="Me as a founder-seller, me as an AE, my company sales team, or both">
-              <span class="question-help">This answer determines which questions matter. The output is always one SELLER.md.</span>
-            </div>
-            <div class="wizard-step" data-wizard-step>
-              <span class="question-kicker">Context owner</span>
-              <label class="wizard-question" for="identity">Who owns this context—and who should use it?</label>
-              <input id="identity" name="identity" placeholder="Yousuf, founder-seller; or North America mid-market sales team">
-              <span class="question-help">For an individual, include your role and deal motion. For a company, name the team, roles, and maintainer.</span>
-            </div>
-            <div class="wizard-step" data-wizard-step>
-              <span class="question-kicker">Company sales context</span>
-              <label class="wizard-question" for="company">Which company and sales motion should the file represent?</label>
-              <input id="company" name="company" placeholder="Company name">
-              <span class="question-help">This anchors the product, proof, policies, and competitive context.</span>
-            </div>
-            <div class="wizard-step" data-wizard-step>
-              <span class="question-kicker">Your territory</span>
-              <label class="wizard-question" for="segment">What segment or patch do you own?</label>
-              <input id="segment" name="segment" placeholder="Mid-market SaaS in North America">
-              <span class="question-help">Include segment, region, vertical, or named-account scope.</span>
-            </div>
-            <div class="wizard-step" data-wizard-step>
-              <span class="question-kicker">Your account universe</span>
-              <label class="wizard-question" for="territory">How is your territory organized?</label>
-              <textarea id="territory" name="territory" placeholder="Coverage model, account count, tiering rules, priority accounts, exclusions, account-list source, territory thesis, and review cadence."></textarea>
-              <span class="question-help">Reference the CRM view or CSV that holds the full list. Keep only priority accounts and the territory logic in SELLER.md.</span>
-            </div>
-            <div class="wizard-step" data-wizard-step>
-              <span class="question-kicker">Your offer</span>
-              <label class="wizard-question" for="product">What do you sell?</label>
-              <textarea id="product" name="product" placeholder="Product, category, main use cases, and the business outcomes it creates."></textarea>
-              <span class="question-help">Explain it like you would to a smart new teammate—not like a homepage.</span>
-            </div>
-            <div class="wizard-step" data-wizard-step>
-              <span class="question-kicker">Best fit</span>
-              <label class="wizard-question" for="icp">Who is your ideal customer?</label>
-              <textarea id="icp" name="icp" placeholder="Company size, industry, maturity, triggers, bad fits, and disqualifiers."></textarea>
-              <span class="question-help">The sharper this is, the better your agents can prioritize accounts.</span>
-            </div>
-            <div class="wizard-step" data-wizard-step>
-              <span class="question-kicker">The buying group</span>
-              <label class="wizard-question" for="personas">Who buys, champions, evaluates, or blocks you?</label>
-              <textarea id="personas" name="personas" placeholder="Economic buyer, technical buyer, champion, blocker—and what each cares about."></textarea>
-              <span class="question-help">Use real titles and the language each persona responds to.</span>
-            </div>
-            <div class="wizard-step" data-wizard-step>
-              <span class="question-kicker">Credibility</span>
-              <label class="wizard-question" for="proof">What proof are you allowed to use?</label>
-              <textarea id="proof" name="proof" placeholder="Customer stories, verified metrics, sources, and useful before-and-after examples."></textarea>
-              <span class="question-help">Only include proof you can verify. Your agent should never invent a metric.</span>
-            </div>
-            <div class="wizard-step" data-wizard-step>
-              <span class="question-kicker">Your edge</span>
-              <label class="wizard-question" for="differentiation">Why do you win—and why do you lose?</label>
-              <textarea id="differentiation" name="differentiation" placeholder="Alternatives, competitors, strengths, weak spots, and claims you cannot make."></textarea>
-              <span class="question-help">Honest constraints produce better positioning than a perfect-sounding answer.</span>
-            </div>
-            <div class="wizard-step" data-wizard-step>
-              <span class="question-kicker">Sound like you</span>
-              <label class="wizard-question" for="voice">How should your agent sound—and how should it treat buyers?</label>
-              <textarea id="voice" name="voice" placeholder="Voice, directness, boundaries, banned phrases, CTA style, and what respectful communication means to you."></textarea>
-              <span class="question-help">Describe what you would actually send and how care should show up in the work—not what corporate copy sounds like.</span>
-            </div>
-            <div class="wizard-step" data-wizard-step>
-              <span class="question-kicker">Your judgment</span>
-              <label class="wizard-question" for="judgment">When should your agent slow down, challenge, or recommend not buying?</label>
-              <textarea id="judgment" name="judgment" placeholder="Signals that deserve more attention, when curiosity is better than a recommendation, when to challenge respectfully, promises to protect, and where you will not force a sale."></textarea>
-              <span class="question-help">Good judgment includes knowing when not to optimize for the next meeting.</span>
-            </div>
-            <div class="wizard-step" data-wizard-step>
-              <span class="question-kicker">Buyer resistance</span>
-              <label class="wizard-question" for="objections">What objections do you hear most?</label>
-              <textarea id="objections" name="objections" placeholder="Exact buyer wording, what it usually means, your response, proof, and follow-up question."></textarea>
-              <span class="question-help">Exact buyer language is much more useful than generic objection labels.</span>
-            </div>
-            <div class="wizard-step" data-wizard-step>
-              <span class="question-kicker">Teach it your standards</span>
-              <label class="wizard-question" for="qualityBar">What would you change—and why?</label>
-              <p class="question-help">Think of an email, proposal, or slide. What would you keep, change, or refuse to send? Explain why, then write the standard you want your AI to follow.</p>
-              <textarea id="qualityBar" name="qualityBar" placeholder="Change: Ask about the buyer’s workflow instead of assuming they have a problem.&#10;Why: We have not confirmed their pain.&#10;Remember: Start with a useful question.&#10;Applies when: First-touch outreach.&#10;Exception: If the buyer has confirmed the problem, use their words."></textarea>
-              <span class="question-help">Your answer goes into this SELLER.md as your declared standard. Keep buyer names and confidential details out. Leave blank if you have no example yet.</span>
-            </div>
-          </div>
-
-          <div class="wizard-actions" data-wizard-actions>
-            <button class="wizard-back" type="button" data-wizard-back>← Back</button>
-            <button class="wizard-next" type="button" data-wizard-next>Next →</button>
-          </div>
-
-          <div class="wizard-finish" data-wizard-finish hidden>
-            <span class="finish-mark" aria-hidden="true">✓</span>
-              <h3 data-finish-title>Your one SELLER.md is ready.</h3>
-            <p id="finish-summary">Your seller context is ready for ChatGPT, Claude, Gemini, Codex, Cursor, and the sales agents you use next.</p>
-            <div class="finish-actions">
-              <button class="button" type="button" data-copy>Copy SELLER.md</button>
-              <button class="button secondary" type="button" data-download>Download file</button>
-              <button class="button secondary" type="button" data-wizard-restart>Start over</button>
-            </div>
-          </div>
-        </form>
-      </section>
+    <section id="interview" class="ai-launcher interview-fallback" data-compiler-mode="interview" aria-labelledby="interview-title">
+      <div>
+        <div class="eyebrow">Starting fresh?</div>
+        <h2 id="interview-title">Interview me instead.</h2>
+        <p>New AI account or not much context yet? Let your AI ask the questions it needs to understand your product, buyers, proof, and selling standards. It builds the same editable SELLER.md.</p>
+        <p class="compiler-privacy">Already answered something? It skips that question. You can edit the draft, skip a gap, or stop whenever you have enough.</p>
+      </div>
+      <div class="ai-actions" aria-label="Start an interview in your AI">
+        <button class="button compiler-copy" type="button" data-compiler-copy>Copy interview prompt</button>
+        <p class="ai-handoff-note">Paste it into your AI, or open a new chat below.</p>
+        <a class="ai-button" href="https://chatgpt.com/" target="_blank" rel="noopener" data-ai="ChatGPT"><img class="ai-brand-logo" src="assets/openai.svg" alt=""><span>Open ChatGPT</span><span class="ai-arrow" aria-hidden="true">↗</span></a>
+        <a class="ai-button" href="https://claude.ai/" target="_blank" rel="noopener" data-ai="Claude"><img class="ai-brand-logo" src="assets/anthropic.svg" alt=""><span>Open Claude</span><span class="ai-arrow" aria-hidden="true">↗</span></a>
+        <a class="ai-button" href="https://gemini.google.com/app" target="_blank" rel="noopener" data-ai="Gemini"><img class="ai-brand-logo" src="assets/gemini.svg" alt=""><span>Open Gemini + paste prompt</span><span class="ai-arrow" aria-hidden="true">↗</span></a>
+        <p class="ai-handoff-note">We try to copy the prompt as a backup. If it does not appear in your AI, paste it. Gemini requires pasting.</p>
+        <p class="compiler-status" role="status" aria-live="polite" data-compiler-status></p>
+      </div>
+      <details class="prompt-details"><summary>Read or manually copy the interview prompt</summary><pre data-compiler-preview>Enable JavaScript to preview the prompt, or use the downloadable instructions below.</pre></details>
+      <p class="compiler-download"><a href="assistants/instructions.md" download>Download compiler instructions</a> · <a href="https://github.com/Mangosteen-Studio/sellercontext/tree/main/skills/seller-context" target="_blank" rel="noopener">Get the reusable skill ↗</a></p>
     </section>
 
     <section id="how" class="how-section" aria-labelledby="why-title">
       <div class="how-section-head">
-        <h2 id="why-title">One context. The skill decides what to ask next.</h2>
+        <h2 id="why-title">A draft to edit, not a form to finish.</h2>
         <p>
-          You should not need to understand a context architecture before your AI can help you sell. Start with who the context is for. Seller Context selects the right branch, confirms what it learns, and returns one file.
+          Your AI may already have useful context. Start there, authorize any additional sources you want it to use, and review the file before relying on it. Seller Context does not connect to or receive your email or CRM.
         </p>
       </div>
         <div class="steps">
           <div class="step">
-            <strong>01 / set the scope</strong>
-            <p>Say whether this is for an individual seller, founder-seller, company sales team, or both.</p>
+            <strong>01 / use existing context</strong>
+            <p>Paste the prompt into your AI. It uses relevant context actually available there; additional email, CRM, or document access needs your permission.</p>
           </div>
           <div class="step">
-            <strong>02 / follow the branch</strong>
-            <p>The skill asks only relevant questions, using authorized work to propose answers without quietly filling gaps.</p>
+            <strong>02 / draft, then fill gaps</strong>
+            <p>Get an editable draft with supported facts, proposed preferences, and visible unknowns. Answer only material missing or conflicting questions.</p>
           </div>
           <div class="step">
-            <strong>03 / build one file</strong>
-            <p>Confirm what it learned, correct weak inferences, and receive one SELLER.md shaped to your selling reality.</p>
+            <strong>03 / review and make it yours</strong>
+            <p>Edit the draft and approve the rules you want agents to follow. Save one SELLER.md and review sensitive information before taking it into another AI.</p>
           </div>
         </div>
         <div class="steps" style="margin-top: 18px;">
@@ -3770,468 +3656,9 @@
 
   <div id="toast" class="toast" role="status" aria-live="polite">Copied SELLER.md</div>
 
-  <script>
-    const defaults = {
-      contextType: "",
-      identity: "",
-      company: "",
-      segment: "",
-      territory: "",
-      product: "",
-      icp: "",
-      personas: "",
-      proof: "",
-      differentiation: "",
-      voice: "",
-      judgment: "",
-      objections: "",
-      qualityBar: ""
-    };
-
-    const form = document.querySelector("#seller-form");
-    const preview = document.querySelector("#preview");
-    const toast = document.querySelector("#toast");
-    const aiPromptPreview = document.querySelector("#ai-prompt");
-    const wizardSteps = Array.from(document.querySelectorAll("[data-wizard-step]"));
-    const wizardStage = document.querySelector("[data-wizard-stage]");
-    const wizardActions = document.querySelector("[data-wizard-actions]");
-    const wizardFinish = document.querySelector("[data-wizard-finish]");
-    const wizardBack = document.querySelector("[data-wizard-back]");
-    const wizardNext = document.querySelector("[data-wizard-next]");
-    const wizardRestart = document.querySelector("[data-wizard-restart]");
-    const wizardStepLabel = document.querySelector("#wizard-step-label");
-    const wizardProgressBar = document.querySelector("#wizard-progress-bar");
-    const finishSummary = document.querySelector("#finish-summary");
-    const finishTitle = document.querySelector("[data-finish-title]");
-    let wizardIndex = 0;
-
-    const sellerInterviewPrompt = `You are my Seller Context compiler. Build one durable SELLER.md that gives an AI the company truth, individual selling judgment when relevant, territory logic, and references to live systems behind how I sell.
-
-First determine scope: is this for me as an individual or founder-seller, for a company sales team, or for both? If I already answered, record it and continue. The output is always one SELLER.md—never separate company, territory, or CRM context files.
-
-After scope is clear, name any sources you can access in this conversation. Do not inspect email, calendar, sales documents, call notes, CRM context, or any other source until I explicitly authorize it and the review period. Prefer a recent representative sample. Infer personal voice only from work I authored, sent, edited, rejected, reused, or approved. Use incoming buyer material only for buyer language and deal context.
-
-Use an adaptive interview of no more than 14 primary questions. Ask one question at a time. Always gather: owner and users; company, offer, outcomes, and bad fit; ICP, triggers, and disqualifiers; buying group; approved proof and prohibited claims; differentiation; commercial, legal, security, and pricing boundaries.
-
-For an individual or founder-seller, also gather: role and deal motion; territory and prioritization; personal voice and buyer treatment; judgment; objections; work I would send and reject; qualification and first-call standards; live-system references; refresh triggers.
-
-For a company team, gather: supported roles and variations; territory policy; shared messaging, outreach, qualification, and follow-up standards; approved judgment and escalation rules; objections; approved and rejected work; governance; live-system references; refresh triggers. Do not pretend every seller has one personal voice.
-
-Mark each relevant answer Confirmed, Proposed from authorized context, Partial, or Missing. Mark irrelevant branches Not applicable. For every proposed answer, show the answer and evidence pattern, then ask me to confirm, correct, or remove it. Ask a clear question for every partial or missing item. Preserve [fill in] instead of guessing.
-
-Make the output review part of this interview, not a separate tool or task. Use the work-I-would-send-and-reject question to ask: "What would you change—and why?" Invite a redacted email, proposal, or slide, or use an example from sources I already authorized. If I have no example, offer a short illustrative draft using only confirmed facts; do not invent buyer facts or proof. Ask what I would keep, change, or refuse to send and why. Distill my answer into a proposed reusable standard with when it applies and when to ask or make an exception. Show the exact standard and get my approval before adding it to Selling Standards And Judgment or AI Output Quality Bar. Keep one-off buyer feedback and raw private drafts out of the file. For a team profile, confirm this is a shared standard, not one person's preference. If I skip or cannot decide, leave it Missing rather than inventing my judgment. This replaces the generic quality-bar question within the 14-question limit; confirmation is a follow-up, not a new workflow.
-
-Rules:
-- Explicit instructions override inferred behavior.
-- Separate observed patterns, declared standards, confirmed rules, verified facts, hypotheses, and unknowns.
-- Never invent customers, metrics, competitors, pricing, buyer pain, product capabilities, security answers, or proof.
-- Keep volatile accounts, opportunities, activity, and approvals in their source systems; reference them from SELLER.md.
-- Treat care as attention, accuracy, useful questions, honest uncertainty, respectful challenge, and reliable follow-through—not simulated empathy.
-- Before generating the file, show the most important inferred patterns and conflicts for confirmation.
-
-The final file must begin with # SELLER.md and include these top-level sections: Context Scope; Context Owner; Context Provenance; Learning And Privacy Policy; Context Scope And Precedence; Refresh And Change Control; Territory; Company Sales Context; Ideal Customer Profile; Buyer Personas; Selling Standards And Judgment; Differentiation; Proof Points; Messaging Rules; Banned Phrases; Outreach Standards; First Call Standards; Qualification Standards; Objections; Pricing And Commercial Rules; Customer And Account Memory References; AI Output Quality Bar.
-
-Begin by determining context scope.`;
-
-    const aiDeepLinks = {
-      ChatGPT: (prompt) => `https://chatgpt.com/?q=${encodeURIComponent(prompt)}`,
-      Claude: (prompt) => `https://claude.ai/new?q=${encodeURIComponent(prompt)}`,
-      Gemini: () => "https://gemini.google.com/app"
-    };
-
-    function questionCoverage() {
-      const confirmed = wizardSteps.filter((step) => {
-        const field = step.querySelector("input, textarea");
-        return field && field.value.trim();
-      }).length;
-      return { confirmed, missing: wizardSteps.length - confirmed };
-    }
-
-    function fieldValue(name) {
-      const value = new FormData(form).get(name);
-      return String(value || "").trim() || "[fill in]";
-    }
-
-    function generateMarkdown() {
-      const coverage = questionCoverage();
-      return `# SELLER.md
-
-This file gives an AI durable context about the company, seller or team, territory, and selling standards behind the work.
-
-## Context Scope
-
-- Context mode: ${fieldValue("contextType")}
-- Context owner: ${fieldValue("identity")}
-- Applies to: ${fieldValue("segment")}
-- Company sales context included: Yes
-- Individual seller context included: ${fieldValue("contextType")}
-- Territory context included: Yes / reference only / not applicable
-- Live source systems referenced: [fill in]
-- Scope notes: Created with the Seller Context manual builder
-
-## Context Owner
-
-- Owner identity, role, and responsibility: ${fieldValue("identity")}
-- Team / function: [fill in]
-- Company: ${fieldValue("company")}
-- Segment / patch: ${fieldValue("segment")}
-- Region: [fill in]
-- Quota responsibility: [fill in]
-- Typical deal size: [fill in]
-- Typical sales cycle: [fill in]
-- Sales methodology: [fill in]
-- Strongest selling motion: [fill in]
-- Weakest selling habit: [fill in]
-
-## Context Provenance
-
-- Profile creation method: Manual 14-question builder
-- Connected sources reviewed: None
-- Analysis period: Not applicable
-- Seller-authored artifacts reviewed: None
-- Behavioral signals reviewed: None
-- Last refreshed: ${new Date().toISOString().slice(0, 10)}
-- Seller confirmed on: [fill in]
-- Sources intentionally excluded: All external sources
-- Overall confidence: Seller-provided context; no behavioral inference
-- Adaptive interview coverage: ${coverage.confirmed} confirmed; ${coverage.missing} missing
-- Important gaps: Any field marked [fill in]
-
-## Learning And Privacy Policy
-
-- Review only sources I explicitly authorize.
-- Learn personal voice from work the seller authored, edited, rejected, reused, or approved.
-- Distill patterns; do not paste raw private content into this file.
-- Treat inferred patterns as hypotheses until confirmed.
-- Ask one question at a time for missing context.
-- Never use this context for shared model training without explicit permission.
-
-## Context Scope And Precedence
-
-- Keep company context, individual judgment, territory logic, and live-system references in this one file.
-- Apply current explicit instructions first, then verified live facts, confirmed rules, observed patterns, and defaults.
-- When sources conflict, show the conflict and ask.
-- Keep live account and opportunity state in its source system.
-
-## Refresh And Change Control
-
-- Profile owner: ${fieldValue("identity")}
-- Profile version: 1.0 draft
-- Review cadence: Quarterly and after a material change
-- Next review date: [fill in]
-- Refresh triggers: Role / territory / product / pricing / policy / methodology / win-loss pattern
-- Sections most likely to expire: Territory; proof; pricing; integrations; commercial rules
-- Last material change: Initial manual profile
-- Change summary: Created from the Seller Context builder
-
-## Territory
-
-${fieldValue("territory")}
-
-## Company Sales Context
-
-- Company: ${fieldValue("company")}
-- Product, category, use cases, outcomes, and bad fit:
-
-${fieldValue("product")}
-
-## Ideal Customer Profile
-
-${fieldValue("icp")}
-
-## Buyer Personas
-
-${fieldValue("personas")}
-
-## Selling Standards And Judgment
-
-### Observed Patterns
-
-- No connected sources were reviewed. Treat the following as declared context until behavior provides evidence.
-
-### Declared Standards
-
-${fieldValue("voice")}
-
-### Judgment Patterns
-
-${fieldValue("judgment")}
-
-### Owner-Declared Output Standards
-
-The following is the owner's stated preference and reasoning, not independently verified buyer evidence. Apply reusable guidance only within its stated scope; ask about conflicts and exceptions.
-
-${fieldValue("qualityBar")}
-
-### Cross-Workflow Consistency
-
-- Outreach: Apply the confirmed voice, proof, and buyer-treatment rules.
-- Research: Separate facts, hypotheses, and unknowns.
-- Discovery: Remain curious when the operating problem is unclear.
-- Follow-up: Protect commitments and add something useful.
-- Recommendations: Ask when context is missing instead of guessing.
-
-## Differentiation
-
-${fieldValue("differentiation")}
-
-## Proof Points
-
-${fieldValue("proof")}
-
-## Messaging Rules
-
-${fieldValue("voice")}
-
-## Banned Phrases
-
-- unlock value
-- drive transformation
-- seamless solution
-- cutting-edge
-- game-changer
-- guaranteed, unless quoting an approved guarantee
-
-## Outreach Standards
-
-- Lead with a specific signal, buyer problem, or clearly labeled hypothesis.
-- Be useful before asking for time.
-- Separate verified facts from inference.
-- Use one clear, low-friction CTA.
-
-## First Call Standards
-
-- Earn curiosity rather than giving a feature tour.
-- Confirm why the conversation matters now.
-- Use proof only when it fits the buyer's problem.
-- End with a mutual next step.
-
-## Qualification Standards
-
-- Methodology: [fill in]
-- Required qualification fields: [fill in]
-- Real next step: [fill in]
-- Fake pipeline: [fill in]
-- Deal risks: [fill in]
-
-## Objections
-
-${fieldValue("objections")}
-
-## Pricing And Commercial Rules
-
-- Pricing model: [fill in]
-- Discounting rules: [fill in]
-- Procurement path: [fill in]
-- Legal / security notes: [fill in]
-- Commercial claims allowed: [fill in]
-- Commercial claims prohibited: [fill in]
-- ROI assumptions allowed: [fill in]
-- ROI assumptions prohibited: [fill in]
-
-## Customer And Account Memory References
-
-- System of record: [fill in]
-- Territory list source: [fill in]
-- Active-opportunity source: [fill in]
-- Last checked: [fill in]
-- Closed-lost lessons: [fill in]
-- Messaging that got replies: [fill in]
-- Messaging that failed: [fill in]
-- Account triggers that led to meetings: [fill in]
-
-## AI Output Quality Bar
-
-- Is the account and buyer context specific?
-- Are factual claims verified or tagged?
-- Does the work follow the confirmed voice and judgment rules?
-- Does it demonstrate care through attention rather than simulated empathy?
-- Would the owner actually send it?
-
-If not, state what context is missing and ask one question at a time.
-`;
-    }
-
-    async function render() {
-      const deadAccountFallback = `# SELLER.md
-
-> DeadAccount is a pre-launch product. This example combines the intended company sales context with Yousuf's founder-selling judgment without implying live customers or verified outcomes.
-
-## Context Scope
-
-- Context mode: Combined
-- Context owner: Yousuf Imran
-- Company sales context included: Yes
-- Individual seller context included: Yes
-- Adaptive interview coverage: Proposed from authorized context
-
-## Company Sales Context
-
-- Company: DeadAccount.ai
-- Product stage: Pre-launch
-- Category: AI-native territory operations
-- One-sentence description: DeadAccount investigates, prioritizes, and continuously maintains a sales territory so the seller receives the territory ready to work.
-- Product / service: Proposed launch lineup — Agent software, the human-reviewed Managed Territory service, and Team later.
-
-## Selling Standards And Judgment
-
-- Sound direct, candid, useful, evidence-led, and human.
-- Name what is verified, inferred, and missing.
-- Show the completed work before explaining the technology.
-- Never promise pipeline or fabricate proof.
-
-Open this page through the local or hosted web server to load the complete example.`;
-
-      preview.textContent = deadAccountFallback;
-
-      try {
-        const response = await fetch("./examples/deadaccount-founder/SELLER.md", { cache: "no-store" });
-        if (!response.ok) throw new Error(`Example request failed: ${response.status}`);
-        preview.textContent = await response.text();
-      } catch (error) {
-        console.info("Using the embedded DeadAccount example because the full Markdown file could not be loaded.", error);
-      }
-    }
-
-    async function writeClipboard(text) {
-      try {
-        await navigator.clipboard.writeText(text);
-        return true;
-      } catch (error) {
-        const area = document.createElement("textarea");
-        area.value = text;
-        document.body.appendChild(area);
-        area.select();
-        const copied = document.execCommand("copy");
-        area.remove();
-        if (!copied) throw error;
-        return true;
-      }
-    }
-
-    function showToast(message) {
-      toast.textContent = message;
-      toast.classList.add("show");
-      window.setTimeout(() => toast.classList.remove("show"), 1400);
-    }
-
-    async function copyMarkdown() {
-      await writeClipboard(generateMarkdown());
-      showToast("Copied SELLER.md");
-    }
-
-    async function copyInterviewPrompt(destination = "your AI") {
-      await writeClipboard(sellerInterviewPrompt);
-      showToast(`Compiler prompt copied — paste into ${destination}`);
-    }
-
-    async function openWithInterviewPrompt(event, link) {
-      const destination = link.dataset.ai;
-      if (link.dataset.launchMode === "clipboard") {
-        event.preventDefault();
-        try {
-          await writeClipboard(sellerInterviewPrompt);
-          showToast(`Prompt copied — paste it into ${destination}`);
-          window.setTimeout(() => window.location.assign(link.href), 180);
-        } catch (error) {
-          showToast("Could not copy the prompt — use the copy link below");
-        }
-        return;
-      }
-
-      await writeClipboard(sellerInterviewPrompt);
-      showToast(`Opening ${destination} with the compiler prompt copied as backup`);
-    }
-
-    function downloadMarkdown() {
-      const blob = new Blob([generateMarkdown()], { type: "text/markdown;charset=utf-8" });
-      const url = URL.createObjectURL(blob);
-      const link = document.createElement("a");
-      link.href = url;
-      link.download = "SELLER.md";
-      document.body.appendChild(link);
-      link.click();
-      link.remove();
-      URL.revokeObjectURL(url);
-    }
-
-    function showWizardStep(index, focusField = false) {
-      wizardIndex = Math.max(0, Math.min(index, wizardSteps.length - 1));
-      wizardStage.hidden = false;
-      wizardActions.hidden = false;
-      wizardFinish.hidden = true;
-      wizardSteps.forEach((step, stepIndex) => step.classList.toggle("active", stepIndex === wizardIndex));
-      wizardStepLabel.textContent = `Question ${wizardIndex + 1} of ${wizardSteps.length}`;
-      wizardProgressBar.style.width = `${((wizardIndex + 1) / wizardSteps.length) * 100}%`;
-      wizardBack.style.visibility = wizardIndex === 0 ? "hidden" : "visible";
-      wizardNext.textContent = wizardIndex === wizardSteps.length - 1 ? "Finish →" : "Next →";
-      if (focusField) {
-        const field = wizardSteps[wizardIndex].querySelector("input, textarea");
-        window.setTimeout(() => field?.focus({ preventScroll: true }), 80);
-      }
-    }
-
-    function finishWizard() {
-      const coverage = questionCoverage();
-      wizardStage.hidden = true;
-      wizardActions.hidden = true;
-      wizardFinish.hidden = false;
-      wizardStepLabel.textContent = coverage.missing === 0 ? "Complete" : "Draft";
-      wizardProgressBar.style.width = "100%";
-      finishTitle.textContent = coverage.missing === 0 ? "Your one SELLER.md is ready." : "Your SELLER.md draft is ready.";
-      finishSummary.textContent = coverage.missing === 0
-        ? `All ${wizardSteps.length} answers captured. Your seller context is ready to copy, download, and use with every sales agent.`
-        : `${coverage.confirmed} of ${wizardSteps.length} answers captured. The downloaded file will keep ${coverage.missing} missing answer${coverage.missing === 1 ? "" : "s"} marked [fill in].`;
-    }
-
-    wizardNext.addEventListener("click", () => {
-      if (wizardIndex === wizardSteps.length - 1) {
-        finishWizard();
-      } else {
-        showWizardStep(wizardIndex + 1, true);
-      }
-    });
-
-    wizardBack.addEventListener("click", () => showWizardStep(wizardIndex - 1, true));
-    wizardRestart.addEventListener("click", () => {
-      form.reset();
-      showWizardStep(0, true);
-    });
-
-    form.addEventListener("keydown", (event) => {
-      if (event.key === "Enter" && event.target instanceof HTMLInputElement) {
-        event.preventDefault();
-        wizardNext.click();
-      }
-    });
-
-    document.querySelectorAll("[data-copy]").forEach((button) => button.addEventListener("click", copyMarkdown));
-    document.querySelector("[data-download]").addEventListener("click", downloadMarkdown);
-    document.querySelectorAll("[data-ai]").forEach((link) => {
-      const destination = link.dataset.ai;
-      const buildDeepLink = aiDeepLinks[destination];
-      if (buildDeepLink) link.href = buildDeepLink(sellerInterviewPrompt);
-      link.addEventListener("click", (event) => openWithInterviewPrompt(event, link));
-    });
-    document.querySelector("[data-prompt-copy]").addEventListener("click", () => copyInterviewPrompt());
-    aiPromptPreview.textContent = sellerInterviewPrompt;
-
-    Object.entries(defaults).forEach(([key, value]) => {
-      const field = form.elements[key];
-      if (field) field.value = value;
-    });
-
-    showWizardStep(0);
-    render();
-  </script>
+  <script src="assets/compiler-core.js"></script>
+  <script src="assets/compiler-ui.js"></script>
   <script src="assets/comparison-core.js"></script>
   <script src="assets/comparison-ui.js"></script>
-  <script>
-    function redirectLegacyChecker() {
-      if (window.location.hash === '#before-you-send') window.location.replace('/before-you-send/');
-    }
-    window.addEventListener('hashchange', redirectLegacyChecker);
-    redirectLegacyChecker();
-  </script>
 </body>
 </html>

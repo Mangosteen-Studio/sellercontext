@@ -2,7 +2,7 @@
 
 Use this one file to give an AI agent persistent context about how you or your company sells before it writes, researches, briefs, follows up, or recommends an action.
 
-This context can be created from your answers or compiled by your personal AI from sources you explicitly authorize, such as seller-authored email, calendar patterns, sales documents, call notes, and CRM context.
+Start with an editable draft from relevant conversation context, supplied files, and memory actually available to your AI. Additional email, CRM, or document review needs your authorization. Use an interview only when context is missing or you prefer it.
 
 The goal is not to copy private messages or make AI imitate a caring seller. The goal is to combine company sales truth, individual judgment when relevant, territory logic, and references to live systems in one portable context file.
 
@@ -38,7 +38,7 @@ Complete the personal fields for an individual or founder-seller. For company co
 
 Make it clear where this context came from and how confident the seller should be in it.
 
-- Profile creation method: Personal AI compiler / manual builder / team-provided
+- Profile creation method: Draft from available context / authorized-source enrichment / interview / team-provided
 - Connected sources reviewed:
 - Analysis period:
 - Seller-authored artifacts reviewed:
@@ -58,10 +58,10 @@ Make it clear where this context came from and how confident the seller should b
 - Distill patterns; do not paste raw emails, transcripts, customer names, personal information, or unnecessary confidential details into this file.
 - Separate observed patterns, declared standards, and seller-confirmed rules.
 - Treat an inferred pattern as a hypothesis until the seller confirms it.
-- Connected context may propose an answer, but it does not eliminate the relevant questions for the selected context mode.
-- Mark every required answer as confirmed, proposed, partial, or missing.
-- Show proposed answers to the seller and ask them to confirm, correct, or remove each one.
-- Ask every partial or missing question one at a time; do not declare the profile complete while required context remains unconfirmed.
+- Draft first from available context; ask only material unanswered or conflicting questions. Do not delay the draft for a fixed checklist.
+- Distinguish directly stated facts, source-supported information, proposed inferences, missing fields, conflicts, and not-applicable sections.
+- Show a concise review summary of key inferences, conflicts, and gaps; let the seller edit and approve the whole file.
+- Ask only necessary gap questions, one at a time. Allow skipping or stopping; deliver a partial draft without calling it complete. Approval does not verify uncertain claims.
 - Explicit seller instructions override inferred behavior.
 - Ask before replacing or materially changing a confirmed rule.
 - Preserve disagreements between what the seller says and what their behavior suggests for review; do not resolve them silently.

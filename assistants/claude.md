@@ -1,13 +1,7 @@
-# Claude — keep the deep link
+# Claude handoff
 
-Claude has no public prebuilt-assistant equivalent: Projects only share inside a
-Team workspace, and Skills require a file upload — exactly the friction we're
-avoiding for non-technical sellers.
+Prefer copying the draft-first prompt into the conversation or project where the seller's context is available.
 
-The site's existing `claude.ai/new?q=` prefill already opens Claude with the full
-compiler prompt in the composer, which is the best consumer path available. Leave
-the button as-is.
+The website also offers a new-chat prompt link. If prefill is unavailable, the user can paste the copied prompt or select it from the on-page preview. A new chat may have less context than the existing one.
 
-After a seller has built their SELLER.md, the Claude guidance (for the future
-per-tool install pages) is: create a Project, paste SELLER.md into the Project's
-instructions, and run every sales chat inside it.
+For a reusable workflow, use the packaged seller-context skill or assistants/instructions.md with the SELLER.md template. State actual source access; obtain authorization before additional connected-source review.

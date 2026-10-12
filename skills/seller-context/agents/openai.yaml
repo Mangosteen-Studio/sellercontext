@@ -1,4 +1,4 @@
 interface:
   display_name: "Seller Context"
-  short_description: "Build one adaptive context file for sales agents"
-  default_prompt: "Use $seller-context to determine my context scope and build one verified SELLER.md for my AI sales agents."
+  short_description: "Draft your sales playbook from available context"
+  default_prompt: "Use $seller-context to draft my SELLER.md from context already available to you, then ask only about material gaps and let me review the file."

@@ -28,12 +28,13 @@ test('standalone page has one draft field, local assets and both creation routes
   const ui = fs.readFileSync(path.join(root, 'assets/send-check-ui.js'), 'utf8');
   assert.equal((page.match(/<textarea\b/g) || []).length, 1);
   assert.doesNotMatch(page, /<select\b|<input\b|Your standards/);
-  for (const id of ['generate', 'build']) {
+  for (const id of ['generate', 'interview']) {
     assert.ok(page.includes(`href="/#${id}"`));
     assert.ok(home.includes(`id="${id}"`));
   }
   assert.ok(home.includes('href="/before-you-send/"'));
-  assert.ok(home.includes("window.location.hash === '#before-you-send'"));
+  const compilerUI = fs.readFileSync(path.join(root, 'assets/compiler-ui.js'), 'utf8');
+  assert.ok(compilerUI.includes("window.location.hash === '#before-you-send'"));
   assert.doesNotMatch(home, /id="before-you-send"|src="assets\/send-check/);
   assert.ok(page.includes('href="https://sellercontext.com/before-you-send/"'));
   for (const match of page.matchAll(/(?:src|href)="(\/assets\/[^\"]+)"/g)) {

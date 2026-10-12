@@ -1,94 +1,49 @@
-# Seller Context adaptive interview contract
+# Seller Context draft-first and interview contract — v2.0.0
 
-Use this contract to build one `SELLER.md`. Select questions from the user's answers instead of forcing separate company, seller, territory, or CRM files.
+Build one editable SELLER.md that captures the company context, seller judgment, territory logic, and live-system references useful to my AI sales agents.
 
-## Coverage statuses
+AVAILABLE CONTEXT AND PERMISSION
+Use relevant conversation context, files I supplied for this task, and memory actually exposed to you. Do not claim access to all past chats, hidden memory, email, or a CRM. Briefly state what you can and cannot access. A connected app is not the same as permission to inspect its data for this task.
+Before retrieving additional email, CRM, calendar, call notes, or documents, ask once which available sources and review period I authorize. Use an existing explicit authorization if it already covers this task; do not ask again unnecessarily. If I decline or a connection is unavailable, continue with the context you have. Prefer a bounded, representative sample over a full-account scan. No sending, CRM updates, or other external writes are authorized.
 
-- **Confirmed:** The user directly provided or approved the answer.
-- **Proposed from authorized context:** The answer is inferred from sources the user explicitly authorized but has not yet approved.
-- **Partial:** Some required parts are known; important parts remain unanswered.
-- **Missing:** No supported answer is available for a relevant question.
-- **Not applicable:** The question belongs to a branch outside the selected context scope.
+DRAFT FIRST
+Default to producing an editable draft before any gap questions or approval gate, using the relevant context already available. Infer scope only when clear: individual seller, founder-seller, company team, or combined. If ambiguous, mark scope unresolved rather than blending employers or people. Include the sections below and leave unknown relevant fields [fill in]. Do not delay the initial draft while waiting for optional connected sources; offer to enrich it after authorization.
+If there is no meaningful sales context at all, explain that plainly and use the interview fallback, starting with scope and the company/offer. Do not present an empty template as a completed profile.
 
-Do not declare the file complete while a relevant item is proposed, partial, or missing.
+EVIDENCE AND GAPS
+Mark information as directly stated, supported by a source, proposed inference, missing, conflicting, or not applicable. Include source type and date when known; never invent citations, counts, or verification. Memory is a starting point, not proof that a fact or policy is current.
+After the draft, ask only material unanswered or conflicting questions. Prioritize company/scope ambiguity, approved proof, prohibited claims, commercial boundaries, and important selling preferences. Skip already-supported answers, unrelated branches, and optional fields that do not affect the intended use. Offer a short prioritized gap list, then ask one necessary question at a time. Allow me to skip, edit directly, or keep a draft. Do not force a 14-question checklist or confirmation of every field before showing the file.
 
-## Opening question
+SELLER JUDGMENT
+Learn personal voice only from work I authored, sent, edited, rejected, reused, or approved. Incoming buyer messages provide buyer context, not my writing style. CRM records provide commercial context, not automatic evidence of my preferred behavior. A recurring habit is not automatically an approved standard; team policy is not one person's preference.
+Separate observed patterns, declared preferences, supported company facts, and confirmed rules. Surface conflicts instead of silently choosing. If a material standard is unclear, ask what I would change in a redacted example and why. Propose its exact wording, scope, and exceptions in the draft for review. Do not turn one-off buyer feedback into a general rule.
 
-If the user already states the scope clearly, record it and continue to the first unanswered relevant question. Otherwise ask first:
+PRIVACY AND ACCURACY
+Distill patterns; exclude raw emails, transcripts, private customer identities, sensitive personal details, credentials, and unnecessary confidential information. Use approved public proof only when its status is supported; otherwise leave proof unapproved or missing. Exclude unrelated personal, HR, medical, legal, and security material unless I explicitly include it for a defined reason.
+Never invent customers, metrics, pricing, buyer pain, product capabilities, security answers, or proof. Keep live account lists, opportunities, activity, and approvals in their source systems; include safe references rather than copies. Do not infer approval of confidential information for public sharing or use in another AI.
+Current explicit instructions take precedence over verified live facts, then confirmed rules, observed patterns, and defaults. Recheck time-sensitive claims before customer-facing use.
 
-> Are we building Seller Context for you as an individual or founder-seller, for a company sales team, or for both?
+REVIEW AND OUTPUT
+Begin the document with # SELLER.md. Label it Draft until I review it. Include one concise review summary with key inferences, conflicts, and gaps; let me edit and approve the whole file instead of confirming every supported answer separately. Approval does not fact-check uncertain claims or fill missing fields. Do not say complete while material gaps remain. If I skip questions, deliver a clearly labeled partial draft anyway.
+Use these top-level sections: Context Scope; Context Owner; Context Provenance; Learning And Privacy Policy; Context Scope And Precedence; Refresh And Change Control; Territory; Company Sales Context; Ideal Customer Profile; Buyer Personas; Selling Standards And Judgment; Differentiation; Proof Points; Messaging Rules; Banned Phrases; Outreach Standards; First Call Standards; Qualification Standards; Objections; Pricing And Commercial Rules; Customer And Account Memory References; AI Output Quality Bar.
+Record creation method, actual sources reviewed, review period, confidence, unresolved gaps, and confirmation/refresh dates when known. Use Not applicable for irrelevant branches. Keep everything in one SELLER.md, not separate company, territory, or CRM files. Preserve an existing profile and present meaningful changes before replacing confirmed rules.
 
-Record the answer under `Context Scope`, then select the relevant questions below. Ask one question at a time. Do not ask more than 14 primary questions unless the user requests a deeper interview.
+INTERVIEW FALLBACK
+If I explicitly choose Interview me instead, begin with the first unanswered relevant question, not a connected-source review. Use any answers already provided and do not ask them again. Draft as soon as useful context exists, then fill only material gaps. No fixed question count; stop when there is enough for the intended use or I ask to stop. Do not access additional sources unless I later authorize them.
 
-## Questions for every mode
+## Template application
 
-1. Who owns this context, who should use it, and what roles or selling motion does it cover?
-2. What company is being represented, what does it sell, what outcomes does it create, and where is it not a fit?
-3. Who is the ideal customer, what triggers matter, and what disqualifies an account?
-4. Who buys, champions, evaluates, or blocks the sale, and what does each person care about?
-5. What customer, metric, and narrative proof may agents use, how is it verified, and which claims are prohibited?
-6. Why does the company win or lose, what alternatives appear, and what commercial, legal, security, or pricing boundaries must agents follow?
+Follow assets/SELLER.md without removing required top-level sections. The template's "Adaptive interview coverage" field records coverage statuses even when no interview was needed. Record only actual review and approval dates.
 
-## Individual or founder-seller branch
+## Interview topics, not a mandatory checklist
 
-7. What is the seller's role, responsibility, quota, deal size, sales cycle, methodology, strongest motion, and weakest habit?
-8. What territory or account patch does the seller own, how is it prioritized, and where does the live account list reside?
-9. How should the agent sound, treat buyers, use calls to action, and communicate uncertainty?
-10. When should the agent stay curious, challenge respectfully, recommend action, or recommend not buying?
-11. What objections does the seller hear, what do they usually mean, and how should the agent respond?
-12. What is one piece of work the seller would send and one they would reject? What makes the difference?
-13. What qualification, first-call, follow-up, and deal-management standards should the agent follow?
-14. Which live systems should the file reference, what must stay out of the file, and what should trigger a refresh?
+Use only the topics needed for the selected scope and intended work. A question may cover several related missing facts; do not re-ask facts already supported.
 
-For a founder-seller, combine company and individual answers. Do not ask the same underlying question twice.
+- Owner, company, offer, target buyers, outcomes, and bad fit.
+- Approved proof, prohibited claims, differentiation, and commercial boundaries.
+- Voice, buyer treatment, judgment, objections, and examples the seller would send or reject.
+- Territory logic and safe references to live systems, when relevant.
+- Outreach, qualification, first-call, and follow-up standards.
+- For a team, shared policy, role variation, and who approves changes.
 
-## Company sales team branch
-
-7. Which roles, segments, regions, or motions must the shared context support, and where should they differ?
-8. How are territories organized, tiered, assigned, reviewed, and referenced in the CRM or planning system?
-9. What organization-wide messaging, outreach, first-call, qualification, and follow-up standards are approved?
-10. Which behaviors show good judgment, and when should an agent remain curious, challenge, escalate, or recommend not buying?
-11. Which objections recur across the team, what do they mean, and which approved responses and proof apply?
-12. Show work the company would approve and reject. Which standards explain the difference?
-13. Who approves company context, proof, pricing, policy, and methodology changes, and how should role-specific variation be handled?
-14. Which live systems should the file reference, what must remain in those systems, and what cadence or events should trigger a refresh?
-
-For company mode, capture shared standards and allowed variation. Do not infer that every seller has one personal voice or taste.
-
-## Source-assisted rules
-
-Before reading any source, name what is accessible and ask the user to authorize the source and review period.
-
-When authorized:
-
-- Prefer a recent, representative sample over scanning everything.
-- Infer personal voice only from work the individual authored, sent, edited, rejected, reused, or approved.
-- Infer company standards from approved company material and repeated team-level evidence, not one person's habits.
-- Use incoming buyer content for buyer language and deal context only.
-- Record evidence type, count, recency, and confidence when practical.
-- Distill patterns rather than copying raw emails, transcripts, customer names, personal information, or unnecessary confidential details.
-- Exclude personal, HR, medical, legal, security, and unrelated private content unless the user includes it for a defined reason.
-
-For every proposed answer, show the answer and supporting pattern, then ask the user to confirm, correct, or remove it.
-
-## Reconciliation gate
-
-Before generating the file:
-
-1. Ask only necessary gap questions.
-2. Show conflicts between approved company rules, declared standards, and observed behavior.
-3. Present the most important inferred patterns.
-4. Ask the user to confirm, correct, or remove them.
-5. Generate the file only after this gate.
-
-## Output rules
-
-- Produce one file named `SELLER.md`.
-- Follow `assets/SELLER.md` without removing required top-level sections.
-- Set `Context mode` to individual seller, founder-seller, company sales team, or combined.
-- Mark irrelevant subsections `Not applicable`; do not create additional context files.
-- Record creation method, authorized sources, review period, exclusions, confidence, gaps, confirmation date, and refresh information.
-- Separate observed patterns, declared standards, and confirmed rules.
-- Preserve `[fill in]` for unresolved relevant fields.
-- Never invent customers, metrics, competitors, pricing, buyer pain, product capabilities, or proof.
-- Keep live accounts, opportunities, activity, and approvals in source systems; reference them from `SELLER.md` rather than copying volatile state.
+Do not require private customer examples. A redacted example or directly declared standard is enough. Keep all proposed rules visibly proposed until reviewed.

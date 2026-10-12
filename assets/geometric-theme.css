@@ -1,4 +1,12 @@
-/* Reference-led geometric / editorial theme. Shared behavior stays in index.html. */
+/* Reference-led geometric / editorial theme. */
+.compiler-copy { grid-column: 1 / -1; width: 100%; cursor: pointer; }
+.compiler-status { grid-column: 1 / -1; font-size: 14px; line-height: 1.5; min-height: 1.5em; overflow-wrap: anywhere; }
+.compiler-privacy { font-size: 14px !important; }
+.compiler-download { grid-column: 1 / -1; font-size: 14px; }
+.compiler-download a { text-underline-offset: 4px; }
+.interview-fallback { border-top: 1px solid var(--line); }
+.example-download { padding: 0 40px 24px; font-size: 14px; }
+.prompt-details pre { white-space: pre-wrap; overflow-wrap: anywhere; max-height: 420px; overflow: auto; }
 :root {
   --blue: #303d80;
   --blue-mid: #424f99;
@@ -101,7 +109,7 @@ h1 { max-width: none; margin: 0 0 32px; color: var(--blue); font-size: clamp(64p
 .ai-button { background: var(--paper); color: var(--blue); border: 1px solid #b6bad0; min-height: 86px; font-size: 16px; box-shadow: none; }
 .ai-button:hover { background: var(--pink); color: var(--blue); border-color: var(--blue); transform: none; box-shadow: none; }
 .ai-arrow { color: var(--blue); }
-.ai-launcher .ai-handoff-note { font-size: 14px; }
+.ai-launcher .ai-handoff-note { font-size: 14px; color: var(--muted); text-align: left; }
 .prompt-copy-link, .prompt-details summary { color: var(--blue); font-size: 14px; text-underline-offset: 4px; }
 .prompt-copy-link:hover { color: var(--blue); }
 .prompt-details { border-color: var(--line); }
