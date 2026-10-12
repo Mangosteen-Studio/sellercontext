@@ -34,6 +34,12 @@ Output standards belong inside the draft, not in a separate review tool. The com
 
 The shared comparison contract is designed to support slide outlines and deck export later. See `docs/comparison-foundation.md` for the current boundaries and extension plan. Run `node --test tests/*.test.cjs` for prompt-isolation and review checks.
 
+## One-pager prompt and worked example
+
+`/one-pager/` offers a copyable, editable prompt from `prompts/one-pager.md` to use with a seller's own SELLER.md in their AI. The site does not call a model or upload the user's context. Clipboard failure leaves the prompt selected for manual copying; the Markdown download works without JavaScript.
+
+The DeadAccount example is an editorially prepared concept illustration based on the existing public founder profile and value map, not a measured generation or verified current product offer. Its print view preserves the draft label and provenance while excluding the surrounding instructions and review commentary. Private local research, pricing, roadmap promises, and customer results are not published as proof. The prompt requires a separate seller-only review note and forbids invented evidence.
+
 ## Files
 
 - `index.html` — production landing page with draft-first and interview prompt launchers
